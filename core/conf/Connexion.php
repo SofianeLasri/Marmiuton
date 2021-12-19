@@ -3,9 +3,9 @@ class Connexion {
 
 // attributs de la classe Connexion paramètres de connexion à la base
 static private $hostname = 'localhost';
-static private $database = 'slasrit';
-static private $login = 'slasrit';
-static private $password = 'fVpk04kFb3lbIhPG';
+static private $database = 'marmiuton';
+static private $login = 'marmiuton';
+static private $password = 's6rqTiA0hNKmcgy7';
 
 // attribut de la classe Connexion paramètres d'encodage
 static private $tabUTF8 = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
