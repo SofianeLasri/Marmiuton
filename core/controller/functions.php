@@ -8,6 +8,7 @@ function loadPage(){
     if($localSettings["urlMode"] == "parameters"){
         // Ici on fonctionne en mode paramètres, on va donc reconstruire l'alias
 
+        $alias = array();
         // Si le paramètre admin existe (pas besoin qu'il ai de valeur)
         if(isset($_GET['admin'])){
             $alias[] = "admin"; // Alors on l'ajoute à l'alias
@@ -22,6 +23,11 @@ function loadPage(){
     }else{
         // Si on est en mode alias, alors on récupère directement la variable $urlPath
         $alias = $urlPath;
+    }
+
+    if(empty($alias)){
+        // Si l'alias est vide, on va donc charger la page vitrine
+        $alias[] = "vitrine";
     }
     
     // On vérifie le type de page que l'on souhaite afficher
