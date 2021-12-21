@@ -27,10 +27,10 @@ function loadPage(){
     // On vérifie le type de page que l'on souhaite afficher
     if($alias[0]!="admin"){
         // Il s'agit d'une page client
-        if(file_exists('pages/client/'.$pageName.'.php')){
-            require 'pages/client/'.$pageName.'.php';
+        if(file_exists('pages/client/'.$alias[0].'.php')){
+            require 'pages/client/'.$alias[0].'.php';
         }else{
-            show404($pageName);
+            show404($alias[0]);
         }
     }else{
         array_shift($alias); // On supprime le /admin pour que la fonction loadAdminPage puisse directement vérifier les pages
