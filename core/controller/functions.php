@@ -22,7 +22,7 @@ function loadPage(){
     }else{
         show404($pageName);
     }*/
-    var_dump($alias);
+    print_r($alias);
 }
 
 // Afficher la page 404
