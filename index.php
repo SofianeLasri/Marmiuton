@@ -10,3 +10,4 @@ Connexion::connect();
 
 // Et on appelle la page demandée
 loadPage();
+//le doute m'habite
