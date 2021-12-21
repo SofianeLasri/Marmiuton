@@ -1,6 +1,7 @@
 <?php
 //Chargement des pages
 function loadPage($alias = ["vitrine"]){
+    global $localSettings, $urlPath;
     // S'il existe un paramètre on l'affecte à pageName
 
     // Ici on va vérifier le mode de récupération de l'url
