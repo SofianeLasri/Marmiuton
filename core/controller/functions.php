@@ -1,6 +1,6 @@
 <?php
 //Chargement des pages
-function loadPage($alias = ["vitrine"]){
+function loadPage(){
     global $localSettings, $urlPath;
     // S'il existe un paramètre on l'affecte à pageName
 
