@@ -25,9 +25,9 @@ function loadPage(){
         $alias = $urlPath;
     }
 
-    if(empty($alias)){
+    if(empty($alias[0])){
         // Si l'alias est vide, on va donc charger la page vitrine
-        $alias[] = "vitrine";
+        $alias[0] = "vitrine";
     }
     
     // On vérifie le type de page que l'on souhaite afficher
