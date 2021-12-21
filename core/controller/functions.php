@@ -1,16 +1,27 @@
 <?php
 //Chargement des pages
-function loadPage($pageName = "vitrine"){
+function loadPage($alias = ["vitrine"]){
     // S'il existe un paramètre on l'affecte à pageName
-    if(isset($_GET['page']) && !empty($_GET['page'])){
-        $pageName = $_GET['page'];
-    }
 
+    // Ici on va vérifier le mode de récupération de l'url
+    if($localSettings["urlMode"] == "parameters"){
+        if(isset($_GET['admin'])){
+            $alias[] = "admin";
+        }
+        if(isset($_GET['page']) && !empty($_GET['page'])){
+            $alias[] = $_GET['page'];
+        }
+    }else{
+        $alias = $urlPath;
+    }
+    
+    /*
     if(file_exists('pages/'.$pageName.'.php')){
         require 'pages/'.$pageName.'.php';
     }else{
         show404($pageName);
-    }
+    }*/
+    var_dump($alias);
 }
 
 // Afficher la page 404
