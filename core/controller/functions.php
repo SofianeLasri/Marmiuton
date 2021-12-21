@@ -6,23 +6,40 @@ function loadPage(){
 
     // Ici on va vérifier le mode de récupération de l'url
     if($localSettings["urlMode"] == "parameters"){
+        // Ici on fonctionne en mode paramètres, on va donc reconstruire l'alias
+
+        // Si le paramètre admin existe (pas besoin qu'il ai de valeur)
         if(isset($_GET['admin'])){
-            $alias[] = "admin";
+            $alias[] = "admin"; // Alors on l'ajoute à l'alias
         }
+        // Pareil pour les pages
         if(isset($_GET['page']) && !empty($_GET['page'])){
             $alias[] = $_GET['page'];
+        }else{
+            // Maisi ici on va donner une valeur par défaut
+            $alias[] = "vitrine";
         }
     }else{
+        // Si on est en mode alias, alors on récupère directement la variable $urlPath
         $alias = $urlPath;
     }
     
-    /*
-    if(file_exists('pages/'.$pageName.'.php')){
-        require 'pages/'.$pageName.'.php';
+    // On vérifie le type de page que l'on souhaite afficher
+    if($alias[0]!="admin"){
+        // Il s'agit d'une page client
+        if(file_exists('pages/client/'.$pageName.'.php')){
+            require 'pages/client/'.$pageName.'.php';
+        }else{
+            show404($pageName);
+        }
     }else{
-        show404($pageName);
-    }*/
-    print_r($alias);
+        array_shift($alias); // On supprime le /admin pour que la fonction loadAdminPage puisse directement vérifier les pages
+        loadAdminPage($alias);
+    }
+}
+// Pages admins uniquement
+function loadAdminPage($alias){
+    
 }
 
 // Afficher la page 404
