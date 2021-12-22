@@ -1,5 +1,5 @@
 :root{
---mainOrange: #ec6f20;
+--mainColor: #ec6f20;
 }
 body{
     font-family: 'Noto Serif', serif!important;
@@ -29,6 +29,6 @@ body{
 }
 
 /* General */
-.mainOrange-bg{
+.mainColor-bg{
     background-color: var(--mainOrange) !important;
 }
