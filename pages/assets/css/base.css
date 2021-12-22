@@ -1,6 +1,9 @@
 :root{
 --mainOrange: #ec6f20;
 }
+body{
+    font-family: 'Noto Serif', serif!important;
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -23,4 +26,9 @@
     background: transparent;
     border: 0px none #ffffff;
     border-radius: 50px;
+}
+
+/* General */
+.mainOrange-bg{
+    background-color: var(--mainOrange) !important;
 }

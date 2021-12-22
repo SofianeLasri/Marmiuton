@@ -8,6 +8,10 @@
     <title>Marmiuton</title>
 </head>
 <body>
-    <h1>Test2</h1>
+    <div class="container-fluid mainOrange-bg">
+        <div class="container">
+            <span>Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site. <i class="fas fa-cookie"></i></span>
+        </div>
+    </div>
 </body>
 </html>
