@@ -20,7 +20,7 @@ static public function pdo() {return self::$pdo;}
 
 // fonction de connexion
 static public function connect()  {
-  require_once "core/conf/ConfigurationGenerale.php"; // Ce fichier contient les identifiants
+  require "core/conf/ConfigurationGenerale.php"; // Ce fichier contient les identifiants
   $h = $bddHost;
   $d = $bddName;
   $l = $bddUsername;
