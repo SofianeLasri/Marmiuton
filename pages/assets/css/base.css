@@ -30,5 +30,5 @@ body{
 
 /* General */
 .mainColor-bg{
-    background-color: var(--mainOrange) !important;
+    background-color: var(--mainColor) !important;
 }
