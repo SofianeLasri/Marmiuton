@@ -29,7 +29,7 @@
             </form>
             </div>
         </div>
-        <div class="flex-grow-1"style=background-image;url(https://www.google.com/url?sa=i&url=http%3A%2F%2Fcrookies.fr%2Fcomment-manger-bon-bien-et-malin-en-grece%2F&psig=AOvVaw3m2fyQdQWL_odEJBeKckyX&ust=1640299818343000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLCLkt-x-PQCFQAAAAAdAAAAABAF);background-size:cover;background-size:cover;background-position:.>
+        <div class="flex-grow-1"style=background-image:url('https://media.istockphoto.com/photos/bowl-dish-with-brown-rice-cucumber-tomato-green-peas-red-cabbage-picture-id1047798504?k=20&m=1047798504&s=612x612&w=0&h=sXUN01Y_SuuTnHlgtAhnZEJmb_4blMk7bYWhyhNCNPI=');>
         </div>  
     </div>
 </body>
