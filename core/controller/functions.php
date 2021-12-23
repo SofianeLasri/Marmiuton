@@ -52,7 +52,9 @@ function loadAdminPage($alias){
 function show404($pageName){
     require 'pages/404.php';
 }
-
+function ShowConnexion($pageName){
+    require 'pages/Connexion.php';
+}
 // Récupérer les dépendances
 function getDepedencies(){
     require 'core/conf/dependencies.php';
