@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!-- Dépendances -->
     <?=getDepedencies()?>
-    <link rel="stylesheet" href="pages/assets/css/Connexion.css">
+    <link rel="stylesheet" href="pages/assets/css/connexion.css">
     <title>Marmiuton</title>
 </head>
 <body>
