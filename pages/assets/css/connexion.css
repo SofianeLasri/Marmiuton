@@ -1,8 +1,6 @@
 body{
     background-color: brown;
 }
-.p-2 {
-    position: absolute;
-    width: 100%;
-    left: 0;
+flex-column { 
+   height: 50rem;
 }
