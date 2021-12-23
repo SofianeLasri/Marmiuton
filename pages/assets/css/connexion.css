@@ -1,3 +1,8 @@
 body{
     background-color: brown;
 }
+.d-flex p-2{
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
