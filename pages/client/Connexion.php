@@ -14,12 +14,14 @@
             <div class="d-flex flex-column justify-content-center"style="width=500 ">
             <form action="routeur.php" method="get">
                 <input type="hidden" name="action" value="created">
-                <p>
+                
                     <label>Nom d'utilisateur :</label>
+                    <p>
                     <input type="text" name="nomUser" required>
                 </p>
-                <p>
+                
                     <label>Mot de passe :</label>
+                    <p>
                     <input type="text" name="mdp" required>
                 </p>
                
