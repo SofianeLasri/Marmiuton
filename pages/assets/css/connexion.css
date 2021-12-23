@@ -1,7 +1,7 @@
 body{
     background-color: brown;
 }
-.d-flex flex-column justify-content-center{
+.p-2 {
     position: absolute;
     width: 100%;
     left: 0;
