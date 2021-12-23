@@ -1,6 +1,11 @@
 body{
-    background-color: brown;
+    background-color: white;
 }
 .flex-column { 
    height: 50rem;
+}
+h1{
+    width: 100px;
+margin-left: auto;
+margin-right: auto;
 }
