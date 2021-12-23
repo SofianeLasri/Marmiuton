@@ -3,7 +3,7 @@ body{
 }
 
 .flex-column{
-    height:70rem;
+    height:100rem;
     width: auto;
-    margin-right: auto;
+    margin-right: 15rem;
 }
