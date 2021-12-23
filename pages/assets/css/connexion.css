@@ -1,6 +1,6 @@
 body{
     background-color: brown;
 }
-flex-column { 
+.flex-column { 
    height: 50rem;
 }
