@@ -2,6 +2,6 @@ body{
     background-color: white;
 }
 .flex-column { 
-   height: 50rem;
-   width: 35rem;
+   height: 50%;
+   width: 50%;
 }
