@@ -32,7 +32,7 @@
             </form>
             </div>
         </div>
-        <div class="flex-grow-1"style=background-image:url('https://media.istockphoto.com/photos/bowl-dish-with-brown-rice-cucumber-tomato-green-peas-red-cabbage-picture-id1047798504?k=20&m=1047798504&s=612x612&w=0&h=sXUN01Y_SuuTnHlgtAhnZEJmb_4blMk7bYWhyhNCNPI=');>
+        <div class="flex-grow-1"style=background-image:url('https://media.istockphoto.com/photos/bowl-dish-with-brown-rice-cucumber-tomato-green-peas-red-cabbage-picture-id1047798504?k=20&m=1047798504&s=612x612&w=0&h=sXUN01Y_SuuTnHlgtAhnZEJmb_4blMk7bYWhyhNCNPI=');background-size:cover;background-position:;>
         </div>  
     </div>
 </body>
