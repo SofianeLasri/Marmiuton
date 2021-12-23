@@ -8,7 +8,7 @@
     <title>Marmiuton</title>
 </head>
 <body>
-    <h1> Par ici pour vous connecter ! </h1>
+
     <div class="d-flex p-2">
         <div class="d-flex flex-column justify-content-center">
             <div class="d-flex flex-column justify-content-center"style="width=500 ">

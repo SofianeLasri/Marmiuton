@@ -3,8 +3,5 @@ body{
 }
 .flex-column { 
    height: 50rem;
-}
-h1{
-margin-left: auto;
-margin-right: auto;
+   width: 70rem;
 }
