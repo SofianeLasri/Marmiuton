@@ -32,3 +32,6 @@ body{
 .mainColor-bg{
     background-color: var(--mainColor) !important;
 }
+.text-orange{
+    color: var(--mainColor) !important;
+}
