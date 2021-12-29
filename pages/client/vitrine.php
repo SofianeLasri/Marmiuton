@@ -9,8 +9,8 @@
 </head>
 <body>
     <div id="topBarInfos" class="container-fluid mainColor-bg">
-        <div class="container">
-            <span>Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site. <i class="fas fa-cookie"></i></span>
+        <div class="container text-center">
+            <span class="badge badge-pill badge-danger">Spécial Noël</span> <span>Une sélection de recettes très spéciales pour les fêtes de Noël.</span>
         </div>
     </div>
 </body>
