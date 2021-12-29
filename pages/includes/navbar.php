@@ -33,7 +33,7 @@
                 </li>
             </ul>
             <form id="search" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Je cherche une <strong>recette</strong>, un <strong>ingrédient</strong>...">
+                <input class="form-control mr-sm-2" type="search" placeholder="Je cherche une recette, un ingrédient...">
             </form>
         </div>
     </div>
