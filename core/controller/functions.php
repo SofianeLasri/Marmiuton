@@ -59,3 +59,8 @@ function ShowConnexion($pageName){
 function getDepedencies(){
     require 'core/conf/dependencies.php';
 }
+
+//récupère la barre de navigation
+function getNavbar(){
+    require 'pages/includes/navbar.php';
+}
