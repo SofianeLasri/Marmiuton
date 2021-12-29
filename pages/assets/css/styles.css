@@ -1,7 +1,7 @@
 @import 'base.css';
 #topBarInfos{
     color: white !important;
-    background: linear-gradient(0deg, rgba(236, 111, 32, 0.5), rgba(236, 111, 32, 0.5)), url("/data/images/plat-delicieux1.jpg"); display: block;
+    background: linear-gradient(0deg, rgba(236, 111, 32, 0.75), rgba(236, 111, 32, 0.75)), url("/data/images/plat-delicieux1.jpg"); display: block;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
