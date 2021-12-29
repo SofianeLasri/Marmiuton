@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="topBarInfos" class="container-fluid mainColor-bg">
-        <div class="container text-center my-2">
+        <div class="container text-center py-2">
             <span class="badge badge-pill badge-danger">Spécial Noël</span> <span>Une sélection de recettes très spéciales pour les fêtes de Noël.</span>
         </div>
     </div>
