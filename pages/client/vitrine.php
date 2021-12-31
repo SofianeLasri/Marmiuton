@@ -39,7 +39,7 @@
 
     <!-- Newsletter -->
     <div class="container rounded d-flex newsletter mt-5 p-4">
-        <div class="flex-fill align-self-center d-flex flex-column align-items-center">
+        <div class="flex-fill align-self-center d-flex flex-column">
             <h3 style="color: black!important;"><strong>Abonnez-vous à notre Newsletter</strong></h3>
             <span class="text-muted">Et recevez toutes nos dernières recettes en avant première.</span>
         </div>
