@@ -66,7 +66,7 @@
                     </a>
                     <div class="carte-recette-infos">
                         <h4>Recette 1</h4>
-                        <span class="text-muted">Par <a href="#">Marmiuton</a></span>
+                        <span class="text-muted">Par <a href="#" class="text-orange">Marmiuton</a></span>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quia.</p>
                         <a href="#" class="btn btn-orange">Voir la recette</a>
                     </div>

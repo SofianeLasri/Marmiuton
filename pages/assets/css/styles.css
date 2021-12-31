@@ -76,6 +76,7 @@
 }
 .carte-recette-img{
     width: 160px;
+    height: 100%;
     border-radius: 5px;
     background-position: center;
     background-repeat: no-repeat;
