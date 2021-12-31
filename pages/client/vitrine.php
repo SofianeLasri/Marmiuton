@@ -30,7 +30,7 @@
     <?=getNavbar()?>
 
     <!-- Carroussel de la vitrine -->
-    <div class="carrousselVitrine js-flickity">
+    <div class="carrousselVitrine js-flickity" data-flickity-options='{ "wrapAround": true }'>
         <div class="gallery-cell">...</div>
         <div class="gallery-cell">...</div>
         <div class="gallery-cell">...</div>
