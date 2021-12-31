@@ -55,9 +55,10 @@
 
 /* newsletter */
 .newsletter{
-    background-color: #fae3ce;
+    background-color: #fff5ec;
     background-image: url("/data/images/illustration-fruits.png");
-    background-position: center;
-    background-size: cover;
     background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    background-attachment: scroll;
 }

@@ -38,12 +38,12 @@
     <!-- Fin -->
 
     <!-- Newsletter -->
-    <div class="container rounded d-flex newsletter">
-        <div class="flex-fill">
+    <div class="container rounded d-flex newsletter mt-5">
+        <div class="flex-fill align-self-center">
             <h3 style="color: black!important;">Abonnez-vous à notre Newsletter</h3>
             <p class="text-muted">Et recevez toutes nos dernières recettes en avant première.</p>
         </div>
-        <div class="d-flex flex-fill">
+        <div class="d-flex flex-fillalign-self-center">
             <div class="form-inline">
                 <input class="form-control" type="email" placeholder="Votre email">
                 <button type="button" class="btn btn-orange">S'abonner</button>
