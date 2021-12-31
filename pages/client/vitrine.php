@@ -38,15 +38,7 @@
 
     <script src="/pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
     <script type="text/javascript">
-        var flkty = new Flickity( '.carrousselVitrine', {
-            // options
-            cellAlign: 'left',
-            contain: true,
-            wrapAround: true,
-            autoPlay: true,
-            prevNextButtons: false,
-            pageDots: false
-        });
+        
     </script>
 </body>
 </html>
