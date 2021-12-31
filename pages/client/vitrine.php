@@ -39,13 +39,15 @@
 
     <!-- Newsletter -->
     <div class="container rounded d-flex newsletter">
-        <div>
+        <div class="flex-fill">
             <h3 style="color: black!important;">Abonnez-vous à notre Newsletter</h3>
             <p class="text-muted">Et recevez toutes nos dernières recettes en avant première.</p>
         </div>
-        <div class="d-flex">
-            <input class="form-control" type="email" placeholder="Votre email">
-            <button type="button" class="btn btn-orange">S'abonner</button>
+        <div class="d-flex flex-fill">
+            <div class="form-inline">
+                <input class="form-control" type="email" placeholder="Votre email">
+                <button type="button" class="btn btn-orange">S'abonner</button>
+            </div>
         </div>
     </div>
 
