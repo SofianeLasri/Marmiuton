@@ -13,13 +13,13 @@
 }
 
 .gallery-cell {
-    width: 100%;
+    width: 66%;
     height: 200px;
     margin-right: 10px;
     background: #8C8;
     counter-increment: gallery-cell;
 }
-
+  
 /* cell number */
 .gallery-cell:before {
     display: block;
