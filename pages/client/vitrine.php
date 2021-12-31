@@ -6,6 +6,13 @@
     <?=getDepedencies()?>
     <link rel="stylesheet" href="pages/assets/css/styles.css">
     <title>Marmiuton</title>
+    
+    <!-- Embed -->
+    <meta content="Marmiuton" property="og:title" />
+    <meta content="Retrouvez des milliers de recettes toutes plus délicieuses les unes des autres. Rejoignez la communauté des Marmiutons et  partagez vos recettes de grand-mère!" property="og:description" />
+    <meta content="https://marmiuton.sl-projects.com/" property="og:url" />
+    <meta content="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" property="og:image" />
+    <meta content="#ed8930" data-react-helmet="true" name="theme-color" />
 </head>
 <body>
     <!-- Barre du dessus pour les infos peu ou pas importantes -->
