@@ -60,6 +60,7 @@
         </div>
 
         <div class="row mt-5">
+            <!-- Carte recette -->
             <div class="col-md-6">
                 <div class="carte-recette">
                     <a href="#">
@@ -72,6 +73,52 @@
                     </div>
                 </div>
             </div>
+            <!-- Fin -->
+
+            <!-- Carte recette -->
+            <div class="col-md-6">
+                <div class="carte-recette">
+                    <a href="#">
+                        <div class="carte-recette-img" style="background-image: url('/data/images/plat-delicieux1.jpg');"></div>
+                    </a>
+                    <div class="carte-recette-infos">
+                        <h4><strong>Recette 1</strong></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quia.</p>
+                        <i><a href="#" class="text-orange">Marmiuton</a> <span class="text-muted"><i class="far fa-stopwatch"></i> 75 minutes</span></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin -->
+
+            <!-- Carte recette -->
+            <div class="col-md-6">
+                <div class="carte-recette">
+                    <a href="#">
+                        <div class="carte-recette-img" style="background-image: url('/data/images/plat-delicieux1.jpg');"></div>
+                    </a>
+                    <div class="carte-recette-infos">
+                        <h4><strong>Recette 1</strong></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quia.</p>
+                        <i><a href="#" class="text-orange">Marmiuton</a> <span class="text-muted"><i class="far fa-stopwatch"></i> 75 minutes</span></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin -->
+
+            <!-- Carte recette -->
+            <div class="col-md-6">
+                <div class="carte-recette">
+                    <a href="#">
+                        <div class="carte-recette-img" style="background-image: url('/data/images/plat-delicieux1.jpg');"></div>
+                    </a>
+                    <div class="carte-recette-infos">
+                        <h4><strong>Recette 1</strong></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quia.</p>
+                        <i><a href="#" class="text-orange">Marmiuton</a> <span class="text-muted"><i class="far fa-stopwatch"></i> 75 minutes</span></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin -->
         </div>
     </div>
 
