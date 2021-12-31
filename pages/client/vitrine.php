@@ -58,7 +58,8 @@
             <h3><strong>Recettes faciles</strong></h3>
             <span class="text-muted">Une sélection de recettes simple à préparer pour vos repas.</span>
         </div>
-        <div class="row">
+
+        <div class="row mt-5">
             <div class="col-md-6">
                 <div class="carte-recette">
                     <a href="#">
