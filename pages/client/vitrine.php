@@ -56,7 +56,21 @@
     <div class="container">
         <div class="block-titres">
             <h3><strong>Recettes faciles</strong></h3>
-            <p class="text-muted">Une sélection de recettes simple à préparer pour vos repas.</p>
+            <span class="text-muted">Une sélection de recettes simple à préparer pour vos repas.</span>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="carte-recette">
+                    <div class="carte-recette-img" style="background-image: url('data/images/recettes/recette1.jpg');">
+                    </div>
+                    <div class="carte-recette-infos">
+                        <h4>Recette 1</h4>
+                        <span class="text-muted">Par <a href="#">Marmiuton</a></span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quia.</p>
+                        <a href="#" class="btn btn-orange">Voir la recette</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
