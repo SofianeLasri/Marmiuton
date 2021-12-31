@@ -38,9 +38,9 @@
     <!-- Fin -->
 
     <!-- Newsletter -->
-    <div class="container rounded d-flex newsletter mt-5 p-4">
+    <div class="container rounded d-flex newsletter my-5 p-4">
         <div class="flex-fill align-self-center d-flex flex-column">
-            <h3 style="color: black!important;"><strong>Abonnez-vous à notre Newsletter</strong></h3>
+            <h3><strong>Abonnez-vous à notre Newsletter</strong></h3>
             <span class="text-muted">Et recevez toutes nos dernières recettes en avant première.</span>
         </div>
         <div class="d-flex flex-fillalign-self-center">
@@ -48,6 +48,15 @@
                 <input class="form-control mr-2" type="email" placeholder="Votre email">
                 <button type="button" class="btn btn-orange rounded-pill">S'abonner</button>
             </div>
+        </div>
+    </div>
+    <!-- Fin -->
+
+    <!-- Recettes -->
+    <div class="container">
+        <div class="block-titres">
+            <h3><strong>Recettes faciles</strong></h3>
+            <p class="text-muted">Une sélection de recettes simple à préparer pour vos repas.</p>
         </div>
     </div>
 

@@ -55,10 +55,17 @@
 
 /* newsletter */
 .newsletter{
-    background-color: #fff4ec;
+    background-color: var(--lightMainColor);
     background-image: url("/data/images/illustration-fruits.png");
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: cover;
     background-attachment: scroll;
+}
+
+/* Blocs de construction du site */
+.block-titres{
+    border-bottom: 3px solid var(--color-border-grey);
+    padding: 15px 0;
+    padding-top: 0;
 }

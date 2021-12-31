@@ -1,5 +1,7 @@
 :root{
---mainColor: #ec6f20;
+    --mainColor: #ec6f20;
+    --lightMainColor: #fff4ec;
+    --color-border-grey: #e0dede;
 }
 body{
     font-family: 'Noto Serif', serif!important;
