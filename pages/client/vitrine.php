@@ -38,15 +38,15 @@
     <!-- Fin -->
 
     <!-- Newsletter -->
-    <div class="container rounded d-flex newsletter mt-5">
-        <div class="flex-fill align-self-center">
-            <h3 style="color: black!important;">Abonnez-vous à notre Newsletter</h3>
+    <div class="container rounded d-flex newsletter mt-5 p-4">
+        <div class="flex-fill align-self-center d-flex flex-column align-items-center">
+            <h3 style="color: black!important;"><strong>Abonnez-vous à notre Newsletter</strong></h3>
             <p class="text-muted">Et recevez toutes nos dernières recettes en avant première.</p>
         </div>
         <div class="d-flex flex-fillalign-self-center">
             <div class="form-inline">
-                <input class="form-control" type="email" placeholder="Votre email">
-                <button type="button" class="btn btn-orange">S'abonner</button>
+                <input class="form-control mr-2" type="email" placeholder="Votre email">
+                <button type="button" class="btn btn-orange rounded-pill">S'abonner</button>
             </div>
         </div>
     </div>
