@@ -62,7 +62,7 @@
             <div class="col-md-6">
                 <div class="carte-recette">
                     <a href="#">
-                        <div class="carte-recette-img" style="background-image: url('data/images/recettes/recette1.jpg');"></div>
+                        <div class="carte-recette-img" style="background-image: url('data/images/plat-delicieux1.jpg');"></div>
                     </a>
                     <div class="carte-recette-infos">
                         <h4>Recette 1</h4>
