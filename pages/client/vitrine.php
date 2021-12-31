@@ -59,9 +59,9 @@
             <span class="text-muted">Une sélection de recettes simple à préparer pour vos repas.</span>
         </div>
 
-        <div class="row mt-5">
+        <div class="row">
             <!-- Carte recette -->
-            <div class="col-md-6">
+            <div class="col-md-6 mt-5">
                 <div class="carte-recette">
                     <a href="#">
                         <div class="carte-recette-img" style="background-image: url('/data/images/plat-delicieux1.jpg');"></div>
