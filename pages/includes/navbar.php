@@ -1,7 +1,9 @@
 <!-- J'ai un peu honte de cette navbar car c'est ni plus, ni moins, qu'un C/C de la doc de Bootstrap, mais bon le prof n'y verra que du feu x) -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">Marmiuton</a>
+        <a class="navbar-brand" href="#">
+            <img src="/data/images/logo/large.svg" width="131" height="30" class="d-inline-block align-top" alt="" loading="Marmiuton">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
