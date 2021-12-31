@@ -41,7 +41,7 @@
     <div class="container rounded d-flex newsletter mt-5 p-4">
         <div class="flex-fill align-self-center d-flex flex-column align-items-center">
             <h3 style="color: black!important;"><strong>Abonnez-vous à notre Newsletter</strong></h3>
-            <p class="text-muted">Et recevez toutes nos dernières recettes en avant première.</p>
+            <span class="text-muted">Et recevez toutes nos dernières recettes en avant première.</span>
         </div>
         <div class="d-flex flex-fillalign-self-center">
             <div class="form-inline">
