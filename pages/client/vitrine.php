@@ -35,6 +35,19 @@
         <div class="item">...</div>
         <div class="item">...</div>
     </div>
+    <!-- Fin -->
+
+    <!-- Newsletter -->
+    <div class="container rounded d-flex newsletter">
+        <div>
+            <h3 style="color: black!important;">Abonnez-vous à notre Newsletter</h3>
+            <p class="text-muted">Et recevez toutes nos dernières recettes en avant première.</p>
+        </div>
+        <div class="d-flex">
+            <input class="form-control" type="email" placeholder="Votre email">
+            <button type="button" class="btn btn-orange">S'abonner</button>
+        </div>
+    </div>
 
     <script src="/pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
     <script type="text/javascript">
