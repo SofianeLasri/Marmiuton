@@ -13,6 +13,9 @@
     <meta content="https://marmiuton.sl-projects.com/" property="og:url" />
     <meta content="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" property="og:image" />
     <meta content="#ed8930" data-react-helmet="true" name="theme-color" />
+
+    <!-- Uniquement pour la vitrine -->
+    <link rel="stylesheet" href="/pages/assets/vendors/flickity/css/flickity.css" media="screen">
 </head>
 <body>
     <!-- Barre du dessus pour les infos peu ou pas importantes -->
@@ -27,5 +30,23 @@
     <?=getNavbar()?>
 
     <!-- Carroussel de la vitrine -->
+    <div class="carrousselVitrine js-flickity">
+        <div class="gallery-cell">...</div>
+        <div class="gallery-cell">...</div>
+        <div class="gallery-cell">...</div>
+    </div>
+
+    <script src="/pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
+    <script type="text/javascript">
+        var flkty = new Flickity( '.carrousselVitrine', {
+            // options
+            cellAlign: 'left',
+            contain: true,
+            wrapAround: true,
+            autoPlay: true,
+            prevNextButtons: false,
+            pageDots: false
+        });
+    </script>
 </body>
 </html>
