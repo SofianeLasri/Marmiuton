@@ -61,8 +61,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="carte-recette">
-                    <div class="carte-recette-img" style="background-image: url('data/images/recettes/recette1.jpg');">
-                    </div>
+                    <a href="#">
+                        <div class="carte-recette-img" style="background-image: url('data/images/recettes/recette1.jpg');"></div>
+                    </a>
                     <div class="carte-recette-infos">
                         <h4>Recette 1</h4>
                         <span class="text-muted">Par <a href="#">Marmiuton</a></span>

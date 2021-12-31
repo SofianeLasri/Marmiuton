@@ -75,12 +75,13 @@
     display: flex;
 }
 .carte-recette-img{
+    width: 160px;
     border-radius: 5px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .carte-recette-infos{
-    display: flex;
-    flex-direction: column;
+    padding: 15px;
+    flex: 1;
 }
