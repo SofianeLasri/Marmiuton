@@ -1,40 +1,65 @@
-<?php
-if(Connexion::pdo()->query("SELECT COUNT(*) FROM m_utilisateur")->fetchColumn() == 0){
-    $hasUserInDB = false;
-}else {
-    $hasUserInDB = true;
-}
-?>
-Wesh mon pote komen sa va? Tu veu te connecté? Ah...  bon ok alors attend 🤔
-<br>Accès à la bdd: check
-<br>Y a des utilisateurs dans la bdd:
-<?php
-if($hasUserInDB){
-    echo "check";
-}else{ ?>
+<!DOCTYPE html>
+<html>
+    
+<head>
+<title>My Awesome Login Page</title>
+    <meta charset="UTF-8">
+    <!-- Dépendances -->
+    <?=getDepedencies()?>
+    <link rel="stylesheet" href="pages/assets/css/connexion.css">
+</head>
+<body>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+                <form action="index.php" method="POST">
+                <input type="hidden" name="action" value="created">
+						<div class="input-group mb-3">
+                        <div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="nom" class="form-control input_user"  placeholder="nom" required>
+                                </div>  
+                                <div class="input-group mb-3">
+                                <div class="input-group-append">
+								    <span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="prenom" class="form-control input_user"  placeholder="prenom" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                <div class="input-group-append">
+								    <span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="email" name="email" class="form-control input_user"  placeholder="mail" required>
+                                </div>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="mdp" class="form-control input_pass"  placeholder="password" required>
+						</div>
+						<div class="form-group">
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 	<button type="submit" name="button" class="btn login_btn">Creer le compte</button>
+				   </div>
+					</form>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <?=getFooter()?>
 
-<b>pas check!</b>
-<br>Bon t'est reloux toi. Rempli le formulaire ci-dessous
-
-<form method="post" style="display:flex; flex-direction:column;width:15rem;">
-    <input type="text" name="username" placeholder="nom d'utilisateur" required>
-    <input type="password" name="password" placeholder="mot de passe" required>
-    <input type="text" name="addresse" placeholder="addresse">
-    <input type="text" name="numero" placeholder="numéro">
-    <input type="text" name="ville" placeholder="ville">
-    <input type="text" name="codepostal" placeholder="code postal">
-    <input type="text" name="prefculinaire" placeholder="préférence culinaire">
-    <input type="text" name="jesaispasquoimettre" placeholder="attirances particulières">
-    <input type="text" name="aled" placeholder="age">
-    <input type="text" name="moioui" placeholder="êtes-vous célibataire?">
-    <input type="text" name="bofhein" placeholder="aimez-vous les moches?">
-    <input type="text" name="persochocolat" placeholder="chocolat ou chocolatine?">
-    <div>
-        <input type="checkbox" name="checkbox" >
-        <p>J'accepte que mes données personelles soient envoyées à nos associées publicitaires aléatoires, et utilisées à des fins lucratives dont la mention de l'origine n'est pas obligatoire.</p>
-    </div>
-    <input type="submit" value="Connexion">
-</form>
-<br>Ouai orf,  bon ok. T'as que les deux premières boites qui sont obligatoires.
-
-<?php }
+<script src="/pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
+<script type="text/javascript">
+    
+</script>
+</body>
+</html>

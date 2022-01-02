@@ -1,39 +1,64 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
+    
 <head>
+	<title>My Awesome Login Page</title>
     <meta charset="UTF-8">
     <!-- Dépendances -->
     <?=getDepedencies()?>
     <link rel="stylesheet" href="pages/assets/css/connexion.css">
-    <title>Marmiuton</title>
 </head>
 <body>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+                <form action="index.php" method="get">
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+						</div>
+						<div class="form-group">
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" class="custom-control-input" id="customControlInline">
+								<label class="custom-control-label" for="customControlInline">Remember me</label>
+							</div>
+						</div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 	<button type="button" name="button" class="btn login_btn">Login</button>
+				   </div>
+					</form>
+				</div>
+		
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a href="loginTemp" class="ml-2">Sign Up</a>
+					</div>
+					<div class="d-flex justify-content-center links">
+						<a href="#">Forgot your password?</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <?=getFooter()?>
 
-    <div class="d-flex p-2">
-        <div class="d-flex flex-column justify-content-center">
-            <div class="d-flex flex-column justify-content-center"style="width=500 ">  
-            <form action="routeur.php" method="get">
-                <input type="hidden" name="action" value="created">
-                
-                    <label>Nom d'utilisateur :</label>
-                    <p>
-                    <input type="text" name="nomUser" required>
-                </p>
-                
-                    <label>Mot de passe :</label>
-                    <p>
-                    <input type="text" name="mdp" required>
-                </p>
-               
-                <p>
-                    <input type="submit" name="creer un compte" value="créer un compte">       
-                    <input type="submit" name="connexion" value="se connecter">
-                </p>
-            </form>
-            </div>
-        </div>
-        <div class="flex-grow-1"style=background-image:url('https://media.istockphoto.com/photos/bowl-dish-with-brown-rice-cucumber-tomato-green-peas-red-cabbage-picture-id1047798504?k=20&m=1047798504&s=612x612&w=0&h=sXUN01Y_SuuTnHlgtAhnZEJmb_4blMk7bYWhyhNCNPI=');background-size:cover;background-position:;>
-        </div>  
-    </div>
+<script src="/pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
+<script type="text/javascript">
+    
+</script>
 </body>
 </html>
