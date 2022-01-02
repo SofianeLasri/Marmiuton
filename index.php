@@ -11,6 +11,9 @@ require_once "core/controller/controllerLogin.php";
 
 // On initialise la connexion à la base de donnée
 Connexion::connect();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5917908ca4a09db272693a1faf0a13c071a68e34
 // Et on appelle la page demandée
 loadPage();
