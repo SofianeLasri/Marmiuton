@@ -23,6 +23,7 @@
 				</div>
 				<div class="d-flex justify-content-center form_container">
                 <form action="index.php" method="get">
+                <input type="hidden" name="action" value="created">
 						<div class="input-group mb-3">
                         <div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -40,7 +41,7 @@
 						</div>
 						<div class="form-group">
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" name="button" class="btn login_btn">Creer le compte</button>
+				 	<button type="submit" name="button" class="btn login_btn">Creer le compte</button>
 				   </div>
 					</form>
 				</div>
