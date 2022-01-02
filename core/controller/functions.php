@@ -64,3 +64,7 @@ function getDepedencies(){
 function getNavbar(){
     require 'pages/includes/navbar.php';
 }
+//récupère le footer
+function getFooter(){
+    require 'pages/includes/footer.php';
+}
