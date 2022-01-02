@@ -59,7 +59,7 @@
             <span class="text-muted">Une sélection de recettes simple à préparer pour vos repas.</span>
         </div>
 
-        <div class="row">
+        <div class="row pb-3">
             <!-- Carte recette -->
             <div class="col-md-6">
                 <div class="carte-recette">

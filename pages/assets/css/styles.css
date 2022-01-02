@@ -76,7 +76,7 @@
 /* Cartes des recettes */
 .carte-recette{
     display: flex;
-    margin: 1.5rem 0;
+    margin-top: 3rem;
 }
 .carte-recette-img{
     width: 160px;
@@ -93,7 +93,7 @@
 /*footer*/
 footer{
     background-color: var(--lightMainColor);
-    padding: 1rem 0;
+    padding: 3rem 0;
 }
 footer a{
     color: var(--mainColor)!important;
