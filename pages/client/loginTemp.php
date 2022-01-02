@@ -49,5 +49,11 @@
 			</div>
 		</div>
 	</div>
+    <?=getFooter()?>
+
+<script src="/pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
+<script type="text/javascript">
+    
+</script>
 </body>
 </html>
