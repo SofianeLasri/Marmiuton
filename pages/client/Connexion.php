@@ -2,7 +2,7 @@
 <html>
     
 <head>
-	<title>My Awesome Login Page</title>
+	<title>My Awesome Login Page test</title>
     <meta charset="UTF-8">
     <!-- Dépendances -->
     <?=getDepedencies()?>
