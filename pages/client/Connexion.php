@@ -12,7 +12,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
-
 <body>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
@@ -23,7 +22,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
+                <form action="index.php" method="get">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -50,7 +49,7 @@
 		
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
+						Don't have an account? <a href="loginTemp.php" class="ml-2">Sign Up</a>
 					</div>
 					<div class="d-flex justify-content-center links">
 						<a href="#">Forgot your password?</a>
