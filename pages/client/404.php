@@ -1,6 +1,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <!-- Dépendances -->
+    <?=getDepedencies()?>
     <title>404</title>
     <link rel="stylesheet" type="text/css" href="css/404.css">
 </head>
