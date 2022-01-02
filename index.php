@@ -8,9 +8,5 @@ require_once "core/controller/controllerLogin.php";
 
 // On initialise la connexion à la base de donnée
 Connexion::connect();
-if (isset($_GET["action"]) && in_array($_GET["action"],get_class_methods("controllerLogin"))) 
-	$action = $_GET["action"];
-
-ControllerVoiture::$action();
 // Et on appelle la page demandée
 loadPage();
