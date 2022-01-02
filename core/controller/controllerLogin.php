@@ -1,5 +1,5 @@
 <?php 
-require_once(" ./core/modele/login.php");
+require_once("core/modele/login.php");
 
 class controllerLogin {
 
