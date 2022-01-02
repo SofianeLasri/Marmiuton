@@ -16,7 +16,7 @@ if($hasUserInDB){
 <b>pas check!</b>
 <br>Bon t'est reloux toi. Rempli le formulaire ci-dessous
 
-<form method="post">
+<form method="post" style="display:flex; flex-direction:column;width:50rem;">
     <input type="text" name="username" placeholder="nom d'utilisateur" required>
     <input type="password" name="password" placeholder="mot de passe" required>
     <input type="text" name="addresse" placeholder="addresse">
