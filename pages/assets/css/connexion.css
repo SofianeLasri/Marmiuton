@@ -1,4 +1,13 @@
 
+    
+      /*footer*/
+footer{
+    background-color: var(--lightMainColor);
+    padding: 3rem 0;
+}
+footer a{
+    color: var(--mainColor)!important;
+}
     body,
     html {
         margin: 0;
@@ -69,11 +78,4 @@
     .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
         background-color: #c0392b !important;
     }
-    /*footer*/
-footer{
-    background-color: var(--lightMainColor);
-    padding: 3rem 0;
-}
-footer a{
-    color: var(--mainColor)!important;
-}
+  
