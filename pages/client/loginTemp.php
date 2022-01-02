@@ -28,16 +28,16 @@
                         <div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="nom">
+							<input type="text" name="nom" class="form-control input_user"  placeholder="nom" required>
 						
-							<input type="text" name="" class="form-control input_user" value="" placeholder="prenom">
-							<input type="email" name="" class="form-control input_user" value="" placeholder="mail">
+							<input type="text" name="prenom" class="form-control input_user"  placeholder="prenom" required>
+							<input type="email" name="email" class="form-control input_user"  placeholder="mail" required>
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+							<input type="password" name="mdp" class="form-control input_pass"  placeholder="password" required>
 						</div>
 						<div class="form-group">
 							<div class="d-flex justify-content-center mt-3 login_container">
