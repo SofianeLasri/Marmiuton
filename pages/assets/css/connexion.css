@@ -5,6 +5,8 @@
         padding: 0;
         height: 100%;
         background: #60a3bc !important;
+        background-image :
+            url("../../../data\images\planche-bois-aliments.jpg");
     }
     .user_card {
         height: 400px;
@@ -68,3 +70,4 @@
     .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
         background-color: #c0392b !important;
     }
+    
