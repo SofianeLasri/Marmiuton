@@ -29,7 +29,12 @@ if($hasUserInDB){
     <input type="text" name="moioui" placeholder="êtes-vous célibataire?">
     <input type="text" name="bofhein" placeholder="aimez-vous les moches?">
     <input type="text" name="persochocolat" placeholder="chocolat ou chocolatine?">
+    <div>
+        <input type="checkbox" name="checkbox" >
+        <p>J'accepte que mes données personelles soient envoyées à nos associées publicitaires aléatoires, et utilisées à des fins lucratives dont la mention de l'origine n'est pas obligatoire.</p>
+    </div>
     <input type="submit" value="Connexion">
 </form>
+<br>Ouai orf,  bon ok. T'as que les deux premières boites qui sont obligatoires.
 
 <?php }
