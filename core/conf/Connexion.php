@@ -20,17 +20,17 @@ static public function pdo() {return self::$pdo;}
 
 // fonction de connexion
 static public function connect()  {
-  require "core/conf/ConfigurationGenerale.php"; // Ce fichier contient les identifiants
-  $h = $bddHost;
-  $d = $bddName;
-  $l = $bddUsername;
-  $p = $bddUserPassword;
-  $t = self::$tabUTF8;
-  try {
-      self::$pdo = new PDO("mysql:host=$h;dbname=$d",$l,$p,$t);
-      self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  } catch(PDOException $e) {
-      echo "Erreur de connexion !";
+    require "core/conf/ConfigurationGenerale.php"; // Ce fichier contient les identifiants
+    $h = $bddHost;
+    $d = $bddName;
+    $l = $bddUsername;
+    $p = $bddUserPassword;
+    $t = self::$tabUTF8;
+    try {
+        self::$pdo = new PDO("mysql:host=$h;dbname=$d",$l,$p,$t);
+        self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch(PDOException $e) {
+        echo "Erreur de connexion !";
+    }
   }
-}
 }
