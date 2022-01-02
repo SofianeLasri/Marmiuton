@@ -4,7 +4,7 @@
     <!-- Dépendances -->
     <?=getDepedencies()?>
     <title>404</title>
-    <link rel="stylesheet" type="text/css" href="css/404.css">
+    <link rel="stylesheet" href="pages/assets/css/404.css">
 </head>
 <body>
 <body>
