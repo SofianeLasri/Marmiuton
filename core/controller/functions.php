@@ -26,21 +26,28 @@ function loadPage(){
     }
 
     if(empty($alias[0])){
-        // Si l'alias est vide, on va donc charger la page vitrine
+        // Si le premier alias est vide, on va donc charger la page vitrine
         $alias[0] = "vitrine";
     }
-    
-    // On vérifie le type de page que l'on souhaite afficher
-    if($alias[0]!="admin"){
+
+    // Maintenant qu'alias[0] aura toujours une valeur, on peut commencer à la comparer
+    if($alias[0]=="backTasks"){
+        // Si le premier alias est backTasks, on va donc charger la page backTasks
+        // backTasks est un alias que l'on appel pour toutes requêtes Javascript ex: vérification de l'existence d'un email dans la bdd
+        require "core/controller/backTasks.php";
+    }elseif($alias[0]=="admin"){
+        // Si le premier alias est admin, on va donc appeller la fonction qui se charge de gérer les pages admin
+        array_shift($alias); // On supprime le /admin pour que la fonction loadAdminPage puisse directement vérifier les pages
+        loadAdminPage($alias);
+    }else{
         // Il s'agit d'une page client
+        // On va vérifier que la page existe
         if(file_exists('pages/client/'.$alias[0].'.php')){
             require 'pages/client/'.$alias[0].'.php';
         }else{
+            // Si elle n'existe pas, on va charger la page 404
             show404($alias[0]);
         }
-    }else{
-        array_shift($alias); // On supprime le /admin pour que la fonction loadAdminPage puisse directement vérifier les pages
-        loadAdminPage($alias);
     }
 }
 // Pages admins uniquement
@@ -67,4 +74,26 @@ function getNavbar(){
 //récupère le footer
 function getFooter(){
     require 'pages/includes/footer.php';
+}
+
+// Vérifie si un username ou un email existe dans la bdd
+function checkUsernameEmail($data){
+	$pos = strpos($data, "@");
+	if ($pos !== false) {
+		$response = Connexion::pdo()->prepare("SELECT * FROM m_userSetting WHERE name='email' AND value=?");
+		$response->execute([$data]);
+		if (empty($response->fetch())) {
+			return false;
+		} else {
+			return true;
+		}
+	} else {
+		$response = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur WHERE username=?");
+		$response->execute([$data]);
+		if (empty($response->fetch())) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 }
