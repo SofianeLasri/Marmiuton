@@ -69,11 +69,14 @@
     padding: 15px 0;
     padding-top: 0;
 }
+.block-titres.orange{
+    border-bottom: 3px solid var(--mainColor);
+}
 
 /* Cartes des recettes */
 .carte-recette{
     display: flex;
-    margin: 0 1.5rem;
+    margin: 1.5rem 0;
 }
 .carte-recette-img{
     width: 160px;
@@ -85,4 +88,10 @@
 }
 .carte-recette-infos{
     margin-left: 1rem;
+}
+
+/*footer*/
+.footer{
+    background-color: var(--lightMainColor);
+    padding: 1rem 0;
 }
