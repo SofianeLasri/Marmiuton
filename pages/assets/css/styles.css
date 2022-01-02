@@ -95,3 +95,6 @@ footer{
     background-color: var(--lightMainColor);
     padding: 1rem 0;
 }
+footer a{
+    color: var(--mainColor)!important;
+}
