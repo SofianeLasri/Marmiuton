@@ -11,6 +11,25 @@ Wesh mon pote komen sa va? Tu veu te connecté? Ah...  bon ok alors attend 🤔
 <?php
 if($hasUserInDB){
     echo "check";
-}else{
-    echo "<b>pas check!</b>";
-}
+}else{ ?>
+
+<b>pas check!</b>
+<br>Bon t'est reloux toi. Rempli le formulaire ci-dessous
+
+<form method="post">
+    <input type="text" name="username" placeholder="nom d'utilisateur" required>
+    <input type="password" name="password" placeholder="mot de passe" required>
+    <input type="text" name="addresse" placeholder="addresse">
+    <input type="text" name="numero" placeholder="numéro">
+    <input type="text" name="ville" placeholder="ville">
+    <input type="text" name="codepostal" placeholder="code postal">
+    <input type="text" name="prefculinaire" placeholder="préférence culinaire">
+    <input type="text" name="jesaispasquoimettre" placeholder="attirances particulières">
+    <input type="text" name="aled" placeholder="age">
+    <input type="text" name="moioui" placeholder="êtes-vous célibataire?">
+    <input type="text" name="bofhein" placeholder="aimez-vous les moches?">
+    <input type="text" name="persochocolat" placeholder="chocolat ou chocolatine?">
+    <input type="submit" value="Connexion">
+</form>
+
+<?php }
