@@ -22,7 +22,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-                <form action="index.php" method="get">
+                <form action="index.php" method="POST">
                 <input type="hidden" name="action" value="created">
 						<div class="input-group mb-3">
                         <div class="input-group-append">
