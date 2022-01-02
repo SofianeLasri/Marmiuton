@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <!-- Dépendances -->
     <?=getDepedencies()?>
-    <link rel="stylesheet" href="pages/assets/css/styles.css">
     <title>Marmiuton</title>
     
     <!-- Embed -->

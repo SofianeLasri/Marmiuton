@@ -19,3 +19,6 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" type="text/css" href="pages/assets/vendors/fontawesome/css/all.min.css">
 <script src="pages/assets/vendors/fontawesome/js/all.min.js" data-auto-replace-svg="nest"></script>
+
+<!-- Styles -->
+<link rel="stylesheet" href="pages/assets/css/styles.css">
