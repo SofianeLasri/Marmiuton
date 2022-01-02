@@ -91,7 +91,7 @@
             <!-- Fin -->
 
             <!-- Carte recette -->
-            <div class="col-md-6 mt-5">
+            <div class="col-md-6">
                 <div class="carte-recette">
                     <a href="#">
                         <div class="carte-recette-img" style="background-image: url('/data/images/plat-delicieux1.jpg');"></div>

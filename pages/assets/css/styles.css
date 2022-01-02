@@ -73,6 +73,7 @@
 /* Cartes des recettes */
 .carte-recette{
     display: flex;
+    margin: 0 1.5rem;
 }
 .carte-recette-img{
     width: 160px;
