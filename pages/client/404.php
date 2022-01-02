@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/404.css">
 </head>
 <body>
-    <h1> Votre faim semble avoir dévorer cette page <h1>
+    <h1> Votre faim semble avoir dévorer cette page ou pas   <h1>
     <div class="container">
     <div class="row">
         <div class="col-md-12">
