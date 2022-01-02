@@ -24,15 +24,9 @@
 				<div class="d-flex justify-content-center form_container">
                 <form action="index.php" method="get">
 						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
 							<input type="text" name="" class="form-control input_user" value="" placeholder="nom">
-						</div>
-						</div>
+						
 							<input type="text" name="" class="form-control input_user" value="" placeholder="prenom">
-						</div>
-						</div>
 							<input type="email" name="" class="form-control input_user" value="" placeholder="mail">
 						</div>
 						<div class="input-group mb-2">
