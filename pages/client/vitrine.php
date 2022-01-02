@@ -127,7 +127,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <div class="block-titres">
+                    <div class="block-titres orange">
                         <h3><strong>À propos de nous</strong></h3>
                     </div>
                     <div>
@@ -135,7 +135,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="block-titres">
+                    <div class="block-titres orange">
                         <h3><strong>Liens utiles</strong></h3>
                     </div>
                     <div>
@@ -147,7 +147,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="block-titres">
+                    <div class="block-titres orange">
                         <h3><strong>Dernières recettes</strong></h3>
                     </div>
                     <div>
