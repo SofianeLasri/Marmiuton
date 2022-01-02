@@ -27,9 +27,15 @@
 							<input type="text" name="nom" class="form-control input_user"  placeholder="nom" required>
                                 </div>  
                                 <div class="input-group mb-3">
+                                <div class="input-group-append">
+								    <span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
 							<input type="text" name="prenom" class="form-control input_user"  placeholder="prenom" required>
                                 </div>
                                 <div class="input-group mb-3">
+                                <div class="input-group-append">
+								    <span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
 							<input type="email" name="email" class="form-control input_user"  placeholder="mail" required>
                                 </div>
 						</div>
