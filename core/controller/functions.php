@@ -57,7 +57,7 @@ function loadAdminPage($alias){
 
 // Afficher la page 404
 function show404($pageName){
-    require 'pages/404.php';
+    require 'pages/client/404.php';
 }
 function ShowConnexion($pageName){
     require 'pages/Connexion.php';
