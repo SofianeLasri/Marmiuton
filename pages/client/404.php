@@ -5,6 +5,7 @@
     <?=getDepedencies()?>
     <title>404</title>
     <link rel="stylesheet" href="pages/assets/css/404.css">
+    <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <body>
