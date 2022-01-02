@@ -40,3 +40,4 @@ class Login {
 			echo "erreur : ".$e->getMessage()."<br>";
 		}
 	}
+}
