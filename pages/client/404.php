@@ -5,7 +5,8 @@
     <?=getDepedencies()?>
     <title>404</title>
     <link rel="stylesheet" href="pages/assets/css/404.css">
-    <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <body>
