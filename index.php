@@ -5,7 +5,7 @@ require_once "core/conf/Connexion.php"; // Ce fichier se charge de la connexion 
 require_once "core/controller/variables.php"; // Ce fichier se charge de récupérer les variables globales
 require_once "core/controller/functions.php"; // Et celui-ci des différentes fonctions
 require_once "core/controller/controllerLogin.php";
-require_once "core/modele/login.php";
+
 // On initialise la connexion à la base de donnée
 Connexion::connect();
 if (isset($_GET["action"]) && in_array($_GET["action"],get_class_methods("controllerLogin"))) 
