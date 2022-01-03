@@ -105,23 +105,23 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                     $usernameEmail = strtolower($_POST['loginUsernameEmail']);
                                     $pos = strpos($usernameEmail, "@");
                                     if ($pos !== false) {
-                                        $response = $bdd->prepare("SELECT id FROM m_userSetting WHERE email=?");
+                                        $response = Connexion::pdo()->prepare("SELECT id FROM m_userSetting WHERE email=?");
                                         $response->execute([$usernameEmail]);
                                         $supposedUserId = $response->fetchColumn();
 
-                                        $response = $bdd->prepare("SELECT * FROM m_utilisateur WHERE id=?");
+                                        $response = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur WHERE id=?");
                                         $response->execute([$supposedUserId]);
                                     } else {
-                                        $response = $bdd->prepare("SELECT * FROM m_utilisateur WHERE username=?");
+                                        $response = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur WHERE username=?");
                                         $response->execute([$usernameEmail]);
                                     }
                                     $user=$response->fetch(PDO::FETCH_ASSOC);
                                     if (!empty($user)) {
                                         if(password_verify($_POST['loginPassword'], $user["password"])){
-                                            $response = $bdd->prepare("SELECT * FROM m_userSetting WHERE userId=? AND name='lastIp' AND value=?");
+                                            $response = Connexion::pdo()->prepare("SELECT * FROM m_userSetting WHERE userId=? AND name='lastIp' AND value=?");
                                             $response->execute([$user['id'], $ip]);
                                             if (empty($response->fetch())) {
-                                                $response = $bdd->prepare("INSERT INTO m_userSetting (`userId`, `name`, `ip`) VALUES (?,?,?)");
+                                                $response = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `ip`) VALUES (?,?,?)");
                                                 $response->execute([$user['id'], 'lastIp', $ip]);
                                             }
             
@@ -129,7 +129,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                             $_SESSION['userName'] = $user['username'];
                                             $_SESSION['userGroupId'] = $user['groupId'];
 
-                                            $userProfilPic = $bdd->prepare("SELECT value FROM m_userSetting WHERE userId=? AND name='profilPic'");
+                                            $userProfilPic = Connexion::pdo()->prepare("SELECT value FROM m_userSetting WHERE userId=? AND name='profilPic'");
                                             $userProfilPic->execute([$user['id']]);
                                             $userProfilPic = $userProfilPic->fetchColumn();
 
