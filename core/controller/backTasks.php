@@ -26,73 +26,79 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                 // Make and decode POST request:
                 $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
                 $recaptcha = json_decode($recaptcha);
-                print_r($recaptcha);
-                // Take action based on the score returned:
-                if ($recaptcha->score >= 0.5){
-                    if (!empty($_POST['registerUsername'])) {
-                        if (isset($_POST['registerEmail'])) {
-                            if (!empty($_POST['registerEmail'])) {
-                                if (isset($_POST['registerPassword1'])) {
-                                    if (!empty($_POST['registerPassword1'])) {
-                                        if (isset($_POST['registerPassword2'])) {
-                                            if (!empty($_POST['registerPassword2'])) {
-                                                if ($_POST['registerPassword1']==$_POST['registerPassword2']) {
-                                                    if (preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/', $_POST['registerPassword1'])==1) {
-                                                        $username = $_POST['registerUsername'];
-                                                        $email = strtolower($_POST['registerEmail']); // ici on converti l'email donné en casse minuscule
-                                                        $password = password_hash($_POST['registerPassword1'], PASSWORD_DEFAULT);
-        
-                                                        // Ici on récupère l'id du groupe des utilisateurs
-                                                        $userGroupId = Connexion::pdo()->query("SELECT id FROM m_groupeUtilisateur WHERE nome='utilisateur'")->fetchColumn();
-        
-                                                        // Là on va insérer l'utilisateur dans la table des utilisateurs
-                                                        $query = Connexion::pdo()->prepare("INSERT INTO m_utilisateur (id, grouppId, username, password) VALUES (?, ?, ?)");
-                                                        $query->execute([null, $userGroupId, $username]);
-        
-                                                        // Maintenant on va récuper son id
-                                                        $userId = Connexion::pdo()->prepare("SELECT id FROM m_utilisateur WHERE username=?")->execute([$username])->fetchColumn();
+                if($recaptcha->success==1){
+                    // Take action based on the score returned:
+                    if ($recaptcha->score >= 0.5){
+                        if (!empty($_POST['registerUsername'])) {
+                            if (isset($_POST['registerEmail'])) {
+                                if (!empty($_POST['registerEmail'])) {
+                                    if (isset($_POST['registerPassword1'])) {
+                                        if (!empty($_POST['registerPassword1'])) {
+                                            if (isset($_POST['registerPassword2'])) {
+                                                if (!empty($_POST['registerPassword2'])) {
+                                                    if ($_POST['registerPassword1']==$_POST['registerPassword2']) {
+                                                        if (preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/', $_POST['registerPassword1'])==1) {
+                                                            $username = $_POST['registerUsername'];
+                                                            $email = strtolower($_POST['registerEmail']); // ici on converti l'email donné en casse minuscule
+                                                            $password = password_hash($_POST['registerPassword1'], PASSWORD_DEFAULT);
+
+                                                            // Ici on récupère l'id du groupe des utilisateurs
+                                                            $userGroupId = Connexion::pdo()->query("SELECT id FROM m_groupeUtilisateur WHERE nome='utilisateur'")->fetchColumn();
+
+                                                            // Là on va insérer l'utilisateur dans la table des utilisateurs
+                                                            $query = Connexion::pdo()->prepare("INSERT INTO m_utilisateur (id, grouppId, username, password) VALUES (?, ?, ?)");
+                                                            $query->execute([null, $userGroupId, $username]);
+
+                                                            // Maintenant on va récuper son id
+                                                            $userId = Connexion::pdo()->prepare("SELECT id FROM m_utilisateur WHERE username=?")->execute([$username])->fetchColumn();
+                                                            
+                                                            // On va insérer son adresse mail
+                                                            $query = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
+                                                            $query->execute([$userId, 'email', $email]);
+
+                                                            // Sa date d'inscription
+                                                            $query = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
+                                                            $query->execute([$userId, 'joinedDate', date("Y-m-d H:i:s")]);
+
+                                                            $return["success"] = "Inscription réussie, tu peux désormais te connecter! 🥳";
+                                                        } else {
+                                                            $return["error"] = 'Ton mot de passe doit être long d\'au moins 8 caractères et doit contenir au moins 1 majuscule, 1 minuscule et 1 nombre.';
+                                                        }
                                                         
-                                                        // On va insérer son adresse mail
-                                                        $query = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
-                                                        $query->execute([$userId, 'email', $email]);
-        
-                                                        // Sa date d'inscription
-                                                        $query = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
-                                                        $query->execute([$userId, 'joinedDate', date("Y-m-d H:i:s")]);
-        
-                                                        $return["success"] = "Inscription réussie, tu peux désormais te connecter! 🥳";
                                                     } else {
-                                                        $return["error"] = 'Ton mot de passe doit être long d\'au moins 8 caractères et doit contenir au moins 1 majuscule, 1 minuscule et 1 nombre.';
+                                                        $return["error"] = 'Je sais pas comment  t\'as fais, <b>il faut que les deux mots de passe correspondent</b>';
                                                     }
                                                     
                                                 } else {
-                                                    $return["error"] = 'Je sais pas comment  t\'as fais, <b>il faut que les deux mots de passe correspondent</b>';
+                                                    $return["error"] = 'Je sais pas comment  t\'as fais, mais stp rempli tous les champs. <b>Même celui du second mdp</b>';
                                                 }
-                                                
                                             } else {
-                                                $return["error"] = 'Je sais pas comment  t\'as fais, mais stp rempli tous les champs. <b>Même celui du second mdp</b>';
+                                                $return["error"] = 'Hmm c\'est embêtant ça... Il semblerait que le champ du 2nd mot de passe n\'est pas reconnu.';
                                             }
                                         } else {
-                                            $return["error"] = 'Hmm c\'est embêtant ça... Il semblerait que le champ du 2nd mot de passe n\'est pas reconnu.';
+                                            $return["error"] = 'Je sais pas comment  t\'as fais, mais stp rempli tous les champs. <b>Même celui du premier mdp</b>';
                                         }
                                     } else {
-                                        $return["error"] = 'Je sais pas comment  t\'as fais, mais stp rempli tous les champs. <b>Même celui du premier mdp</b>';
+                                        $return["error"] = 'Hmm c\'est embêtant ça... Il semblerait que le champ du 1er mot de passe n\'est pas reconnu.';
                                     }
                                 } else {
-                                    $return["error"] = 'Hmm c\'est embêtant ça... Il semblerait que le champ du 1er mot de passe n\'est pas reconnu.';
+                                    $return["error"] = 'Je sais pas comment  t\'as fais, mais stp rempli tous les champs. <b>Même celui de l\'adresse email</b>';
                                 }
                             } else {
-                                $return["error"] = 'Je sais pas comment  t\'as fais, mais stp rempli tous les champs. <b>Même celui de l\'adresse email</b>';
+                                $return["error"] = 'Hmm c\'est embêtant ça... Il semblerait que le champ de l\'adresse email n\'est pas reconnu.';
                             }
+                            
                         } else {
-                            $return["error"] = 'Hmm c\'est embêtant ça... Il semblerait que le champ de l\'adresse email n\'est pas reconnu.';
+                            $return["error"] = 'Je sais pas comment  t\'as fais, mais stp rempli tous les champs. <b>Même celui de l\'identifiant</b>';
                         }
-                        
-                    } else {
-                        $return["error"] = 'Je sais pas comment  t\'as fais, mais stp rempli tous les champs. <b>Même celui de l\'identifiant</b>';
+                    }else{
+                        $return["error"] = "Le reCAPTCHA t'as identifié comme un robot. Re-essaie plus-tard.";
                     }
                 }else{
-                    $return["error"] = "Le reCAPTCHA t'as identifié comme un robot. Re-essaie plus-tard.";
+                    $return["error"] = "Nous rencontrons un problème avec le reCAPTCHA:";
+                    foreach($recaptcha->{'error-codes'} as $error){
+                        $return["error"] .= "<br>".$error;
+                    }
                 }
             }
         }
