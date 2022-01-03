@@ -12,6 +12,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
 
 }elseif(isset($_GET["handleLoginAndRegisterForm"])){
     // Celle-ci va permettre de gérer l'envoie des formulaires d'inscription et de connexion
+    $return = null;
     if(!empty($_POST)){
         // On va s'assurer qu'il ne s'agisse pas d'un bot
         if(isset($_POST['recaptcha_response'])){
@@ -94,7 +95,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                         } else {
                             $return["error"] = 'Je sais pas comment  t\'as fais, mais stp rempli tous les champs. <b>Même celui de l\'identifiant</b>';
                         }
-                    }elseif(isset($_POST['registerUsername'])){
+                    }elseif(isset($_POST['loginUsernameEmail'])){
                         // Il s'agit d'une connexion
 
                         // Pareil, on va s'assurer qu'on a tous les champs nécessaires
@@ -156,6 +157,8 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                         } else {
                             $return["error"] = 'Dit donc, tu n\'as pas rentré d\'identifiant là!';
                         }
+                    }else{
+                        $return["error"] = 'Type de formulaire inconnu';
                     }
                     
                 }else{
