@@ -216,7 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
                             </div>
                         </div>
 
-                        <button type="button" id="registerBtn" onclick="sendFormData()" class="btn btn-orange">S'inscrire</button>
+                        <button type="button" id="registerBtn" class="btn btn-orange">S'inscrire</button>
                         <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                         <a href="/Connexion" class="text-orange">Déjà inscrit? 🌈</a>
                     </form>
@@ -225,16 +225,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 		</div>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script type="text/javascript">
-		// Example starter JavaScript for disabling form submissions if there are invalid fields
 		(function() {
 		  'use strict';
 		  window.addEventListener('load', function() {
 		    // Fetch all the forms we want to apply custom Bootstrap validation styles to
 		    var forms = document.getElementsByClassName('needs-validation');
 		    // Loop over them and prevent submission
+			document.getElementById("registerBtn").addEventListener("click", function() {
+				if(form.checkValidity() === false){
+
+				}else{
+					sendFormData();
+				}
+				form.classList.add('was-validated');
+			});
+
+			/*
 		    var validation = Array.prototype.filter.call(forms, function(form) {
 		      form.addEventListener('submit', function(event) {
 		        if (form.checkValidity() === false) {
@@ -244,6 +251,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 		        form.classList.add('was-validated');
 		      }, false);
 		    });
+			*/
 		  }, false);
 		})();
 
@@ -319,11 +327,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 		}
 		
 		function sendFormData(){
-			if($("#registerForm").valid()){
-				console.log("Formulaire validé");
-			}else{
-				console.log("Formulaire invalide");
-			}
+			console.log("Formulaire validé");
 		}
 
 	</script>
