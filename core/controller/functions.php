@@ -1,6 +1,7 @@
 <?php
 //Chargement des pages
 function loadPage(){
+    global $ip;
     global $localSettings, $urlPath;
     // S'il existe un paramètre on l'affecte à pageName
 
