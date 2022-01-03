@@ -309,18 +309,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 		function sendFormData(){
 			$.post( "/backTasks/?checkUsernameEmail?=", $( "#"+formId ).serialize() )
             .done(function( data ) {
-                if(data!=""){
-                    SnackBar({
-                        message: data,
-                        status: "danger",
-                        timeout: false
-                    });
-                } else {
-                    SnackBar({
-                        message: '<?=translate("success-saving")?>',
-                        status: "success"
-                    });
-                }
+				console.log(data);
+				let json = JSON.parse(data);
             });
 		}
 
