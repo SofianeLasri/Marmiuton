@@ -1,3 +1,9 @@
+<?php
+// On redirige si l'utilisateur est déjà connecté
+if(isset($_SESSION['userId'])){
+	header('Location: /');
+}
+?>
 <!DOCTYPE html>
 <html>
     
@@ -195,6 +201,10 @@
 							message: json.success,
 							status: "success"
 						});
+						// On redirige après 5s
+						setTimeout(function(){
+							window.location.href = '/login';
+						}, 5000);
 					}else{
 						SnackBar({
 							message: json.error,
