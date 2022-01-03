@@ -119,7 +119,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                         $response = Connexion::pdo()->prepare("SELECT * FROM m_userSetting WHERE userId=? AND name='lastIp' AND value=?");
                                         $response->execute([$user['id'], $ip]);
                                         if (empty($response->fetch())) {
-                                            $response = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `ip`) VALUES (?,?,?)");
+                                            $response = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
                                             $response->execute([$user['id'], 'lastIp', $ip]);
                                         }
         
