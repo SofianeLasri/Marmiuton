@@ -7,7 +7,7 @@
 	<?=getDepedencies()?>
     <link rel="stylesheet" href="pages/assets/css/recette.css">
     <?php
-    <title>Recette + $_GET['name'] </title>
+    echo "<title>Recette + $_GET['name'] </title>";
     ?>
 	<!-- Embed -->
 	<meta content="Inscription" property="og:title" />
