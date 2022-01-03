@@ -103,7 +103,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                 $usernameEmail = strtolower($_POST['loginUsernameEmail']);
                                 $pos = strpos($usernameEmail, "@");
                                 if ($pos !== false) {
-                                    $response = Connexion::pdo()->prepare("SELECT id FROM m_userSetting WHERE email=?");
+                                    $response = Connexion::pdo()->prepare("SELECT userId FROM m_userSetting WHERE email=?");
                                     $response->execute([$usernameEmail]);
                                     $supposedUserId = $response->fetchColumn();
 
