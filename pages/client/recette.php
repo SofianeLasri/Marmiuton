@@ -2,8 +2,8 @@
 <html>
 <?php
    $title= $_GET['name'] ;
-   <title>$title</title>;
-    ?>
+  echo "<title>$title</title>";
+?>
     
 <head>
     <meta charset="UTF-8">
