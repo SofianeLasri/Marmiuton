@@ -2,11 +2,30 @@
 <html>
     
 <head>
-	<title>My Awesome Login Page test</title>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<title>Connexion</title>
+
+    <!-- Embed -->
+	<meta content="Connexion" property="og:title" />
+	<meta content="Retrouvez des milliers de recettes toutes plus délicieuses les unes des autres. Rejoignez la communauté des Marmiutons et  partagez vos recettes de grand-mère!" property="og:description" />
+	<meta content="https://marmiuton.sl-projects.com/" property="og:url" />
+	<meta content="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" property="og:image" />
+	<meta content="#ed8930" data-react-helmet="true" name="theme-color" />
+
     <!-- Dépendances -->
     <?=getDepedencies()?>
     <link rel="stylesheet" href="pages/assets/css/connexion.css">
+
+	<!-- Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfuDOYdAAAAAEf8Ii1uzBXHVoUfeI2CK38US1-N"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LfuDOYdAAAAAEf8Ii1uzBXHVoUfeI2CK38US1-N', { action: 'contact' }).then(function (token) {
+                var recaptchaResponse = document.getElementById('recaptchaResponse');
+                recaptchaResponse.value = token;
+            });
+        });
+    </script>
 </head>
 <body>
 	<div class="container h-100">
@@ -18,42 +37,97 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-                <form action="index.php" method="get">
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+
+                    <!-- Formulaire de connexion -->
+                    <form method="post" class="mt-3 needs-validation" novalidate id="loginForm">
+						<div class="form-group">
+							<label>Nom d'utilisateur/Email</label>
+							<input type="text" class="form-control" name="loginUsernameEmail" placeholder="gordon.freeman@blackmesa.us" required>
+							<div class="invalid-feedback">
+								Il paraît qu'avec un identifiant ça serait pas mal :p
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<div class="valid-feedback">
+								Nickel 👌
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
 						</div>
 						<div class="form-group">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
+							<label>Mot de passe</label>
+							<input type="password" class="form-control" name="loginPassword" placeholder="tut@p3str0v1te!" required>
+							<div class="invalid-feedback">
+								T'as un compte sans mot de passe toi? 🤔
+							</div>
+							<div class="valid-feedback">
+								Nickel 👌
 							</div>
 						</div>
-							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" name="button" class="btn login_btn">Login</button>
-				   </div>
+
+						<button type="button" name="submit" id="loginBtn" class="btn btn-orange">Se connecter</button>
+						<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+						<a href="/register" class="text-orange">Pas encore inscrit? 😢</a>
 					</form>
-				</div>
-		
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="loginTemp" class="ml-2">Sign Up</a>
-					</div>
-					<div class="d-flex justify-content-center links">
-						<a href="#">Forgot your password?</a>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</script>
+
+    <script type="text/javascript">
+		(function() {
+		  'use strict';
+		  window.addEventListener('load', function() {
+		    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		    var forms = document.getElementsByClassName('needs-validation');
+		    // Loop over them and prevent submission
+			var validation = Array.prototype.filter.call(forms, function(form) {
+				document.getElementById("loginBtn").addEventListener("click", function() {
+					if(form.checkValidity() === false){
+
+					}else{
+						sendFormData();
+					}
+					form.classList.add('was-validated');
+				});
+		    });
+		  }, false);
+		})();
+
+		function sendFormData(){
+			$.post( "/backTasks/?handleLoginAndRegisterForm", $( "#loginForm" ).serialize() )
+            .done(function( data ) {
+				console.log(data);
+				if(isJson(data)){
+					let json = JSON.parse(data);
+					if(json.success){
+						SnackBar({
+							message: json.success,
+							status: "success"
+						});
+					}else{
+						SnackBar({
+							message: json.error,
+							status: "danger",
+							timeout: false
+						});
+					}
+				}else{
+					SnackBar({
+						message: data,
+						status: "danger",
+						timeout: false
+					});
+				}
+            });
+		}
+
+		function isJson(str) {
+			try {
+				JSON.parse(str);
+			} catch (e) {
+				return false;
+			}
+			return true;
+		}
+
+	</script>
 </body>
+</html>
 </html>
