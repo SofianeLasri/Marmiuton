@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
-    <?=getDepedencies()?>
+	<?=getDepedencies()?>
+    <link rel="stylesheet" href="pages/assets/css/connexion.css">
     <title>Inscription</title>
 
 	<!-- Embed -->
