@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-    
+<?php
+    echo "<title>Recette + $_GET['name'] </title>";
+    ?>
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
 	<?=getDepedencies()?>
     <link rel="stylesheet" href="pages/assets/css/recette.css">
-    <?php
-    echo "<title>Recette + $_GET['name'] </title>";
-    ?>
+  
 	<!-- Embed -->
 	<meta content="Inscription" property="og:title" />
 	<meta content="Retrouvez des milliers de recettes toutes plus délicieuses les unes des autres. Rejoignez la communauté des Marmiutons et  partagez vos recettes de grand-mère!" property="og:description" />
