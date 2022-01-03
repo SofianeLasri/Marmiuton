@@ -317,7 +317,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 		}
 		
 		function sendFormData(){
-			if($("#registerForm").isValid()){
+			if($("#registerForm").valid()){
 				console.log("Formulaire validé");
 			}else{
 				console.log("Formulaire invalide");
