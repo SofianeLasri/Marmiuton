@@ -84,7 +84,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" name="registerTos" required>
                                 <label class="form-check-label">
-                                    J'ai lu et j'accepte les <a href="#" class="text-orange">conditions d'utilisation</a>.
+                                    J'ai lu et j'accepte les <a href="#" class="text-light">conditions d'utilisation</a>.
                                 </label>
                                 <div class="invalid-feedback">
                                     De toute façon vous êtes obligé pour continuer
@@ -95,7 +95,7 @@
 						<div id="g-recaptcha"></div>
       					<br/>
                         <button type="button" id="registerBtn" class="btn btn-orange">S'inscrire</button>
-                        <a href="/login" class="text-orange">Déjà inscrit? 🌈</a>
+                        <a href="/login" class="text-light">Déjà inscrit? 🌈</a>
                     </form>
 				</div>
 			</div>

@@ -63,7 +63,7 @@
 						<div id="g-recaptcha"></div>
       					<br/>
 						<button type="button" name="submit" id="loginBtn" class="btn btn-orange">Se connecter</button>
-						<a href="/register" class="text-orange">Pas encore inscrit? 😢</a>
+						<a href="/register" class="text-light">Pas encore inscrit? 😢</a>
 					</form>
 				</div>
 			</div>
