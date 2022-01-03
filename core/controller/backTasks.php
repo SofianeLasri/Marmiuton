@@ -18,7 +18,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
         if(isset($_POST['g-recaptcha-response'])){
             // Build POST request:
             $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-            $recaptcha_secret = '6LfuDOYdAAAAABZDsplfnL8C5xGaE1-5MyyobuEF';
+            $recaptcha_secret = '6Ld3jukdAAAAAFBBftAg-7OHOxXVyHkiAdW6DVL7';
             $recaptcha_response = $_POST['g-recaptcha-response'];
 
             // Make and decode POST request:
