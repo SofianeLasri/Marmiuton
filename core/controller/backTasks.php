@@ -46,8 +46,8 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                                             $userGroupId = Connexion::pdo()->query("SELECT id FROM m_groupeUtilisateur WHERE nom='utilisateur'")->fetchColumn();
 
                                                             // Là on va insérer l'utilisateur dans la table des utilisateurs
-                                                            $query = Connexion::pdo()->prepare("INSERT INTO m_utilisateur (id, grouppId, username, password) VALUES (?, ?, ?)");
-                                                            $query->execute([null, $userGroupId, $username]);
+                                                            $query = Connexion::pdo()->prepare("INSERT INTO m_utilisateur (id, grouppId, username, password) VALUES (?,?, ?, ?)");
+                                                            $query->execute([null, $userGroupId, $username, $password]);
 
                                                             // Maintenant on va récuper son id
                                                             $userId = Connexion::pdo()->prepare("SELECT id FROM m_utilisateur WHERE username=?")->execute([$username])->fetchColumn();
