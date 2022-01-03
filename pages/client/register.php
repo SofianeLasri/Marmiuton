@@ -185,6 +185,7 @@
 		function sendFormData(){
 			$.post( "/backTasks/?handleLoginAndRegisterForm", $( "#registerForm" ).serialize() )
             .done(function( data ) {
+				grecaptcha.reset()
 				console.log(data);
 				if(isJson(data)){
 					let json = JSON.parse(data);
