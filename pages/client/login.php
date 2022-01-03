@@ -20,7 +20,7 @@
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 	<script type="text/javascript">
       var onloadCallback = function() {
-        grecaptcha.render('html_element', {
+        grecaptcha.render('g-recaptcha', {
           'sitekey' : '6Ld3jukdAAAAAFLO9t2Uyc3c9bru4kTcwffcG3mE'
         });
       };
@@ -60,7 +60,7 @@
 							</div>
 						</div>
 
-						<div class="g-recaptcha" data-sitekey="6Ld3jukdAAAAAFLO9t2Uyc3c9bru4kTcwffcG3mE"></div>
+						<div id="g-recaptcha"></div>
       					<br/>
 						<button type="button" name="submit" id="loginBtn" class="btn btn-orange">Se connecter</button>
 						<a href="/register" class="text-orange">Pas encore inscrit? 😢</a>
