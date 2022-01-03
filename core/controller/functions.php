@@ -81,7 +81,7 @@ function checkUsernameEmail($data){
 	$pos = strpos($data, "@");
 	if ($pos !== false) {
 		$response = Connexion::pdo()->prepare("SELECT * FROM m_userSetting WHERE name='email' AND value=?");
-		$response->execute([$data]);
+		$response->execute([strtolower($data)]);
 		if (empty($response->fetch())) {
 			return false;
 		} else {
@@ -89,7 +89,7 @@ function checkUsernameEmail($data){
 		}
 	} else {
 		$response = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur WHERE username=?");
-		$response->execute([$data]);
+		$response->execute([strtolower($data)]);
 		if (empty($response->fetch())) {
 			return false;
 		} else {

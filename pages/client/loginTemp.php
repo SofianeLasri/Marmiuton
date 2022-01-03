@@ -242,31 +242,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 					form.classList.add('was-validated');
 				});
 		    });
-			
-
-			/*
-		    var validation = Array.prototype.filter.call(forms, function(form) {
-		      form.addEventListener('submit', function(event) {
-		        if (form.checkValidity() === false) {
-		          event.preventDefault();
-		          event.stopPropagation();
-		        }
-		        form.classList.add('was-validated');
-		      }, false);
-		    });
-			*/
 		  }, false);
 		})();
-
-		function showRegisterForm(){
-			$('#registerForm').css("display", "block");
-			$('#loginForm').css("display", "none");
-			$("#recaptchaResponse1").attr("value",$("#recaptchaResponse").val());
-		}
-		function showLoginForm(){
-			$('#registerForm').css("display", "none");
-			$('#loginForm').css("display", "block");
-		}
 
 		$("#registerUsername").change(function() {
 			$.get("/backTasks/?checkUsernameEmail="+encodeURI($("#registerUsername").val()), function(data) {
@@ -330,7 +307,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 		}
 		
 		function sendFormData(){
-			console.log("Formulaire validé");
+			$.post( "/backTasks/?checkUsernameEmail?=", $( "#"+formId ).serialize() )
+            .done(function( data ) {
+                if(data!=""){
+                    SnackBar({
+                        message: data,
+                        status: "danger",
+                        timeout: false
+                    });
+                } else {
+                    SnackBar({
+                        message: '<?=translate("success-saving")?>',
+                        status: "success"
+                    });
+                }
+            });
 		}
 
 	</script>
