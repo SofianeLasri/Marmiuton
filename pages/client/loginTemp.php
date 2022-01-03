@@ -216,7 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
                             </div>
                         </div>
 
-                        <button type="submit" id="registerBtn" class="btn btn-orange">S'inscrire</button>
+                        <button type="button" id="registerBtn" onclick="sendFormData()" class="btn btn-orange">S'inscrire</button>
                         <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                         <a href="/Connexion" class="text-orange">Déjà inscrit? 🌈</a>
                     </form>
@@ -313,6 +313,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 					$("#registerBtn").attr("disabled", "");
 				}
 				
+			}
+		}
+		
+		function sendFormData(){
+			if($("#registerForm").isValid()){
+				console.log("Formulaire validé");
+			}else{
+				console.log("Formulaire invalide");
 			}
 		}
 
