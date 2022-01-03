@@ -307,7 +307,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 		}
 		
 		function sendFormData(){
-			$.post( "/backTasks/?checkUsernameEmail?=", $( "#registerForm" ).serialize() )
+			$.post( "/backTasks/?handleLoginAndRegisterForm", $( "#registerForm" ).serialize() )
             .done(function( data ) {
 				console.log(data);
 				let json = JSON.parse(data);
