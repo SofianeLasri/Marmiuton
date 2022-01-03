@@ -37,7 +37,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                         if (isset($_POST['registerPassword2'])) {
                                             if (!empty($_POST['registerPassword2'])) {
                                                 if ($_POST['registerPassword1']==$_POST['registerPassword2']) {
-                                                    $return = registerUser($_POST['registerUsername'], $_POST['registerEmail'], $_POST['registerPassword1']);
+                                                    $return = registerUser($_POST['registerUsername'], $_POST['registerPassword1'], $_POST['registerEmail']);
                                                 } else {
                                                     $return["error"] = 'Je sais pas comment  t\'as fais, <b>il faut que les deux mots de passe correspondent</b>';
                                                 }
