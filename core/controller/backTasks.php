@@ -43,7 +43,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                                             $password = password_hash($_POST['registerPassword1'], PASSWORD_DEFAULT);
 
                                                             // Ici on récupère l'id du groupe des utilisateurs
-                                                            $userGroupId = Connexion::pdo()->query("SELECT id FROM m_groupeUtilisateur WHERE name='utilisateur'")->fetchColumn();
+                                                            $userGroupId = Connexion::pdo()->query("SELECT id FROM m_groupeUtilisateur WHERE nom='utilisateur'")->fetchColumn();
 
                                                             // Là on va insérer l'utilisateur dans la table des utilisateurs
                                                             $query = Connexion::pdo()->prepare("INSERT INTO m_utilisateur (id, grouppId, username, password) VALUES (?, ?, ?)");
@@ -97,7 +97,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                 }else{
                     $return["error"] = "Nous rencontrons un problème avec le reCAPTCHA:";
                     foreach($recaptcha->{'error-codes'} as $error){
-                        $return["error"] .= "<br>".$error;
+                        $return["error"] .= $error." ";
                     }
                 }
             }
