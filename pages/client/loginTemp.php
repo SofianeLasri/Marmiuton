@@ -311,6 +311,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
             .done(function( data ) {
 				console.log(data);
 				let json = JSON.parse(data);
+				if(json.success){
+					SnackBar({
+                        message: json.success,
+                        status: "success"
+                    });
+				}else{
+					SnackBar({
+						message: json.error,
+						status: "danger",
+						timeout: false
+					});
+				}
             });
 		}
 
