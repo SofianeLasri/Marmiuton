@@ -50,7 +50,9 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                                             $query->execute([null, $userGroupId, $username, $password]);
 
                                                             // Maintenant on va récuper son id
-                                                            $userId = Connexion::pdo()->prepare("SELECT id FROM m_utilisateur WHERE username=?")->execute([$username])->fetchColumn();
+                                                            $query = Connexion::pdo()->prepare("SELECT id FROM m_utilisateur WHERE username=?");
+                                                            $query->execute([$username]);
+                                                            $userId = $query->fetchColumn();
                                                             
                                                             // On va insérer son adresse mail
                                                             $query = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
