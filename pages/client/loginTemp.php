@@ -310,20 +310,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])
 			$.post( "/backTasks/?handleLoginAndRegisterForm", $( "#registerForm" ).serialize() )
             .done(function( data ) {
 				console.log(data);
-				let json = JSON.parse(data);
-				if(json.success){
-					SnackBar({
-                        message: json.success,
-                        status: "success"
-                    });
+				if(isJson(data)){
+					let json = JSON.parse(data);
+					if(json.success){
+						SnackBar({
+							message: json.success,
+							status: "success"
+						});
+					}else{
+						SnackBar({
+							message: json.error,
+							status: "danger",
+							timeout: false
+						});
+					}
 				}else{
 					SnackBar({
-						message: json.error,
+						message: data,
 						status: "danger",
 						timeout: false
 					});
 				}
             });
+		}
+
+		function isJson(str) {
+			try {
+				JSON.parse(str);
+			} catch (e) {
+				return false;
+			}
+			return true;
 		}
 
 	</script>
