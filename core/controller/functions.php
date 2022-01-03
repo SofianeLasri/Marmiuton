@@ -175,4 +175,5 @@ function registerUser($username, $password, $email){
     } else {
         $return["error"] = 'Ton mot de passe doit être long d\'au moins 8 caractères et doit contenir au moins 1 majuscule, 1 minuscule et 1 nombre.';
     }
+    return $return;
 }

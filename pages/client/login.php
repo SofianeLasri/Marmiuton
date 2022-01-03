@@ -108,9 +108,13 @@ if(isset($_SESSION['userId'])){
 							message: json.success,
 							status: "success"
 						});
+						SnackBar({
+							message: "Redirection dans 3s...",
+							status: "success"
+						});
 						setTimeout(function(){
 							window.location.href = '/';
-						}, 5000);
+						}, 3000);
 					}else{
 						SnackBar({
 							message: json.error,
