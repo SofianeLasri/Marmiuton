@@ -7,5 +7,5 @@
 
 if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
     // Cette fonction va vérifier si un username ou un email existe déjà dans la bdd
-    return checkUsernameEmail($_GET["checkUsernameEmail"]);
+    echo checkUsernameEmail($_GET["checkUsernameEmail"]);
 }
