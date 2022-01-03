@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="pages/assets/css/connexion.css">
 
 	<!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 </head>
 <body>
 	<div class="container h-100">

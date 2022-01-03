@@ -15,14 +15,7 @@
 	<meta content="#ed8930" data-react-helmet="true" name="theme-color" />
 
     <!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6Ld3jukdAAAAAFLO9t2Uyc3c9bru4kTcwffcG3mE', { action: 'contact' }).then(function (token) {
-                var recaptchaResponse = document.getElementById('recaptchaResponse');
-                recaptchaResponse.value = token;
-            });
-        });
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     </script>
 </head>
 
