@@ -17,15 +17,7 @@
     <link rel="stylesheet" href="pages/assets/css/connexion.css">
 
 	<!-- Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LfuDOYdAAAAAEf8Ii1uzBXHVoUfeI2CK38US1-N"></script>
-    <script>
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6LfuDOYdAAAAAEf8Ii1uzBXHVoUfeI2CK38US1-N', { action: 'contact' }).then(function (token) {
-                var recaptchaResponse = document.getElementById('recaptchaResponse');
-                recaptchaResponse.value = token;
-            });
-        });
-    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 	<div class="container h-100">
@@ -61,8 +53,9 @@
 							</div>
 						</div>
 
+						<div class="g-recaptcha" data-sitekey="6Ld3jukdAAAAAFLO9t2Uyc3c9bru4kTcwffcG3mE"></div>
+      					<br/>
 						<button type="button" name="submit" id="loginBtn" class="btn btn-orange">Se connecter</button>
-						<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 						<a href="/register" class="text-orange">Pas encore inscrit? 😢</a>
 					</form>
 				</div>
