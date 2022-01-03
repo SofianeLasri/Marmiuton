@@ -16,6 +16,12 @@
 
     <!-- Recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6Ld3jukdAAAAAFLO9t2Uyc3c9bru4kTcwffcG3mE'
+        });
+      };
     </script>
 </head>
 
