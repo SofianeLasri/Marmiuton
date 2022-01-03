@@ -20,5 +20,9 @@
 <link rel="stylesheet" type="text/css" href="pages/assets/vendors/fontawesome/css/all.min.css">
 <script src="pages/assets/vendors/fontawesome/js/all.min.js" data-auto-replace-svg="nest"></script>
 
+<!-- Intégration de JS Snackbar -->
+<link rel="stylesheet" href="/pages/assets/vendors/js-snackbar/css/js-snackbar.css?v=2.0.0" />
+<script src="/pages/assets/vendors/js-snackbar/js/js-snackbar.js?v=1.2.0"></script>
+
 <!-- Styles -->
 <link rel="stylesheet" href="pages/assets/css/styles.css">
