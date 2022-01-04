@@ -127,7 +127,7 @@ function login($usernameEmail, $password){
             }else{
                 if($result["value"]!=$ip){
                     // Il existe un champ, on va le comparer
-                    $response = Connexion::pdo()->prepare("UPDATE m_userSetting SET `value`=? WHERE `userId`=?");
+                    $response = Connexion::pdo()->prepare("UPDATE m_userSetting SET `value`=? WHERE `userId`=? AND name='lastIp'");
                     $response->execute($ip, $user['id']);
                 }
                 
