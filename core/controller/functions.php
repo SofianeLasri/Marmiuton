@@ -55,6 +55,40 @@ function loadAdminPage($alias){
     
 }
 
+// Générer les liens
+function genPageLink($path="/"){
+    global $localSettings;
+    $pages = explode("/", $path);
+
+    $return = "?";
+    // Ici on va vérifier le mode de récupération de l'url
+    // On prend l'exemple de ces appels: 
+    // /login, /recettes?search=valeur, /admin/recettes?filterBy=DESC
+    // 
+    if($localSettings["urlMode"] == "parameters"){
+        if($pages[0]=="admin"){
+            if(isset($pages[1])&&!empty($pages[1])){
+                $return += "page=".urlencode($pages[1]);
+            }
+            $return += "&admin";
+            if(isset($pages[3]) && !empty($pages[3])){
+                $return += "page=".urlencode(str_replace("?", "", $pages[3]));
+            }
+        }else{
+            if(isset($pages[0]) && !empty($pages[0])){
+                $return += "page=".urlencode($pages[0]);
+            }
+            if(isset($pages[1]) && !empty($pages[1])){
+                $return += "page=".urlencode(str_replace("?", "", $pages[1]));
+            }
+        }
+    }else{
+        // Pas besoin de travailler, on donne les alias par défaut
+        $return = $path;
+    }
+    return $return;
+}
+
 // Afficher la page 404
 function show404($pageName){
     require 'pages/client/404.php';
