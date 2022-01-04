@@ -234,8 +234,9 @@ function getRecettes($type){
     while ($row = $stmt->fetch()) {
     //recuperer les donnée de la ligne et creer une nouvelle recette via une classe 
     //ajouter la recette a un tableau des recette
-    return $lesRecette
+    
 }
+return $lesRecette;
 }
 function getRecette($recetteId){
     $nom;
