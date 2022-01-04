@@ -125,7 +125,7 @@ function login($usernameEmail, $password){
                 $response = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
                 $response->execute([$user['id'], 'lastIp', $ip]);
             }else{
-                if($result["ip"]!=$ip){
+                if($result["value"]!=$ip){
                     // Il existe un champ, on va le comparer
                     $response = Connexion::pdo()->prepare("UPDATE m_userSetting SET value=? WHERE userId=?");
                     $response->execute($ip, $user['id']);
