@@ -60,7 +60,6 @@ function genPageLink($path="/"){
     global $localSettings;
     $pages = explode("/", $path);
     array_shift($pages);
-    var_dump($pages);
 
     $return = $pages[0];
     return $return;
