@@ -73,8 +73,8 @@ function genPageLink($path="/"){
                 $return = $return . "page=".$pages[1];
             }
             $return = $return . "&admin";
-            if(isset($pages[3]) && !empty($pages[3])){
-                $return = $return . "&".str_replace("?", "", $pages[3]);
+            if(isset($pages[2]) && !empty($pages[2])){
+                $return = $return . "&".str_replace("?", "", $pages[2]);
             }
         }else{
             if(isset($pages[0]) && !empty($pages[0])){
