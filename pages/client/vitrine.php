@@ -124,15 +124,6 @@
         </div>
     </div>
 
-    <?php
-        echo "Zone de test:";
-        echo "<br>/admin/test?info=value - ".genPageLink("/admin/test?info=value");
-        echo "<br>/admin/test/?info=value - ".genPageLink("/admin/test/?info=value");
-        echo "<br>/recettes?search=valeur - ".genPageLink("/recettes?search=valeur");
-        echo "<br>/recettes/?search=valeur - ".genPageLink("/recettes/?search=valeur");
-        echo "<br>/login - ".genPageLink("/login");
-    ?>
-
     <?=getFooter()?>
 
     <script src="/pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>

@@ -66,9 +66,10 @@ function genPageLink($path="/"){
     // On prend l'exemple de ces appels: 
     // /login, /recettes?search=valeur, /admin/recettes?filterBy=DESC
     // 
-    if($localSettings["urlMode"] != "parameters"){
+    if($localSettings["urlMode"] == "parameters"){
+        // est-ce que c'est une page admin?
         if($pages[0]=="admin"){
-
+            // Oui
             if(isset($pages[1]) && !empty($pages[1])){
                 $return = $return . "page=".$pages[1];
             }
@@ -77,6 +78,7 @@ function genPageLink($path="/"){
                 $return = $return . "&".str_replace("?", "", $pages[2]);
             }
         }else{
+            // Non
             if(isset($pages[0]) && !empty($pages[0])){
                 $return = $return . "page=".$pages[0];
             }
