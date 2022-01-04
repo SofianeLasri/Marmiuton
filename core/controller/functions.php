@@ -59,27 +59,31 @@ function loadAdminPage($alias){
 function genPageLink($path="/"){
     global $localSettings;
     $pages = explode("/", $path);
+    array_shift($pages);
 
-    $return = "?";
+    $return = "/?";
     // Ici on va vérifier le mode de récupération de l'url
     // On prend l'exemple de ces appels: 
     // /login, /recettes?search=valeur, /admin/recettes?filterBy=DESC
     // 
-    if($localSettings["urlMode"] != "parameters"){
+    if($localSettings["urlMode"] == "parameters"){
+        // est-ce que c'est une page admin?
         if($pages[0]=="admin"){
-            if(isset($pages[1])&&!empty($pages[1])){
-                $return += "page=".$pages[1];
+            // Oui
+            if(isset($pages[1]) && !empty($pages[1])){
+                $return = $return . "page=".$pages[1];
             }
-            $return += "&admin";
-            if(isset($pages[3]) && !empty($pages[3])){
-                $return += "page=".str_replace("?", "", $pages[3]);
+            $return = $return . "&admin";
+            if(isset($pages[2]) && !empty($pages[2])){
+                $return = $return . "&".str_replace("?", "", $pages[2]);
             }
         }else{
+            // Non
             if(isset($pages[0]) && !empty($pages[0])){
-                $return += "page=".$pages[0];
+                $return = $return . "page=".$pages[0];
             }
             if(isset($pages[1]) && !empty($pages[1])){
-                $return += "page=".str_replace("?", "", $pages[1]);
+                $return = $return . "&".str_replace("?", "", $pages[1]);
             }
         }
     }else{
