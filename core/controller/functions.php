@@ -195,7 +195,7 @@ function getRecettes($type=[]){
 }
 function getRecette($recetteId){
     $nom;
-    $description
-    $image
+    $description;
+    $image;
     
 }
