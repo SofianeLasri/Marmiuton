@@ -62,7 +62,7 @@ function genPageLink($path="/"){
     array_shift($pages);
     var_dump($pages);
 
-    $return = $page[0];
+    $return = $pages[0];
     return $return;
 }
 
