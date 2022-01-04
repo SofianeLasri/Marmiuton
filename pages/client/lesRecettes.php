@@ -18,12 +18,16 @@
     <?=getNavbar()?>
 
     <div class="container">
-  <div class="row">
-    <div class="col">
-        <img src="/data/images/planche-bois-aliments.jpg" class="img-fluid" alt="Responsive image">    
-    </div>
-    
-    <div class="col">Column</div>
+    <?php 
+        $lesRecette[][]=getRecettes($type);
+        foreach($lesRecette as $Recette)
+        echo "<div class=""row"">";
+        echo"<div class=""col"">";
+        echo "<img src="$Recette['imagePath']" class=""img-fluid"" alt=""Responsive image""> "  ;
+        echo "</div>";
+        echo<div class="col">;
+        
+        echo</div>
     <div class="w-100"></div>
     <div class="col">Column</div>
     <div class="col">Column</div>
