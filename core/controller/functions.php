@@ -59,6 +59,7 @@ function loadAdminPage($alias){
 function genPageLink($path="/"){
     global $localSettings;
     $pages = explode("/", $path);
+    array_shift($pages);
     print_r($pages);
 
     $return = "?";
