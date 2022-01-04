@@ -68,18 +68,18 @@ function genPageLink($path="/"){
     if($localSettings["urlMode"] != "parameters"){
         if($pages[0]=="admin"){
             if(isset($pages[1])&&!empty($pages[1])){
-                $return += "page=".urlencode($pages[1]);
+                $return += "page=".$pages[1];
             }
             $return += "&admin";
             if(isset($pages[3]) && !empty($pages[3])){
-                $return += "page=".urlencode(str_replace("?", "", $pages[3]));
+                $return += "page=".str_replace("?", "", $pages[3]);
             }
         }else{
             if(isset($pages[0]) && !empty($pages[0])){
-                $return += "page=".urlencode($pages[0]);
+                $return += "page=".$pages[0];
             }
             if(isset($pages[1]) && !empty($pages[1])){
-                $return += "page=".urlencode(str_replace("?", "", $pages[1]));
+                $return += "page=".str_replace("?", "", $pages[1]);
             }
         }
     }else{
