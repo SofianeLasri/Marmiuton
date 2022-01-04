@@ -68,13 +68,7 @@ function genPageLink($path="/"){
     // 
     if($localSettings["urlMode"] != "parameters"){
         if($pages[0]=="admin"){
-            if(isset($pages[1])&&!empty($pages[1])){
-                $return += "page=".$pages[1];
-            }
-            $return += "&admin";
-            if(isset($pages[3]) && !empty($pages[3])){
-                $return += "page=".str_replace("?", "", $pages[3]);
-            }
+            echo "je suis admin";
         }else{
             if(isset($pages[0]) && !empty($pages[0])){
                 $return += "page=".$pages[0];
