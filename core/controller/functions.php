@@ -68,13 +68,20 @@ function genPageLink($path="/"){
     // 
     if($localSettings["urlMode"] != "parameters"){
         if($pages[0]=="admin"){
-            echo "je suis admin";
+
+            if(isset($pages[1]) && !empty($pages[1])){
+                $return = $return . "page=".$pages[1];
+            }
+            $return = $return . "&admin";
+            if(isset($pages[3]) && !empty($pages[3])){
+                $return = $return . "page=".str_replace("?", "", $pages[3]);
+            }
         }else{
             if(isset($pages[0]) && !empty($pages[0])){
-                $return += "page=".$pages[0];
+                $return = $return . "page=".$pages[0];
             }
             if(isset($pages[1]) && !empty($pages[1])){
-                $return += "page=".str_replace("?", "", $pages[1]);
+                $return = $return . "page=".str_replace("?", "", $pages[1]);
             }
         }
     }else{
