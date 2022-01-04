@@ -224,10 +224,12 @@ function registerUser($username, $password, $email){
 }
 
 // Recettes
-function getRecettes(){
-    // return JSON
-}
+function getRecettes($type=[]){
 
+}
 function getRecette($recetteId){
-    // return JSON
+    $nom;
+    $description;
+    $image;
+    
 }
