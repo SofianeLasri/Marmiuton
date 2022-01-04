@@ -34,7 +34,7 @@
                     <a class="nav-link" href="#">Communauté</a>
                 </li>
             </ul>
-            <form action="/lesRecettes.php" method="post" id="search" class="form-inline my-2 my-lg-0">
+            <form action="/lesRecettes" method="post" id="search" class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2 rounded-pill" type="search" placeholder="Blanquette au saumon">
 
                 <a href="" class="text-orange"><i class="fas fa-search"></i></a>
