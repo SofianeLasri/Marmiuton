@@ -115,11 +115,22 @@ function login($usernameEmail, $password){
     $user=$response->fetch(PDO::FETCH_ASSOC);
     if (!empty($user)) {
         if(password_verify($password, $user["password"])){
-            $response = Connexion::pdo()->prepare("SELECT * FROM m_userSetting WHERE userId=? AND name='lastIp' AND value=?");
-            $response->execute([$user['id'], $ip]);
-            if (empty($response->fetch())) {
+            // On vérifie l'ip
+            $response = Connexion::pdo()->prepare("SELECT * FROM m_userSetting WHERE userId=? AND name='lastIp'");
+            $response->execute([$user['id']]);
+            $result = $response->fetch(PDO::FETCH_ASSOC);
+
+            if (empty($result)) {
+                // Aucun champ d'ip n'existe
                 $response = Connexion::pdo()->prepare("INSERT INTO m_userSetting (`userId`, `name`, `value`) VALUES (?,?,?)");
                 $response->execute([$user['id'], 'lastIp', $ip]);
+            }else{
+                if($result["ip"]!=$ip){
+                    // Il existe un champ, on va le comparer
+                    $response = Connexion::pdo()->prepare("UPDATE m_userSetting SET value=? WHERE userId=?");
+                    $response->execute($ip, $user['id']);
+                }
+                
             }
 
             $_SESSION['userId'] = $user['id'];
