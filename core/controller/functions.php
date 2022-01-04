@@ -58,7 +58,8 @@ function loadAdminPage($alias){
 // Générer les liens
 function genPageLink($path="/"){
     global $localSettings;
-    $pages = explode("/", $path);
+    explode("/", $path);
+    $pages = $path;
 
     $return = "?";
     // Ici on va vérifier le mode de récupération de l'url
