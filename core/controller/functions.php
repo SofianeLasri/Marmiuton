@@ -188,3 +188,12 @@ function registerUser($username, $password, $email){
     }
     return $return;
 }
+
+// Recettes
+function getRecettes(){
+    // return JSON
+}
+
+function getRecette($recetteId){
+    // return JSON
+}
