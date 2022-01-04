@@ -65,7 +65,7 @@ function genPageLink($path="/"){
     // On prend l'exemple de ces appels: 
     // /login, /recettes?search=valeur, /admin/recettes?filterBy=DESC
     // 
-    if($localSettings["urlMode"] == "parameters"){
+    if($localSettings["urlMode"] != "parameters"){
         if($pages[0]=="admin"){
             if(isset($pages[1])&&!empty($pages[1])){
                 $return += "page=".urlencode($pages[1]);
