@@ -31,28 +31,16 @@ function loadPage(){
     }
 
     // Maintenant qu'alias[0] aura toujours une valeur, on peut commencer à la comparer
-    if($alias[0]=="backTasks"){
-        // Si le premier alias est backTasks, on va donc charger la page backTasks
-        // backTasks est un alias que l'on appel pour toutes requêtes Javascript ex: vérification de l'existence d'un email dans la bdd
-        require "core/controller/backTasks.php";
-    }elseif($alias[0]=="admin"){
+    if($alias[0]=="admin"){
         // Si le premier alias est admin, on va donc appeller la fonction qui se charge de gérer les pages admin
         array_shift($alias); // On supprime le /admin pour que la fonction loadAdminPage puisse directement vérifier les pages
-        loadAdminPage($alias);
+        require "core/classes/Admin.php";
+        Admin::loadPage($alias);
     }else{
         // Il s'agit d'une page client
-        // On va vérifier que la page existe
-        if(file_exists('pages/client/'.$alias[0].'.php')){
-            require 'pages/client/'.$alias[0].'.php';
-        }else{
-            // Si elle n'existe pas, on va charger la page 404
-            show404($alias[0]);
-        }
+        require "core/classes/Client.php";
+        Client::loadPage($alias);
     }
-}
-// Pages admins uniquement
-function loadAdminPage($alias){
-    
 }
 
 // Générer les liens
@@ -93,10 +81,6 @@ function genPageLink($path="/"){
     return $return;
 }
 
-// Afficher la page 404
-function show404($pageName){
-    require 'pages/client/404.php';
-}
 function ShowConnexion($pageName){
     require 'pages/Connexion.php';
 }

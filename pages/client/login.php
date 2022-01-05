@@ -41,7 +41,7 @@ if(isset($_SESSION['userId'])){
 						<img src="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" class="brand_logo" alt="Logo">
 					</div>
 				</div>
-				<div class="d-flex justify-content-center form_container">
+				<div class="d-flex justify-content-center form_container" id="container">
 
                     <!-- Formulaire de connexion -->
                     <form method="post" class="mt-3 needs-validation" novalidate id="loginForm">
@@ -112,9 +112,10 @@ if(isset($_SESSION['userId'])){
 							message: "Redirection dans 3s...",
 							status: "success"
 						});
+						$("#container")."<p>Redirection...<br><a href='/' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>";
 						setTimeout(function(){
 							window.location.href = '/';
-						}, 3000);
+						}, 2000);
 					}else{
 						SnackBar({
 							message: json.error,
