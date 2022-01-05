@@ -3,7 +3,7 @@
 if(isset($_SESSION['userId'])){
     // On va afficher une petite barre de navigation supplémentaire ?>
 <div class="container-fluid memberNavbar">
-    <div>
+    <div class="d-flex" align-items-center>
         <div class="userProfilPic" style="background-image:url('<?=$_SESSION["userProfilePic"]?>');"></div>
         <span>Bonjour <strong><?=$_SESSION["userName"]?></strong></span>
     </div>
