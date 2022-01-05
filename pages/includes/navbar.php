@@ -5,7 +5,7 @@ if(isset($_SESSION['userId'])){
 <div class="container-fluid memberNavbar">
     <div class="d-flex" align-items-center>
         <div class="userProfilPic" style="background-image:url('<?=$_SESSION["userProfilePic"]?>');"></div>
-        <span>Bonjour <strong><?=$_SESSION["userName"]?></strong></span>
+        <span class="align-self-center">Bonjour <strong><?=$_SESSION["userName"]?></strong></span>
     </div>
 </div>
 
