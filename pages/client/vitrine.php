@@ -17,14 +17,6 @@
     <link rel="stylesheet" href="/pages/assets/vendors/flickity/css/flickity.css" media="screen">
 </head>
 <body>
-    <!-- Barre du dessus pour les infos peu ou pas importantes -->
-    <div id="topBarInfos" class="container-fluid mainColor-bg">
-        <div class="container text-center py-2">
-            <span class="badge badge-pill badge-danger">Spécial Noël</span> <span>Une sélection de recettes très spéciales pour les fêtes de Noël.</span> <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Découvrir</a>
-        </div>
-    </div>
-    <!-- Fin -->
-
     <!-- Inclusion dynamique de la navbar -->
     <?=getNavbar()?>
 

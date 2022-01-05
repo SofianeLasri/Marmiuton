@@ -202,10 +202,10 @@ if(isset($_SESSION['userId'])){
 							status: "success"
 						});
 						$("#container").html("<p>Redirection...<br><a href='<?=genPageLink("/login")?>' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>");
-						// On redirige après 5s
+						// On redirige après 2s
 						setTimeout(function(){
 							window.location.href = '/login';
-						}, 5000);
+						}, 2000);
 					}else{
 						SnackBar({
 							message: json.error,

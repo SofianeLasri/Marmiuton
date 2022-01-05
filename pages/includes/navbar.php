@@ -1,3 +1,22 @@
+<?php
+// On est pas censé avoir de code dans les vues, mais est-ce réellement une vue? :D
+if(isset($_SESSION['userId'])){
+    // On va afficher une petite barre de navigation supplémentaire ?>
+<div class="container-fluid memberNavbar">
+    <div>
+        <div class="userProfilPic" style="background-image:url('<?=$_SESSION["userProfilPic"]?>');"></div>
+        <span>Bonjour <strong><?=$_SESSION["userName"]?></strong></span>
+    </div>
+</div>
+
+<?php } ?>
+<!-- Barre du dessus pour les infos peu ou pas importantes -->
+<div id="topBarInfos" class="container-fluid mainColor-bg">
+    <div class="container text-center py-2">
+        <span class="badge badge-pill badge-danger">Spécial Noël</span> <span>Une sélection de recettes très spéciales pour les fêtes de Noël.</span> <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Découvrir</a>
+    </div>
+</div>
+<!-- Fin -->
 <!-- J'ai un peu honte de cette navbar car c'est ni plus, ni moins, qu'un C/C de la doc de Bootstrap, mais bon le prof n'y verra que du feu x) -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -34,8 +53,8 @@
                     <a class="nav-link" href="#">Communauté</a>
                 </li>
             </ul>
-            <form action="/lesRecettes" method="post" id="search" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2 rounded-pill" type="search" placeholder="Blanquette au saumon">
+            <form action="<?=genPageLink("/lesRecettes")?>" method="get" id="search" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2 rounded-pill" type="search" name="search" placeholder="Blanquette au saumon">
                 <button type='submit' class='btn btn-orange' ><i class="fas fa-search"></i></button>
             </form>
         </div>

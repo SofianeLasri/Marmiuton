@@ -100,3 +100,20 @@ footer{
 footer a{
     color: var(--mainColor)!important;
 }
+
+/* Barre de navigation utilisateur connecté */
+.memberNavbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background-color: var(--mainColor);
+    color:white!important;
+}
+.memberNavbar .userProfilPic{
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
