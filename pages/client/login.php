@@ -69,7 +69,7 @@ if(isset($_SESSION['userId'])){
 						<div id="g-recaptcha"></div>
       					<br/>
 						<button type="button" name="submit" id="loginBtn" class="btn btn-orange">Se connecter</button>
-						<a href="/register" class="text-light">Pas encore inscrit? 😢</a>
+						<a href="<?=genPageLink("/register")?>" class="text-light">Pas encore inscrit? 😢</a>
 					</form>
 				</div>
 			</div>
@@ -112,7 +112,7 @@ if(isset($_SESSION['userId'])){
 							message: "Redirection dans 3s...",
 							status: "success"
 						});
-						$("#container")."<p>Redirection...<br><a href='/' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>";
+						$("#container").html("<p>Redirection...<br><a href='/' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>");
 						setTimeout(function(){
 							window.location.href = '/';
 						}, 2000);

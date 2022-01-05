@@ -101,7 +101,7 @@ if(isset($_SESSION['userId'])){
 						<div id="g-recaptcha"></div>
       					<br/>
                         <button type="button" id="registerBtn" class="btn btn-orange">S'inscrire</button>
-                        <a href="/login" class="text-light">Déjà inscrit? 🌈</a>
+                        <a href="<?=genPageLink("/login")?>" class="text-light">Déjà inscrit? 🌈</a>
                     </form>
 				</div>
 			</div>
@@ -201,7 +201,7 @@ if(isset($_SESSION['userId'])){
 							message: json.success,
 							status: "success"
 						});
-						$("#container")."<p>Redirection...<br><a href='/login' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>";
+						$("#container").html("<p>Redirection...<br><a href='<?=genPageLink("/login")?>' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>");
 						// On redirige après 5s
 						setTimeout(function(){
 							window.location.href = '/login';
