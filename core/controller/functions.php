@@ -212,8 +212,15 @@ function registerUser($username, $password, $email){
 }
 
 // Recettes
-function getRecettes($type=[]){
-
+function getRecettes($type){
+    $lesRecette=[];
+    $$stmt = Connexion::pdo()->prepare("select nom, from m_recette where nom like '$type'");
+    while ($row = $stmt->fetch()) {
+    //recuperer les donnée de la ligne et creer une nouvelle recette via une classe 
+    //ajouter la recette a un tableau des recette
+    
+}
+return $lesRecette;
 }
 function getRecette($recetteId){
     $nom;
