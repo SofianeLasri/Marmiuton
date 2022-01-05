@@ -12,9 +12,9 @@ if(isset($_SESSION['userId'])){
     </div>
 </div>
 
-<?php } ?>
-<?php
-if(isset($_SESSION["topBarInfos"]) && $_SESSION["topBarInfos"] == true){
+<?php }
+
+if(!isset($_SESSION["topBarInfos"]) || $_SESSION["topBarInfos"] == true){
 ?>
 <!-- Barre du dessus pour les infos peu ou pas importantes -->
 <div id="topBarInfos" class="container-fluid mainColor-bg">
