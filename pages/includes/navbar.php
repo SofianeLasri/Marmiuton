@@ -3,9 +3,12 @@
 if(isset($_SESSION['userId'])){
     // On va afficher une petite barre de navigation supplémentaire ?>
 <div class="container-fluid memberNavbar">
-    <div class="d-flex" align-items-center>
+    <div class="d-flex align-items-center flex-grow-1">
         <div class="userProfilPic" style="background-image:url('<?=$_SESSION["userProfilePic"]?>');"></div>
-        <span class="align-self-center">Bonjour <strong><?=$_SESSION["userName"]?></strong></span>
+        <span class="">Bonjour <strong><?=$_SESSION["userName"]?></strong></span>
+    </div>
+    <div>
+        <a href="<?=genPageLink("/lesRecettes")?>" class="text-light">Se déconnecter</a>
     </div>
 </div>
 
