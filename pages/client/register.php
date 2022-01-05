@@ -129,7 +129,7 @@ if(isset($_SESSION['userId'])){
 		})();
 
 		$("#registerUsername").change(function() {
-			$.get("/backTasks/?checkUsernameEmail="+encodeURI($("#registerUsername").val()), function(data) {
+			$.get("<?=genPageLink("/backTasks")?>?checkUsernameEmail="+encodeURI($("#registerUsername").val()), function(data) {
 				if (data=="true") {
 					$("#registerUsernameAlert").html("Nom d'utilisateur déjà utilisé.");
 					$("#registerUsernameAlert").css("display","block");
@@ -143,7 +143,7 @@ if(isset($_SESSION['userId'])){
 		});
 
 		$("#registerEmail").change(function() {
-			$.get("/backTasks/?checkUsernameEmail="+encodeURI($("#registerEmail").val()), function(data) {
+			$.get("<?=genPageLink("/backTasks")?>?checkUsernameEmail="+encodeURI($("#registerEmail").val()), function(data) {
 				if (data=="true") {
 					$("#registerEmailAlert").html("Email déjà utilisée.");
 					$("#registerEmailAlert").css("display","block");

@@ -98,4 +98,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
         $return["error"] = "Vous n'avez pas rempli tous les champs";
     }
     echo json_encode($return);
+}elseif(isset($_GET["closeTopBarInfos"])){
+    // Cette fonction va fermer la barre d'information en haut de la page
+    $_SESSION["topBarInfos"] = false;
 }

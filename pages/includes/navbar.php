@@ -13,13 +13,17 @@ if(isset($_SESSION['userId'])){
 </div>
 
 <?php } ?>
+<?php
+if(isset($_SESSION["topBarInfos"]) && $_SESSION["topBarInfos"] == true){
+?>
 <!-- Barre du dessus pour les infos peu ou pas importantes -->
 <div id="topBarInfos" class="container-fluid mainColor-bg">
     <div class="container text-center py-2">
-        <span class="badge badge-pill badge-danger">Spécial Noël</span> <span>Une sélection de recettes très spéciales pour les fêtes de Noël.</span> <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Découvrir</a>
+        <span class="badge badge-pill badge-danger">Spécial Noël</span> <span>Une sélection de recettes très spéciales pour les fêtes de Noël.</span> <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Découvrir</a> <a href="#" onclick="closeTopBarInfos()" class="text-light"><i class="fas fa-times"></i></a>
     </div>
 </div>
 <!-- Fin -->
+<?php } ?>
 <!-- J'ai un peu honte de cette navbar car c'est ni plus, ni moins, qu'un C/C de la doc de Bootstrap, mais bon le prof n'y verra que du feu x) -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">

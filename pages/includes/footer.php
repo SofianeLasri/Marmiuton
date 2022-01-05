@@ -44,4 +44,18 @@
 		}
 	}
 	window.onresize = reportWindowSize;
+
+    function closeTopBarInfos(){
+        $.get("<?=genPageLink("/backTasks")?>?closeTopBarInfos"), function(data) {
+            if (data!="") {
+                SnackBar({
+                    message: data,
+                    status: "danger",
+                    timeout: false
+                });
+            }else{
+                $("#topBarInfos").hide();
+            }
+        });
+    }
 </script>
