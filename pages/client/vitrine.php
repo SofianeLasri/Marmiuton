@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
-    <?=Client::getDepedencies()?>
+    <?=Client::getDependencies()?>
     <title>Marmiuton</title>
     
     <!-- Embed -->

@@ -22,16 +22,16 @@
 
 <!-- Font Awesome -->
 <link rel="stylesheet" type="text/css" href="pages/assets/vendors/fontawesome/css/all.min.css">
-<script src="pages/assets/vendors/fontawesome/js/all.min.js" data-auto-replace-svg="nest"></script>
+<script src="/pages/assets/vendors/fontawesome/js/all.min.js" data-auto-replace-svg="nest"></script>
 
 <!-- Intégration de JS Snackbar -->
 <link rel="stylesheet" href="/pages/assets/vendors/js-snackbar/css/js-snackbar.css?v=2.0.0" />
 <script src="/pages/assets/vendors/js-snackbar/js/js-snackbar.js?v=1.2.0"></script>
 
 <!-- Fonction JS du panel -->
-<script src="pages/assets/js/manager.js"></script>
+<script src="/pages/assets/js/manager.js"></script>
 <!-- Styles -->
-<link rel="stylesheet" href="pages/assets/css/manager.css">
+<link rel="stylesheet" href="/pages/assets/css/manager.css">
 
 <!-- Animate CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>

@@ -30,7 +30,7 @@ class Admin{
     }
 
     // Récupérer les dépendances
-    public static function getDepedencies(){
+    public static function getDependencies(){
         require 'pages/admin/includes/dependencies.php';
     }
 

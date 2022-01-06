@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
-    <?=getDepedencies()?>
+    <?=getDependencies()?>
     <title>404</title>
     <link rel="stylesheet" href="pages/assets/css/404.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">

@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
-	<?=Client::getDepedencies()?>
+	<?=Client::getDependencies()?>
     <link rel="stylesheet" href="pages/assets/css/recette.css">
  
 	<!-- Embed -->

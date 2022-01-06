@@ -24,7 +24,7 @@ class Client{
     }
 
     // Récupérer les dépendances
-    public static function getDepedencies(){
+    public static function getDependencies(){
         require 'pages/client/includes/dependencies.php';
     }
 
