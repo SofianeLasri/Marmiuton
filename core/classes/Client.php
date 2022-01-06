@@ -22,4 +22,18 @@ class Client{
     public static function show404($pageName){
         require 'pages/client/404.php';
     }
+
+    // Récupérer les dépendances
+    public static function getDepedencies(){
+        require 'pages/client/includes/dependencies.php';
+    }
+
+    //récupère la barre de navigation
+    public static function getNavbar(){
+        require 'pages/client/includes/navbar.php';
+    }
+    //récupère le footer
+    public static function getFooter(){
+        require 'pages/client/includes/footer.php';
+    }
 }

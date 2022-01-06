@@ -19,7 +19,7 @@ if(isset($_SESSION['userId'])){
 	<meta content="#ed8930" data-react-helmet="true" name="theme-color" />
 
     <!-- Dépendances -->
-    <?=getDepedencies()?>
+    <?=Client::getDepedencies()?>
     <link rel="stylesheet" href="pages/assets/css/connexion.css">
 
 	<!-- Recaptcha -->

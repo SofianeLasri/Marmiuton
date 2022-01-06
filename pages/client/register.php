@@ -10,7 +10,7 @@ if(isset($_SESSION['userId'])){
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
-	<?=getDepedencies()?>
+	<?=Client::getDepedencies()?>
     <link rel="stylesheet" href="pages/assets/css/connexion.css">
     <title>Inscription</title>
 

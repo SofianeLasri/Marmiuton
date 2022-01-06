@@ -81,23 +81,6 @@ function genPageLink($path="/"){
     return $return;
 }
 
-function ShowConnexion($pageName){
-    require 'pages/Connexion.php';
-}
-// Récupérer les dépendances
-function getDepedencies(){
-    require 'core/conf/dependencies.php';
-}
-
-//récupère la barre de navigation
-function getNavbar(){
-    require 'pages/includes/navbar.php';
-}
-//récupère le footer
-function getFooter(){
-    require 'pages/includes/footer.php';
-}
-
 // Vérifie si un username ou un email existe dans la bdd
 function checkUsernameEmail($data){
 	$pos = strpos($data, "@");

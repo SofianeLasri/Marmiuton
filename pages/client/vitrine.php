@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
-    <?=getDepedencies()?>
+    <?=Client::getDepedencies()?>
     <title>Marmiuton</title>
     
     <!-- Embed -->
@@ -18,7 +18,7 @@
 </head>
 <body>
     <!-- Inclusion dynamique de la navbar -->
-    <?=getNavbar()?>
+    <?=Client::getNavbar()?>
 
     <!-- Carroussel de la vitrine -->
     <div class="carrousselVitrine js-flickity" data-flickity-options='{ "wrapAround": true }'>
@@ -116,7 +116,7 @@
         </div>
     </div>
 
-    <?=getFooter()?>
+    <?=Client::getFooter()?>
 
     <script src="/pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
     <script type="text/javascript">
