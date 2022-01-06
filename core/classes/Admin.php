@@ -45,7 +45,7 @@ class Admin{
 
     // Vérifie que l'utilisateur a le droit d'accéder au panel admin
     public static function checkAdmin(){
-        if(!isset($_SESSION['userId']) || verifyUserPermission($_SESSION['userId'], "admin.access")==false){
+        if(!isset($_SESSION['userId']) || verifyUserPermission($_SESSION['userId'], "adminPanel.access")==false){
             return false;
         }else{
             return true;
