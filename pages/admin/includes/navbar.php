@@ -4,7 +4,7 @@
 			<div class="desktop-toggler mx-2">
 				<a href="#" class="menu-toggler" data-action="toggle" data-side="left"><i class="fas fa-bars"></i></a>
 			</div>
-			<a href="<?=VBcmsGetSetting("websiteUrl")?>vbcms-admin" class="brand-name"><?=VBcmsGetSetting("websiteName")?></a>
+			<a href="/admin" class="brand-name">Marmiuton</a>
 		</div>
 
 		<div class="menu d-flex ml-auto justify-content-end">
@@ -25,20 +25,14 @@
 			<div class="menu-item d-flex align-items-center dropdown">
 				<a href="#" class="menu-link dropdown-toggle" role="button" id="userProfileDD" data-toggle="dropdown">
 					<div class="menu-img">
-						<img src="<?=$_SESSION['user_profilePic']?>">
+						<img src="<?=$_SESSION['userProfilePic']?>">
 					</div>
 					<div class="menu-text align-content-center mx-2">
-						<?=$_SESSION['user_username']?>
+						<?=$_SESSION['userName']?>
 					</div>
 				</a>
 				<div class="dropdown-menu userDropdown" aria-labelledby="userProfileDD">
-					<div class="dropdown-topItem">
-						<span class="brand-name">VBcms</span><small class="ml-1"><?=$vbcmsVer["text"]?></small>
-					</div>
-					
-					<!--<a class="dropdown-item" target="_blank" href="https://vbcms.net/manager/myaccount"><?=translate("myProfil")?></a>
-				    <a class="dropdown-item" target="_blank" href="https://vbcms.net/manager/myliscence"><?=translate("manageliscence")?></a>-->
-				    <a class="dropdown-item" href="?logout"><?=translate("disconnect")?></a>
+				    <a class="dropdown-item" href="/logout">Se déconnecter</a>
 				</div>
 			</div>
 		</div>
@@ -50,29 +44,29 @@
 <div class="sidebar sidebarminify">
 	<div class="scrollLinks">
 		<div class="menu" >
-			<div class="menu-header"><?=translate("naviguation")?></div>
+			<div class="menu-header">Tableau de board</div>
 			<div class="menu-item">
 				<a href="/vbcms-admin" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-home"></i></span>
-					<span class="menu-text"><?=translate("dashboard")?></span>
+					<span class="menu-text">Tableau de board</span>
 				</a>
 			</div>
 			<div class="menu-item">
 				<a href="/vbcms-admin/settings" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-wrench"></i></span>
-					<span class="menu-text"><?=translate("settings")?></span>
+					<span class="menu-text">Paramètres</span>
 				</a>
 			</div>
-			<?php if(verifyUserPermission($_SESSION['userId'], 'vbcms', 'updatePanel')) { ?>
+			<?php //if(verifyUserPermission($_SESSION['userId'], 'vbcms', 'updatePanel')) { ?>
 			<div class="menu-item">
 				<a href="/vbcms-admin/updater" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-cloud-download-alt"></i></span>
 					<span class="menu-text"><?=translate("update")?></span>
 				</a>
 			</div>
-			<?php } ?>
+			<?php //} ?>
 
-			<?php 
+			<?php /*
 			if(VBcmsGetSetting("debugMode") == "1" && verifyUserPermission($_SESSION['userId'], 'vbcms', 'accessDebug')){
 				echo '<div class="menu-item">
 				<a href="/vbcms-admin/debug" class="menu-link">
@@ -80,10 +74,10 @@
 					<span class="menu-text">Debug</span>
 				</a>
 			</div>';
-			}
+			}*/
 			?>
 			
-			<?php if(verifyUserPermission($_SESSION['userId'], 'vbcms', 'manageExtensions')) { ?>
+			<?php //if(verifyUserPermission($_SESSION['userId'], 'vbcms', 'manageExtensions')) { ?>
 			<div class="menu-divider"></div>
 			<div class="menu-header"><?=translate("workshop")?></div>
 			<div class="menu-item">
@@ -92,7 +86,7 @@
 					<span class="menu-text"><?=translate("ws_manage")?></span>
 				</a>
 			</div>
-			<?php } ?>
+			<?php //} ?>
 
 			<!-- Insérer les liens ici -->
 			
