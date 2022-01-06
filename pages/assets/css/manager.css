@@ -40,7 +40,7 @@ body {
 	z-index: 1000;
 	height: 60px;
 	align-items: center;
-	background-color: var(--mainBrown);
+	background-color: var(--mainColor);
 	-webkit-box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.1);
 	box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.1);
@@ -129,7 +129,7 @@ header .menu-item{
 	background-color: #dadada;
 }
 .navbar .dropdown-item:active{
-	background-color: var(--mainBrown);
+	background-color: var(--mainColor);
 }
 .notificationsDropdown small{
 	font-size: .75em;
@@ -220,7 +220,7 @@ header .menu-item{
 	margin-left: 240px;
 	width: calc(100% - 240px);
 	padding: 30px 50px;
-	background-color: var(--mainBrown);
+	background-color: var(--mainColor);
 	color: white;
 }
 .dashboardTopCard .userLogo{
@@ -242,7 +242,7 @@ header .menu-item{
 	display: flex;
 	flex-direction: column;
 	color: white;
-	background-color: var(--mainBrown);
+	background-color: var(--mainColor);
 	border-radius: 5px;
 }
 .indexCardBody{
@@ -703,14 +703,14 @@ header .menu-item{
 }
 .settingsContainer .tabs ul li:hover{
 	margin: 0;
-	border-top: 1px solid var(--mainBrown);
-	border-left: 1px solid var(--mainBrown);
-	border-right: 1px solid var(--mainBrown);
+	border-top: 1px solid var(--mainColor);
+	border-left: 1px solid var(--mainColor);
+	border-right: 1px solid var(--mainColor);
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 .settingsContainer .tabs ul li a{
-	color: var(--mainBrown);
+	color: var(--mainColor);
 }
 .settingsContainer .tabs ul li a:link { text-decoration: none; }
 .settingsContainer .tabs ul li a:visited { text-decoration: none; }
@@ -718,10 +718,10 @@ header .menu-item{
 .settingsContainer .tabs ul li a:active { text-decoration: none; }
 
 .settingsContainer .tabs ul .active{
-	background-color: var(--mainBrown);
-	border-top: 1px solid var(--mainBrown);
-	border-left: 1px solid var(--mainBrown);
-	border-right: 1px solid var(--mainBrown);
+	background-color: var(--mainColor);
+	border-top: 1px solid var(--mainColor);
+	border-left: 1px solid var(--mainColor);
+	border-right: 1px solid var(--mainColor);
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	margin: 0;
@@ -749,7 +749,7 @@ header .menu-item{
 	transform-origin: center;
 	/*animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;*/
 	animation: dash 1.4s ease-in-out infinite;
-	stroke:var(--mainBrown);
+	stroke:var(--mainColor);
 }
 
 @keyframes colors {
@@ -880,7 +880,7 @@ header .menu-item{
 }
 
 .plusMenu ul li:hover {
-    background-color: var(--mainBrown);
+    background-color: var(--mainColor);
     color: white;
 }
 .plusMenu ul li.danger:hover {
