@@ -35,7 +35,7 @@ function loadPage(){
         if(!isset($alias[1])||empty($alias[1])){
             $alias[1] = "index";
         }
-        
+
         // Si le premier alias est admin, on va donc appeller la fonction qui se charge de gérer les pages admin
         array_shift($alias); // On supprime le /admin pour que la fonction loadAdminPage puisse directement vérifier les pages
         require "core/classes/Admin.php";
@@ -214,4 +214,61 @@ function getRecette($recetteId){
     $description;
     $image;
     
+}
+
+// Vérifie les permissions
+function verifyUserPermission($userId, $permission){
+    // $permission peut être un tableau ou un string
+    if(is_array($permission)){
+        if(count($permission)!=2){
+            throw new Exception('Erreur! Le tableau doit être composé de 2 éléments.');
+        }
+        $groupName = $permission[0];
+        $permissionName = $permission[1];
+    }else{
+        if(strpos($permission, '.') == false){
+            throw new Exception('Erreur! La permission doit suivre la règle suivante: groupeName.permissionName');
+        }else{
+            $temp = explode('.', $permission);
+            if(count($temp)!=2){
+                throw new Exception('Erreur! La permission doit suivre la règle suivante: groupeName.permissionName');
+            }
+            $groupName = $temp[0];
+            $permissionName = $temp[1];
+        }
+    }
+    // On peut maintenant vérifier dans la bdd
+    $response = Connexion::pdo()->prepare("SELECT m_permission.id FROM m_permissionGroup INNER JOIN m_permission ON m_permissionGroup.id=m_permission.groupId WHERE m_permissionGroup.name=? AND m_permission.name=?");
+    $response->execute([$groupName, $permissionName]);
+    $targetPermId = $response->fetchColumn();
+
+    if(empty($targetPermId)){
+        throw new Exception('Erreur! La permission n\'existe pas.');
+    }
+    
+    // On va commencer par vérifier les permissions de l'utilisateur
+    $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM m_permissionUtilisateur WHERE userId=? AND permId=?");   
+    $response->execute([$userId, $targetPermId]);
+    $hasPermission = $response->fetchColumn();
+    if($hasPermission == 0)$hasPermission = false;
+    else $hasPermission = true;
+
+    // Si l'utilisateur n'a pas la permission, on va vérifier si le groupe l'a
+    if(!$hasPermission){
+        $response = Connexion::pdo()->prepare("SELECT groupId FROM m_utilisateur WHERE id=?");
+        $response->execute([$userId]);
+        $userGroupId = $response->fetchColumn();
+
+        if(empty($userGroupId)){
+            throw new Exception('Erreur! L\'utilisateur n\'existe pas.');
+        }
+
+        $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM m_permissionGroupeUtilisateur WHERE groupId=? AND permId=?");   
+        $response->execute([$userGroupId, $targetPermId]);
+        $hasPermission = $response->fetchColumn();
+        if($hasPermission == 0)$hasPermission = false;
+        else $hasPermission = true;
+    }
+
+    return $hasPermission;
 }
