@@ -61,7 +61,7 @@
 			<div class="menu-item">
 				<a href="/vbcms-admin/updater" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-cloud-download-alt"></i></span>
-					<span class="menu-text"><?=translate("update")?></span>
+					<span class="menu-text">Mises à jour</span>
 				</a>
 			</div>
 			<?php //} ?>
@@ -79,11 +79,11 @@
 			
 			<?php //if(verifyUserPermission($_SESSION['userId'], 'vbcms', 'manageExtensions')) { ?>
 			<div class="menu-divider"></div>
-			<div class="menu-header"><?=translate("workshop")?></div>
+			<div class="menu-header">Workshop</div>
 			<div class="menu-item">
 				<a href="/vbcms-admin/workshop/manage" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-wrench"></i></span>
-					<span class="menu-text"><?=translate("ws_manage")?></span>
+					<span class="menu-text">Gérer les extensions</span>
 				</a>
 			</div>
 			<?php //} ?>
