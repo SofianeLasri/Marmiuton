@@ -32,6 +32,10 @@ function loadPage(){
 
     // Maintenant qu'alias[0] aura toujours une valeur, on peut commencer à la comparer
     if($alias[0]=="admin"){
+        if(!isset($alias[1])||empty($alias[1])){
+            $alias[1] = "index";
+        }
+        
         // Si le premier alias est admin, on va donc appeller la fonction qui se charge de gérer les pages admin
         array_shift($alias); // On supprime le /admin pour que la fonction loadAdminPage puisse directement vérifier les pages
         require "core/classes/Admin.php";
