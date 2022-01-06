@@ -247,11 +247,16 @@ function verifyUserPermission($userId, $permission){
     }
     
     // On va commencer par vérifier les permissions de l'utilisateur
-    $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM m_permissionUtilisateur WHERE userId=? AND permId=?");   
-    $response->execute([$userId, $targetPermId]);
-    $hasPermission = $response->fetchColumn();
-    if($hasPermission == 0)$hasPermission = false;
-    else $hasPermission = true;
+    if(isSuperAdmin($userId)){
+        return true;
+    }else{
+        $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM m_permissionUtilisateur WHERE userId=? AND permId=?");   
+        $response->execute([$userId, $targetPermId]);
+        $hasPermission = $response->fetchColumn();
+        if($hasPermission == 0)$hasPermission = false;
+        else $hasPermission = true;
+    }
+    
 
     // Si l'utilisateur n'a pas la permission, on va vérifier si le groupe l'a
     if(!$hasPermission){
@@ -271,4 +276,14 @@ function verifyUserPermission($userId, $permission){
     }
 
     return $hasPermission;
+}
+
+// Check si l'utilisateur est surper utilisateur
+function isSuperAdmin($userId){
+    $superAdminGroupId = Connexion::pdo()->query("SELECT id FROM m_groupeUtilisateur WHERE nom='superAdmin'")->fetchColumn();
+    $response = Connexion::pdo()->prepare("SELECT COUNT(*) FROM m_utilisateur WHERE id=? AND groupId=?");
+    $response->execute([$userId, $superAdminGroupId]);
+    $isSuperAdmin = $response->fetchColumn();
+    if($isSuperAdmin == 0) return false;
+    else return true;
 }
