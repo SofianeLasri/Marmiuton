@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Marmiuton | Administration</title>
+	<title><?=getWebsiteSetting("websiteName")?> | Administration</title>
 	<?=Admin::getDependencies()?>
 </head>
 <body>
