@@ -15,7 +15,7 @@
 
         <form id="settingsForm" class="width-50em">
             <?php
-                $settings = Connexion::pdo()->query("SELECT * FROM settings")->fetchAll(PDO::FETCH_ASSOC);
+                $settings = Connexion::pdo()->query("SELECT * FROM m_siteSetting")->fetchAll(PDO::FETCH_ASSOC);
                 foreach($settings as $setting){
                     echo ('<div class="form-group">
                         <label>'.$setting["name"].'</label>
