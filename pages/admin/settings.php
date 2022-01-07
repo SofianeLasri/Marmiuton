@@ -19,7 +19,7 @@
                 foreach($settings as $setting){
                     echo ('<div class="form-group">
                         <label>'.$setting["name"].'</label>
-                        <input type="text" class="form-control" id="'.$setting["name"].'" value="'.$setting["value"].'">
+                        <input type="text" class="form-control" name="'.$setting["name"].'" value="'.$setting["value"].'">
                     </div>');
                 }
             ?>
