@@ -6,6 +6,9 @@ if(isset($_SESSION['userId'])){
     <div class="d-flex align-items-center flex-grow-1">
         <div class="userProfilPic" style="background-image:url('<?=$_SESSION["userProfilePic"]?>');"></div>
         <span class="">Bonjour <strong><?=$_SESSION["userName"]?></strong></span>
+        <?php if(verifyUserPermission($_SESSION['userId'], "adminPanel.access"))
+        echo ('<a href="'.genPageLink("/admin/").'" class="text-light mx-2"><i class="fas fa-toolbox"></i> Administration</a>'); ?>
+        <a href="'.genPageLink("/ecrireRecette/").'" class="text-light mx-2"><i class="fas fa-pencil-alt"></i> Écrire une recette</a>
     </div>
     <div>
         <a href="<?=genPageLink("/lesRecettes")?>" class="text-light">Se déconnecter</a>
@@ -14,7 +17,7 @@ if(isset($_SESSION['userId'])){
 
 <?php }
 
-if(!isset($_SESSION["topBarInfos"]) || $_SESSION["topBarInfos"] == true){
+if(!isset($_COOKIE["topBarInfos"]) || $_COOKIE["topBarInfos"] == true){
 ?>
 <!-- Barre du dessus pour les infos peu ou pas importantes -->
 <div id="topBarInfos" class="container-fluid mainColor-bg">

@@ -287,3 +287,11 @@ function isSuperAdmin($userId){
     if($isSuperAdmin == 0) return false;
     else return true;
 }
+
+// Récupère les paramètres du site
+function getWebsiteSetting($setting){
+    $response = Connexion::pdo()->prepare("SELECT value FROM m_siteSetting WHERE name=?");
+    $response->execute([$setting]);
+    $settingValue = $response->fetchColumn();
+    return $settingValue; // Retourne null si le paramètre n'existe pas
+}

@@ -100,5 +100,5 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
     echo json_encode($return);
 }elseif(isset($_GET["closeTopBarInfos"])){
     // Cette fonction va fermer la barre d'information en haut de la page
-    $_SESSION["topBarInfos"] = false;
+    setcookie("topBarInfos", "false", time()+getWebsiteSetting("cookieDuration"));
 }
