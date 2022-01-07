@@ -11,7 +11,11 @@ class Admin{
             }else{
                 // On va vérifier que la page existe
                 if(file_exists('pages/admin/'.$alias[0].'.php')){
-                    require 'pages/admin/'.$alias[0].'.php';
+                    if(verifyUserPermission($_SESSION['userId'], "adminPanel.".$alias[0]."Access")){
+                        require 'pages/admin/'.$alias[0].'.php';
+                    }else{
+                        Admin::show403($alias[0]);
+                    }
                 }else{
                     // Si elle n'existe pas, on va charger la page 404
                     Admin::show404($alias[0]);
@@ -27,6 +31,10 @@ class Admin{
     // Afficher la page 404
     public static function show404($pageName){
         require 'pages/admin/404.php';
+    }
+    // Afficher la page 403
+    public static function show403($pageName){
+        require 'pages/admin/403.php';
     }
 
     // Récupérer les dépendances
