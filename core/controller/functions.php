@@ -155,8 +155,6 @@ function login($usernameEmail, $password){
             }
             
             $_SESSION['userProfilePic'] = $userProfilPic;
-            // On va définir la durée de la session php
-            setcookie('PHPSESSID', session_id(), time() + getWebsiteSetting("cookieDuration"));
             $return["success"] = "Connexion réussie, bienvenue " . $_SESSION['userName'] . "! 🥳";
         } else {
             $return["error"] = "Mauvais couple identifiant/mot de passe.";
