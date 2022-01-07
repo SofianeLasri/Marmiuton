@@ -1,8 +1,4 @@
 <?php
-// On change la durée de la session
-ini_set('session.gc_maxlifetime', 1209600); // 14 jours
-// On demande au client de garder l'id de la sesssion aussi longtemps que sa durée
-session_set_cookie_params(1209600);
 // Et on démarre la session
 session_start();
 
