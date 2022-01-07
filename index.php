@@ -1,5 +1,4 @@
 <?php
-// Et on démarre la session
 session_start();
 
 // Ici on commence par intégrer les différents fichiers qui nous serviront à faire fonctionner le site
