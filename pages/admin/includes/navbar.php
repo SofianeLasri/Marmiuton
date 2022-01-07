@@ -46,13 +46,13 @@
 		<div class="menu" >
 			<div class="menu-header">Tableau de board</div>
 			<div class="menu-item">
-				<a href="/vbcms-admin" class="menu-link">
+				<a href="<?=genPageLink("/admin/")?>" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-home"></i></span>
 					<span class="menu-text">Tableau de board</span>
 				</a>
 			</div>
 			<div class="menu-item">
-				<a href="/vbcms-admin/settings" class="menu-link">
+				<a href="<?=genPageLink("/admin/settings/")?>" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-wrench"></i></span>
 					<span class="menu-text">Paramètres</span>
 				</a>
