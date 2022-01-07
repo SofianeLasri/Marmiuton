@@ -9,7 +9,7 @@
 	<?=Admin::getNavbar()?>
 
 	<!-- Contenu -->
-	<div leftSidebar="240" rightSidebar="0">
+	<div leftSidebar="240" rightSidebar="0" class="page-content">
 		<h3>Paramètres</h4>
         <p>J'avais la flemme de faire un truc propre, alors je sort les données de la BDD en brute. :)</p>
 
