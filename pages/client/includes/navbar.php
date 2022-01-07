@@ -5,7 +5,7 @@ if(isset($_SESSION['userId'])){
 <div class="container-fluid memberNavbar">
     <div class="d-flex align-items-center flex-grow-1">
         <div class="userProfilPic" style="background-image:url('<?=$_SESSION["userProfilePic"]?>');"></div>
-        <span class="">Bonjour <strong><?=$_SESSION["userName"]?></strong></span>
+        <span class="mx-2">Bonjour <strong><?=$_SESSION["userName"]?></strong></span>
         <?php if(verifyUserPermission($_SESSION['userId'], "adminPanel.access"))
         echo ('<a href="'.genPageLink("/admin/").'" class="text-light mx-2"><i class="fas fa-toolbox"></i> Administration</a>'); ?>
         <a href="'.genPageLink("/ecrireRecette/").'" class="text-light mx-2"><i class="fas fa-pencil-alt"></i> Écrire une recette</a>
