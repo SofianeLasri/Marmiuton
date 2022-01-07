@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <!-- Dépendances -->
     <?=Client::getDependencies()?>
-    <title>Marmiuton</title>
+    <title><?=getWebsiteSetting("websiteName")?></title>
     
     <!-- Embed -->
-    <meta content="Marmiuton" property="og:title" />
-    <meta content="Retrouvez des milliers de recettes toutes plus délicieuses les unes des autres. Rejoignez la communauté des Marmiutons et  partagez vos recettes de grand-mère!" property="og:description" />
-    <meta content="https://marmiuton.sl-projects.com/" property="og:url" />
-    <meta content="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" property="og:image" />
-    <meta content="#ed8930" data-react-helmet="true" name="theme-color" />
+    <meta content="<?=getWebsiteSetting("websiteName")?>" property="og:title" />
+    <meta content="<?=getWebsiteSetting("websiteDescription")?>" property="og:description" />
+    <meta content="<?=getWebsiteSetting("websiteUrl")?>" property="og:url" />
+    <meta content="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.png" property="og:image" />
+    <meta content="<?=getWebsiteSetting("mainColor")?>" data-react-helmet="true" name="theme-color" />
 
     <!-- Uniquement pour la vitrine -->
     <link rel="stylesheet" href="/pages/assets/vendors/flickity/css/flickity.css" media="screen">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <?php
    $title= $_GET['name'] ;
   echo "<title>$title</title>";

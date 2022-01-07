@@ -5,7 +5,7 @@ if(isset($_SESSION['userId'])){
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     
 <head>
     <meta charset="UTF-8">
@@ -15,11 +15,11 @@ if(isset($_SESSION['userId'])){
     <title>Inscription</title>
 
 	<!-- Embed -->
-	<meta content="Inscription" property="og:title" />
-	<meta content="Retrouvez des milliers de recettes toutes plus délicieuses les unes des autres. Rejoignez la communauté des Marmiutons et  partagez vos recettes de grand-mère!" property="og:description" />
-	<meta content="https://marmiuton.sl-projects.com/" property="og:url" />
-	<meta content="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" property="og:image" />
-	<meta content="#ed8930" data-react-helmet="true" name="theme-color" />
+    <meta content="<?=getWebsiteSetting("websiteName")?>" property="og:title" />
+    <meta content="<?=getWebsiteSetting("websiteDescription")?>" property="og:description" />
+    <meta content="<?=getWebsiteSetting("websiteUrl")?>" property="og:url" />
+    <meta content="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.png" property="og:image" />
+    <meta content="<?=getWebsiteSetting("mainColor")?>" data-react-helmet="true" name="theme-color" />
 
     <!-- Recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>

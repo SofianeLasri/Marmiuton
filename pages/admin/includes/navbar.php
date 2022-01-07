@@ -4,7 +4,7 @@
 			<div class="desktop-toggler mx-2">
 				<a href="#" class="menu-toggler" data-action="toggle" data-side="left"><i class="fas fa-bars"></i></a>
 			</div>
-			<a href="/admin" class="brand-name">Marmiuton</a>
+			<a href="/admin" class="brand-name"><?=getWebsiteSetting("websiteName")?></a>
 		</div>
 
 		<div class="menu d-flex ml-auto justify-content-end">
