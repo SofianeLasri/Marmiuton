@@ -17,7 +17,7 @@ if(isset($_SESSION['userId'])){
 
 <?php }
 
-if(!isset($_COOKIE["topBarInfos"]) || $_COOKIE["topBarInfos"] == true){
+if(!isset($_COOKIE["topBarInfos"]) || $_COOKIE["topBarInfos"] == "true"){
 ?>
 <!-- Barre du dessus pour les infos peu ou pas importantes -->
 <div id="topBarInfos" class="container-fluid mainColor-bg">
