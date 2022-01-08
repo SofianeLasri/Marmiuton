@@ -369,10 +369,10 @@ function getUtilisateur($search=""){
         $username = $search["username"] ?? "";
 
         $queryString = "SELECT * FROM m_utilisateur WHERE 1=1";
-        if(!emmpty($userId)){
+        if(!empty($userId)){
             $queryString .= "id=:userId";
         }
-        if(!emmpty($username)){
+        if(!empty($username)){
             $queryString .= "id LIKE :username";
         }
 
