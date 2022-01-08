@@ -89,6 +89,7 @@
                 foreach($recettes as $recette){
                     $array["userId"] = $recette["auteurId"];
                     $utilisateur = getUtilisateur($array);
+                    print_r($utilisateur);
 
                     echo('<div class="carte-recette">
                     <a href="'.genPageLink("/recette/").'?recetteId='.$recette["id"].'">
