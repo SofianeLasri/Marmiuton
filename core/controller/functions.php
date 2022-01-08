@@ -386,13 +386,11 @@ function getUtilisateur($search=""){
         if(!empty($username)){
             $query->bindParam(':username', "%".$username."%");
         }
-        print_r($queryString);
-        echo "userId=".$userId;
         
         // On exécute
         $query->execute();
         // Et on retourne le résultat
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetch(PDO::FETCH_ASSOC);
     }else{
         // Si $search n'est pas un array, on va chercher tous les utilisateurs
         $query = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur ORDER BY username");
