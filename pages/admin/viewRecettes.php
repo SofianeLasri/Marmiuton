@@ -18,28 +18,28 @@
                 <div class="recette-card border rounded mx-1 my-1" style="background-image: url('https://sofianelasri.mtxserv.com/vbcms-content/uploads/stayonline.jpg');">
                     <div class="recette-card-content p-2">
                         <span><strong>Un super loading screen</strong></span>
-                        <a href="#" class="btn btn-sm btn-brown float-right">Modifier</a>
+                        <a href="#" class="btn btn-sm btn-orange float-right">Modifier</a>
                     </div>
                 </div>
 
                 <div class="recette-card border rounded mx-1 my-1" style="background-image: url('https://sofianelasri.mtxserv.com/vbcms-content/uploads/doubleload.jpg');">
                     <div class="recette-card-content p-2">
                         <span><strong>Un super loading screen</strong></span>
-                        <a href="#" class="btn btn-sm btn-brown float-right">Modifier</a>
+                        <a href="#" class="btn btn-sm btn-orange float-right">Modifier</a>
                     </div>
                 </div>
 
                 <div class="recette-card border rounded mx-1 my-1" style="background-image: url('https://sofianelasri.mtxserv.com/vbcms-content/uploads/themeTopImage.jpg');">
                     <div class="recette-card-content p-2">
                         <span><strong>Un super loading screen</strong></span>
-                        <a href="#" class="btn btn-sm btn-brown float-right">Modifier</a>
+                        <a href="#" class="btn btn-sm btn-orange float-right">Modifier</a>
                     </div>
                 </div>
 
                 <div class="recette-card border rounded mx-1 my-1" style="background-image: url('https://sofianelasri.mtxserv.com/vbcms-content/uploads/scp2.jpg');">
                     <div class="recette-card-content p-2">
                         <span><strong>Un super loading screen</strong></span>
-                        <a href="#" class="btn btn-sm btn-brown float-right">Modifier</a>
+                        <a href="#" class="btn btn-sm btn-orange float-right">Modifier</a>
                     </div>
                 </div>
             </div>
