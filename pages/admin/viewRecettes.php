@@ -21,11 +21,11 @@
                     echo('<div class="recette-card border rounded mx-1 my-1" style="background-image: url(\''.$recette["image"].'\');">
                     <div class="recette-card-content p-2">
                         <span><strong>'.utf8_decode($recette["nom"]).'</strong></span>
-                        <a href="'.genPageLink("/admin/editRecette/").'?recetteId='.$recette["id"].'" class="btn btn-sm btn-brown float-right">Modifier</a>
+                        <a href="'.genPageLink("/admin/editRecette/").'?recetteId='.$recette["id"].'" class="btn btn-sm btn-orange float-right">Modifier</a>
                     </div>
                 </div>');
                 }
-                ?>
+            ?>
             </div>
         </div>
         

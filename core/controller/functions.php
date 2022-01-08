@@ -204,13 +204,13 @@ function getRecettes($search=""){
 
     // On va récupérer les recettes selon la recherche
     // Si $search est une liste, on va chercher selon son contenu
-    // $search["categoryId"], $search["name"], ["ingredientId"], ["difficulty"], ["time"], ["auteurId"]
+    // $search["categoryId"], $search["name"], ["ingredientId"], ["difficulte"], ["time"], ["auteurId"]
     if(is_array($search)){
         // https://stackoverflow.com/a/18603279
         $categoryId = $search["categoryId"] ?? "";
         $name = $search["name"] ?? "";
         $ingredientId = $search["ingredientId"] ?? "";
-        $difficulty = $search["difficulty"] ?? "";
+        $difficulte = $search["difficulte"] ?? "";
         $tempsPreparation = $search["tempsPreparation"] ?? "";
         $auteurId = $search["auteurId"] ?? "";
 
@@ -225,8 +225,8 @@ function getRecettes($search=""){
         if(!empty($ingredientId)){
             $queryString .= " AND ingredientId=:ingredientId";
         }
-        if(!empty($difficulty)){
-            $queryString .= " AND difficulte=:difficulty";
+        if(!empty($difficulte)){
+            $queryString .= " AND difficulte=:difficulte";
         }
         if(!empty($tempsPreparation)){
             $queryString .= " AND tempsPreparation=:tempsPreparation";
@@ -247,8 +247,8 @@ function getRecettes($search=""){
         if(!empty($ingredientId)){
             $query->bindParam(':ingredientId', $ingredientId);
         }
-        if(!empty($difficulty)){
-            $query->bindParam(':difficulty', $difficulty);
+        if(!empty($difficulte)){
+            $query->bindParam(':difficulte', $difficulte);
         }
         if(!empty($tempsPreparation)){
             $query->bindParam(':tempsPreparation', $tempsPreparation);
@@ -353,4 +353,48 @@ function getWebsiteSetting($setting){
     $response->execute([$setting]);
     $settingValue = $response->fetchColumn();
     return $settingValue; // Retourne null si le paramètre n'existe pas
+}
+
+// Récupère les utilisateurs
+function getUtilisateur($search=""){
+    if(is_array($search)){
+        $userId = $search["userId"] ?? "";
+
+        // Si l'id utilisateur passé en paramètre est vide, il s'agit du compte Marmiton
+        if($userId==0){
+            $userMarmiton["username"] = "Marmiton";
+            return $userMarmiton;
+        } // S'arrête ici
+
+        $username = $search["username"] ?? "";
+
+        $queryString = "SELECT * FROM m_utilisateur WHERE ";
+        if(!emmpty($userId)){
+            $queryString .= "id=:userId";
+        }
+        if(!emmpty($username)){
+            $queryString .= "id LIKE :username";
+        }
+
+        // On la prépare
+        $query = Connexion::pdo()->prepare($queryString." ORDER BY username");
+
+        // On rempli les paramètres
+        if(!empty($userId)){
+            $query->bindParam(':userId', $userId);
+        }
+        if(!empty($username)){
+            $query->bindParam(':username', "%".$username."%");
+        }
+        
+        // On exécute
+        $query->execute();
+        // Et on retourne le résultat
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }else{
+        // Si $search n'est pas un array, on va chercher tous les utilisateurs
+        $query = Connexion::pdo()->prepare("SELECT * FROM m_utilisateur ORDER BY username");
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
