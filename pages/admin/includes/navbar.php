@@ -57,14 +57,6 @@
 					<span class="menu-text">Paramètres</span>
 				</a>
 			</div>
-			<?php //if(verifyUserPermission($_SESSION['userId'], 'vbcms', 'updatePanel')) { ?>
-			<div class="menu-item">
-				<a href="/vbcms-admin/updater" class="menu-link">
-					<span class="menu-icon"><i class="fas fa-cloud-download-alt"></i></span>
-					<span class="menu-text">Mises à jour</span>
-				</a>
-			</div>
-			<?php //} ?>
 
 			<?php /*
 			if(VBcmsGetSetting("debugMode") == "1" && verifyUserPermission($_SESSION['userId'], 'vbcms', 'accessDebug')){
