@@ -256,6 +256,7 @@ function getRecettes($search=""){
         if(!empty($auteurId)){
             $query->bindParam(':auteurId', $auteurId);
         }
+        print_r($query);
 
         // On exécute
         $query->execute();
