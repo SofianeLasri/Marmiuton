@@ -215,7 +215,7 @@ function getRecettes($search=""){
         $auteurId = $search["auteurId"] ?? "";
 
         // On construit la requête
-        $queryString = "SELECT * FROM m_recette WHERE ";
+        $queryString = "SELECT * FROM m_recette WHERE 1=1";
         if(!empty($categoryId)){
             $queryString .= " AND categorieId=:categoryId";
         }
@@ -369,7 +369,7 @@ function getUtilisateur($search=""){
 
         $username = $search["username"] ?? "";
 
-        $queryString = "SELECT * FROM m_utilisateur WHERE ";
+        $queryString = "SELECT * FROM m_utilisateur WHERE 1=1";
         if(!emmpty($userId)){
             $queryString .= "id=:userId";
         }
