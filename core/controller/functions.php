@@ -199,13 +199,74 @@ function registerUser($username, $password, $email){
 }
 
 // Recettes
-function getRecettes($type){
-    $lesRecette=[];
-    $$stmt = Connexion::pdo()->prepare("select nom, from m_recette where nom like '$type'");
-    while ($row = $stmt->fetch()) {
-    //recuperer les donnée de la ligne et creer une nouvelle recette via une classe 
-    //ajouter la recette a un tableau des recette
-    
+function getRecettes($search=""){
+    // C'est gitcopilot qui écrit 75% de cette fonction
+
+    // On va récupérer les recettes selon la recherche
+    // Si $search est une liste, on va chercher selon son contenu
+    // $search["categoryId"], $search["name"], ["ingredientId"], ["difficulty"], ["time"], ["auteurId"]
+    if(is_array($search)){
+        // https://stackoverflow.com/a/18603279
+        $categoryId = $search["categoryId"] ?? "";
+        $name = $search["name"] ?? "";
+        $ingredientId = $search["ingredientId"] ?? "";
+        $difficulty = $search["difficulty"] ?? "";
+        $tempsPreparation = $search["tempsPreparation"] ?? "";
+        $auteurId = $search["auteurId"] ?? "";
+
+        // On construit la requête
+        $queryString = "SELECT * FROM m_recette WHERE nom LIKE ?";
+        if(!empty($categoryId)){
+            $queryString .= " AND categorieId=:categoryId";
+        }
+        if(!empty($name)){
+            $queryString .= " AND nom LIKE :name";
+        }
+        if(!empty($ingredientId)){
+            $queryString .= " AND ingredientId=:ingredientId";
+        }
+        if(!empty($difficulty)){
+            $queryString .= " AND difficulte=:difficulty";
+        }
+        if(!empty($tempsPreparation)){
+            $queryString .= " AND tempsPreparation=:tempsPreparation";
+        }
+        if(!empty($auteurId)){
+            $queryString .= " AND auteurId=:auteurId";
+        }
+        // On la prépare
+        $query = Connexion::pdo()->prepare($queryString." ORDER BY nom");
+
+        // On rempli les paramètres
+        if(!empty($categoryId)){
+            $query->bindParam(':categoryId', $categoryId);
+        }
+        if(!empty($name)){
+            $query->bindParam(':name', "%".$name."%");
+        }
+        if(!empty($ingredientId)){
+            $query->bindParam(':ingredientId', $ingredientId);
+        }
+        if(!empty($difficulty)){
+            $query->bindParam(':difficulty', $difficulty);
+        }
+        if(!empty($tempsPreparation)){
+            $query->bindParam(':tempsPreparation', $tempsPreparation);
+        }
+        if(!empty($auteurId)){
+            $query->bindParam(':auteurId', $auteurId);
+        }
+
+        // On exécute
+        $query->execute();
+        // Et on retourne le résultat
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }else{
+        // Si $search n'est pas un array, on va chercher toutes les recettes
+        $query = Connexion::pdo()->prepare("SELECT * FROM m_recette ORDER BY nom");
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 return $lesRecette;
 }
