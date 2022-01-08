@@ -69,16 +69,22 @@
 			}*/
 			?>
 			
-			<?php //if(verifyUserPermission($_SESSION['userId'], 'vbcms', 'manageExtensions')) { ?>
+			<?php if(verifyUserPermission($_SESSION['userId'], "recette.view")) { ?>
 			<div class="menu-divider"></div>
-			<div class="menu-header">Workshop</div>
+			<div class="menu-header">Recettes</div>
 			<div class="menu-item">
-				<a href="/vbcms-admin/workshop/manage" class="menu-link">
-					<span class="menu-icon"><i class="fas fa-wrench"></i></span>
-					<span class="menu-text">Gérer les extensions</span>
+				<a href="<?=genPageLink("/admin/viewRecettes/")?>" class="menu-link">
+					<span class="menu-icon"><i class="fas fa-list"></i></span>
+					<span class="menu-text">Voir les recettes</span>
 				</a>
 			</div>
-			<?php //} ?>
+			<div class="menu-item">
+				<a href="<?=genPageLink("/ecrireRecette/")?>" class="menu-link">
+					<span class="menu-icon"><i class="fas fa-pencil"></i></span>
+					<span class="menu-text">Écrire une recette</span>
+				</a>
+			</div>
+			<?php } ?>
 
 			<!-- Insérer les liens ici -->
 			
