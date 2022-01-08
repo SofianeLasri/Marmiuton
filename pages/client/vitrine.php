@@ -88,6 +88,7 @@
                 $recettes = getRecettes($search);
                 foreach($recettes as $recette){
                     $utilisateur = getUtilisateur($recette["auteurId"]);
+                    print_r($utilisateur);
                     echo('<div class="carte-recette">
                     <a href="'.genPageLink("/recette/").'?recetteId='.$recette["id"].'">
                         <div class="carte-recette-img" style="background-image: url(\''.$recette["image"].'\');"></div>
