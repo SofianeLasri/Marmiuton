@@ -268,8 +268,6 @@ function getRecettes($search=""){
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 }
-return $lesRecette;
-}
 function getRecette($recetteId){
     $nom;
     $description;
