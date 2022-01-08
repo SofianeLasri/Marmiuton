@@ -85,8 +85,25 @@
 				</a>
 			</div>
 			<?php } ?>
-
-			<!-- Insérer les liens ici -->
+			
+			<?php if(verifyUserPermission($_SESSION['userId'], "utilisateur.view")) { ?>
+			<div class="menu-divider"></div>
+			<div class="menu-header">Utilisateurs</div>
+			<div class="menu-item">
+				<a href="<?=genPageLink("/admin/viewUsers/")?>" class="menu-link">
+					<span class="menu-icon"><i class="fas fa-users"></i></span>
+					<span class="menu-text">Liste des utilisateurs</span>
+				</a>
+			</div>
+			<?php if(verifyUserPermission($_SESSION['userId'], "utilisateur.add")) { ?>
+			<div class="menu-item">
+				<a href="<?=genPageLink("/admin/addUser/")?>" class="menu-link">
+					<span class="menu-icon"><i class="fas fa-user-plus"></i></span>
+					<span class="menu-text">Ajouter un utilisateur</span>
+				</a>
+			</div>
+			<?php } ?>
+			<?php } ?>
 			
 
 		</div>
