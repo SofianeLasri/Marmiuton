@@ -51,38 +51,6 @@
         </div>
 
         <div class="row pb-3">
-            <!-- Carte recette -->
-            <div class="col-md-6">
-                <div class="carte-recette">
-                    <a href="#">
-                        <div class="carte-recette-img" style="background-image: url('/data/images/plat-delicieux1.jpg');"></div>
-                    </a>
-                    <div class="carte-recette-infos">
-                        <h4><strong>Recette 1</strong></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quia.</p>
-                        <i><a href="#" class="text-orange">Marmiuton</a> <span class="text-muted"><i class="far fa-stopwatch"></i> 75 minutes</span></i>
-                    </div>
-                </div>
-            </div>
-            <!-- Fin -->
-
-            <!-- Carte recette -->
-            <div class="col-md-6">
-                <div class="carte-recette">
-                    <a href="#">
-                        <div class="carte-recette-img" style="background-image: url('/data/images/plat-delicieux1.jpg');"></div>
-                    </a>
-                    <div class="carte-recette-infos">
-                        <h4><strong>Recette 1</strong></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quia.</p>
-                        <i><a href="#" class="text-orange">Marmiuton</a> <span class="text-muted"><i class="far fa-stopwatch"></i> 75 minutes</span></i>
-                    </div>
-                </div>
-            </div>
-            <!-- Fin -->
-
-            <!-- Carte recette -->
-            <div class="col-md-6">
             <?php
                 $search["difficulte"] = 1;
                 $recettes = getRecettes($search);
@@ -90,37 +58,21 @@
                     $array["userId"] = $recette["auteurId"];
                     $utilisateur = getUtilisateur($array);
 
-                    echo('<div class="carte-recette">
-                    <a href="'.genPageLink("/recette/").'?recetteId='.$recette["id"].'">
-                        <div class="carte-recette-img" style="background-image: url(\''.$recette["image"].'\');"></div>
-                    </a>
-                    <div class="carte-recette-infos">
-                        <h4><strong>'.utf8_decode($recette["nom"]).'</strong></h4>
-                        <p>'.utf8_decode($recette["description"]).'</p>
-                        <i><a href="'.genPageLink("/utilisateur/").'?id='.$recette["auteurId"].'" class="text-orange">'.$utilisateur['username'].'</a> <span class="text-muted"><i class="far fa-stopwatch"></i> '.$recette["tempsPreparation"].' minutes</span></i>
+                    echo('<!-- Carte recette -->
+                    <div class="col-md-6">
+                        <div class="carte-recette">
+                            <a href="'.genPageLink("/recette/").'?recetteId='.$recette["id"].'">
+                                <div class="carte-recette-img" style="background-image: url(\''.$recette["image"].'\');"></div>
+                            </a>
+                            <div class="carte-recette-infos">
+                                <h4><strong>'.utf8_decode($recette["nom"]).'</strong></h4>
+                                <p>'.utf8_decode($recette["description"]).'</p>
+                                <i><a href="'.genPageLink("/utilisateur/").'?id='.$recette["auteurId"].'" class="text-orange">'.$utilisateur['username'].'</a> <span class="text-muted"><i class="far fa-stopwatch"></i> '.$recette["tempsPreparation"].' minutes</span></i>
+                            </div>
+                        </div>
                     </div>
-                </div>');
+                    <!-- Fin -->');
                 }
-            ?>
-            </div>
-            <!-- Fin -->
-
-            <!-- Carte recette -->
-            <div class="col-md-6">
-                <div class="carte-recette">
-                    <a href="#">
-                        <div class="carte-recette-img" style="background-image: url('/data/images/plat-delicieux1.jpg');"></div>
-                    </a>
-                    <div class="carte-recette-infos">
-                        <h4><strong>Recette 1</strong></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quia.</p>
-                        <i><a href="#" class="text-orange">Marmiuton</a> <span class="text-muted"><i class="far fa-stopwatch"></i> 75 minutes</span></i>
-                    </div>
-                </div>
-            </div>
-            <!-- Fin -->
-            <?php 
-          
             ?>
         </div>
     </div>
