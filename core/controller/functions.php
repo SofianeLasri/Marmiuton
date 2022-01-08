@@ -215,7 +215,7 @@ function getRecettes($search=""){
         $auteurId = $search["auteurId"] ?? "";
 
         // On construit la requête
-        $queryString = "SELECT * FROM m_recette WHERE nom LIKE ?";
+        $queryString = "SELECT * FROM m_recette WHERE ";
         if(!empty($categoryId)){
             $queryString .= " AND categorieId=:categoryId";
         }
