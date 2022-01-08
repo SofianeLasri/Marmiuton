@@ -89,14 +89,15 @@
                 foreach($recettes as $recette){
                     $array["userId"] = $recette["auteurId"];
                     $utilisateur = getUtilisateur($array);
+
                     echo('<div class="carte-recette">
                     <a href="'.genPageLink("/recette/").'?recetteId='.$recette["id"].'">
                         <div class="carte-recette-img" style="background-image: url(\''.$recette["image"].'\');"></div>
                     </a>
                     <div class="carte-recette-infos">
-                        <h4><strong>'.utf8_decode($recette["description"]).'</strong></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quia.</p>
-                        <i><a href="'.genPageLink("/utilisateur/").'?id='.$recette["auteurId"].'" class="text-orange">'.$utilisateur['username'].'</a> <span class="text-muted"><i class="far fa-stopwatch"></i> 75 minutes</span></i>
+                        <h4><strong>'.utf8_decode($recette["nom"]).'</strong></h4>
+                        <p>'.utf8_decode($recette["description"]).'</p>
+                        <i><a href="'.genPageLink("/utilisateur/").'?id='.$recette["auteurId"].'" class="text-orange">'.$utilisateur['username'].'</a> <span class="text-muted"><i class="far fa-stopwatch"></i> '.$recette["tempsPreparation"].' minutes</span></i>
                     </div>
                 </div>');
                 }

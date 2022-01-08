@@ -386,6 +386,7 @@ function getUtilisateur($search=""){
         if(!empty($username)){
             $query->bindParam(':username', "%".$username."%");
         }
+        print($queryString);
         
         // On exécute
         $query->execute();
