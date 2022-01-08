@@ -15,33 +15,17 @@
 
         <div class="d-flex flex-column" id="page-content">
             <div class="d-flex flex-wrap">
-                <div class="recette-card border rounded mx-1 my-1" style="background-image: url('https://sofianelasri.mtxserv.com/vbcms-content/uploads/stayonline.jpg');">
+            <?php
+                $recettes = getRecettes();
+                foreach($recettes as $recette){
+                    echo('<div class="recette-card border rounded mx-1 my-1" style="background-image: url(\''.$recette["image"].'\');">
                     <div class="recette-card-content p-2">
-                        <span><strong>Un super loading screen</strong></span>
-                        <a href="#" class="btn btn-sm btn-orange float-right">Modifier</a>
+                        <span><strong>'.utf8_decode($recette["nom"]).'</strong></span>
+                        <a href="'.genPageLink("/admin/editRecette/").'?recetteId='.$recette["id"].'" class="btn btn-sm btn-brown float-right">Modifier</a>
                     </div>
-                </div>
-
-                <div class="recette-card border rounded mx-1 my-1" style="background-image: url('https://sofianelasri.mtxserv.com/vbcms-content/uploads/doubleload.jpg');">
-                    <div class="recette-card-content p-2">
-                        <span><strong>Un super loading screen</strong></span>
-                        <a href="#" class="btn btn-sm btn-orange float-right">Modifier</a>
-                    </div>
-                </div>
-
-                <div class="recette-card border rounded mx-1 my-1" style="background-image: url('https://sofianelasri.mtxserv.com/vbcms-content/uploads/themeTopImage.jpg');">
-                    <div class="recette-card-content p-2">
-                        <span><strong>Un super loading screen</strong></span>
-                        <a href="#" class="btn btn-sm btn-orange float-right">Modifier</a>
-                    </div>
-                </div>
-
-                <div class="recette-card border rounded mx-1 my-1" style="background-image: url('https://sofianelasri.mtxserv.com/vbcms-content/uploads/scp2.jpg');">
-                    <div class="recette-card-content p-2">
-                        <span><strong>Un super loading screen</strong></span>
-                        <a href="#" class="btn btn-sm btn-orange float-right">Modifier</a>
-                    </div>
-                </div>
+                </div>');
+                }
+                ?>
             </div>
         </div>
         
