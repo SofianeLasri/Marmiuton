@@ -243,7 +243,7 @@ function verifyUserPermission($userId, $permission){
     $targetPermId = $response->fetchColumn();
 
     if(empty($targetPermId)){
-        throw new Exception('Erreur! La permission n\'existe pas.');
+        throw new Exception('Erreur! La permission \''.$groupName.'.'.$permissionName.'\' n\'existe pas.');
     }
     
     // On va commencer par vérifier les permissions de l'utilisateur
