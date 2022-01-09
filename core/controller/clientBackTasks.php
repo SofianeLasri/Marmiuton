@@ -114,7 +114,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                         if(isset($_POST["recetteUstensile"]) && !empty($_POST["recetteUstensile"])){
                             if(isset($_POST["recetteHeaderPic"]) && !empty($_POST["recetteHeaderPic"])){
                                 if(isset($_POST["recetteDifficulte"]) && !empty($_POST["recetteDifficulte"])){
-
+                                    $return["error"] = "Tout est bon, mais je n'ai pas encore fait le backend. :p";
                                 }else{
                                     $return["error"] = "Vous n'avez pas défini de difficulté pour la recette";
                                 }

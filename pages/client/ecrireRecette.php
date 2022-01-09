@@ -253,15 +253,19 @@
                         recetteHeaderPic: recetteHeaderPic
                     },
                     success: function(data){
-                        if(data == "success"){
+                        var json = JSON.parse(data);
+                        if(json.success){
                             SnackBar({
                                 message: "Votre recette a bien été publiée.",
                                 status: "success",
                                 timeout: false
                             });
+                            setTimeout(function(){
+                                window.location.href = "<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("recette")?>?id="+json.recetteId;
+                            }, 2000);
                         } else {
                             SnackBar({
-                                message: "Une erreur est survenue.",
+                                message: "Une erreur est survenue: "+json.error,
                                 status: "danger",
                                 timeout: false
                             });
