@@ -445,14 +445,15 @@ function sendRecette($recetteTitle, $recetteContent, $recetteDescription, $recet
     // Puis on répertorie les ingrédients
     $recetteId = Connexion::pdo()->lastInsertId();
     foreach($recetteIngredients as $ingredient){
-        $query = Connexion::pdo()->prepare("INSERT INTO m_recetteIngredient (id, recetteId, ingredientId) VALUES (NULL, :recetteId, :ingredientId)");
+        $query = Connexion::pdo()->prepare("INSERT INTO m_recetteIngredient (recetteId, ingredientId, quantite) VALUES (:recetteId, :ingredientId, :quantite)");
         $query->bindParam(':recetteId', $recetteId);
         $query->bindParam(':ingredientId', $ingredient);
+        $query->bindParam(':quantite', 1); // Je suis un boulet j'ai oublié ça xD
         $query->execute();
     }
     // Et on termine par les ustensiles
     foreach($recetteUstensiles as $ustensile){
-        $query = Connexion::pdo()->prepare("INSERT INTO m_recetteUstensile (id, recetteId, ustensileId) VALUES (NULL, :recetteId, :ustensileId)");
+        $query = Connexion::pdo()->prepare("INSERT INTO m_recetteUstensile (recetteId, ustensileId) VALUES (:recetteId, :ustensileId)");
         $query->bindParam(':recetteId', $recetteId);
         $query->bindParam(':ustensileId', $ustensile);
         $query->execute();
