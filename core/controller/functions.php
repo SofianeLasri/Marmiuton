@@ -426,13 +426,17 @@ function getIngredients(){
 
 // Envoyer une recette
 function sendRecette($recetteTitle, $recetteContent, $recetteDescription, $recetteCategory, $recetteIngredients, $recettePreparation, $recetteUstensiles, $recetteHeaderPic, $recetteDifficulte){
+    $recetteTitle = utf8_encode($recetteTitle);
+    $recetteContent = utf8_encode($recetteContent);
+    $recetteDescription = utf8_encode($recetteDescription);
+
     // On insert la recette
     $query = Connexion::pdo()->prepare("INSERT INTO m_recette (id, categoryId, auteurId, nom, description, contenu, image, tempsPreparation, difficulte, datePost, dateModif) VALUES (NULL, :categoryId, :auteurId, :nom, :description, :contenu, :image, :tempsPreparation, :difficulte, NOW(), NOW())");
     $query->bindParam(':categoryId', $recetteCategory);
     $query->bindParam(':auteurId', $_SESSION["userId"]);
-    $query->bindParam(':nom', utf8_encode($recetteTitle));
-    $query->bindParam(':description', utf8_encode($recetteDescription));
-    $query->bindParam(':contenu', utf8_encode($recetteContent));
+    $query->bindParam(':nom', $recetteTitle);
+    $query->bindParam(':description', $recetteDescription);
+    $query->bindParam(':contenu', $recetteContent);
     $query->bindParam(':image', $recetteHeaderPic);
     $query->bindParam(':tempsPreparation', $recettePreparation);
     $query->bindParam(':difficulte', $recetteDifficulte);
