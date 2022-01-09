@@ -318,7 +318,8 @@
 			} catch (e) {
 				return false;
 			}
-        }
+			return true;
+		}
     </script>
 </body>
 </html>
