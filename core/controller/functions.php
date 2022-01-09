@@ -429,6 +429,7 @@ function sendRecette($recetteTitle, $recetteContent, $recetteDescription, $recet
     $recetteTitle = utf8_encode($recetteTitle);
     $recetteContent = utf8_encode($recetteContent);
     $recetteDescription = utf8_encode($recetteDescription);
+    $quantite = 1; // Je suis un boulet j'ai oublié ça xD
 
     // On insert la recette
     $query = Connexion::pdo()->prepare("INSERT INTO m_recette (id, categoryId, auteurId, nom, description, contenu, image, tempsPreparation, difficulte, datePost, dateModif) VALUES (NULL, :categoryId, :auteurId, :nom, :description, :contenu, :image, :tempsPreparation, :difficulte, NOW(), NOW())");
@@ -448,7 +449,7 @@ function sendRecette($recetteTitle, $recetteContent, $recetteDescription, $recet
         $query = Connexion::pdo()->prepare("INSERT INTO m_recetteIngredient (recetteId, ingredientId, quantite) VALUES (:recetteId, :ingredientId, :quantite)");
         $query->bindParam(':recetteId', $recetteId);
         $query->bindParam(':ingredientId', $ingredient);
-        $query->bindParam(':quantite', 1); // Je suis un boulet j'ai oublié ça xD
+        $query->bindParam(':quantite', $quantite); 
         $query->execute();
     }
     // Et on termine par les ustensiles
