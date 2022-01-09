@@ -68,16 +68,12 @@
                     </div>
                     <div class="col-sm mt-3">
                         <div class="card">
-                            <h6 class="card-header">Difficultée de la recette</h6>
+                            <h6 class="card-header">Catégorie de la recette</h6>
                             <div class="card-body">
                                 <div class="form-group">
-                                <input
-                                id="recetteDifficulte"
-                                class="rating rating--nojs"
-                                max="5"
-                                step="1"
-                                type="range"
-                                value="3">
+                                    <select class="form-control" id="recetteCategory">
+                                        <option value="0">Aucune</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +84,7 @@
                 <div class="card vbcard">
                     <h6 class="card-header">Publier</h6>
                     <div class="card-body">
-                        <div class="form-group">
+                        <div class="form-group d-flex flex-column">
                             <label>Difficulté</label>
                             <input
                                 id="recetteDifficulte"
@@ -98,7 +94,7 @@
                                 type="range"
                                 value="3">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group d-flex flex-column">
                             <label>Temps de préparation (min)</label>
                             <input type="number" id="recettePreparation" step="1" min="1" max="100" placeholder="15">
                         </div>
@@ -114,17 +110,6 @@
                     <div class="card-body">
                         <p class="card-text"><strong>Une brève description du plat en question.</strong></p>
                         <textarea id="recetteDescription" class="form-control"></textarea>
-                    </div>
-                </div>
-
-                <div class="card vbcard mt-3">
-                    <h6 class="card-header">Catégorie de la recette</h6>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <select class="form-control" id="recetteCategory">
-                                <option value="0">Aucune</option>
-                            </select>
-                        </div>
                     </div>
                 </div>
             </div>
