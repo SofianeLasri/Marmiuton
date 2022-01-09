@@ -259,7 +259,7 @@
                 });
             } else if(recettePreparation == ""){
                 SnackBar({
-                    message: "Votre recette doit avoir une préparation.",
+                    message: "Votre recette doit avoir un temps préparation.",
                     status: "danger",
                     timeout: false
                 });
@@ -274,7 +274,11 @@
                         recetteContent: recetteContent,
                         recetteDescription: recetteDescription,
                         recetteCategory: recetteCategory,
-                        recetteHeaderPic: recetteHeaderPic
+                        recetteHeaderPic: recetteHeaderPic,
+                        recetteIngredients: recetteIngredients,
+                        recetteUstensiles: recetteUstensiles,
+                        recetteDifficulte: recetteDifficulte,
+                        recettePreparation: recettePreparation
                     },
                     success: function(data){
                         if(isJson(data)){
