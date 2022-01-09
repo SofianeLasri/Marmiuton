@@ -140,8 +140,9 @@
 
         function saveHeaderPic(){
             var imageLink = $('input[id^="headerPicInput"]').val();
-            $("#editor-headerPic").css("background", "linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('"+imageLink+"')");
+            $("#editor-headerPic").css("background", "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('"+imageLink+"')");
             $("#editor-headerPic").html('<i class="fas fa-edit"></i> Modifier');
+            $("#editor-headerPic").attr("headerPic", imageLink);
             $("#modal").modal("hide");
         }
     </script>
