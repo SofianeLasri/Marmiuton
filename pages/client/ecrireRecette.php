@@ -88,8 +88,20 @@
                 <div class="card vbcard">
                     <h6 class="card-header">Publier</h6>
                     <div class="card-body">
-                        <button type="button" class="btn btn-orange btn-sm" data-toggle="tooltip" data-placement="bottom" title="Pas eu le temps"><i class="fas fa-save"></i> Brouillon</button>
-                        <button type="button" class="btn btn-outline-orange btn-sm" data-toggle="tooltip" data-placement="bottom" title="Pas eu le temps non plus"><i class="fas fa-eye"></i> Prévisualiser</button>
+                        <div class="form-group">
+                            <label>Difficulté</label>
+                            <input
+                                id="recetteDifficulte"
+                                class="rating rating--nojs"
+                                max="5"
+                                step="1"
+                                type="range"
+                                value="3">
+                        </div>
+                        <div class="form-group">
+                            <label>Temps de préparation (min)</label>
+                            <input type="number" id="recettePreparation" step="1" min="1" max="100" placeholder="15">
+                        </div>
                         <p class="card-text mt-2"><strong>Choisir une image d'entête</strong></p>
                         <a href="#" onclick="chooseHeaderPic()" class="text-orange"><div id="editor-headerPic" class="editor-headerPic border rounded" attr="headerPic"><i class="fas fa-image"></i>Ajouter</div></a>
                         <a href="#" onclick="publish()" class="btn btn-orange" style="margin-top: .75rem;">Publier</a>
