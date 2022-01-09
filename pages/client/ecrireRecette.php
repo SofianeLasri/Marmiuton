@@ -133,7 +133,7 @@
 
         function chooseHeaderPic(){
             $("#modalTitle").html("Choisir une image d'entête");
-            $("#modalBody").html('<div class="form-group"><input type="file" id="headerPicInput" class="form-control-file"></div>');
+            $("#modalBody").html('<div class="form-group"><label>Lien de l\'image (on a pas le temps de faire un envoie de fichier)</label><input type="text" id="headerPicInput" class="form-control-file"></div>');
             $("#modalSave").attr("onclick", "saveHeaderPic()");
             $("#modal").modal("show");
         }
