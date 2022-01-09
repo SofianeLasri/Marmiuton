@@ -77,8 +77,8 @@ body{
 }
 
 .btn-outline-orange {
-    color: var(--lightMainColor);
-    border-color: var(--lightMainColor);
+    color: var(--mainColor);
+    border-color: var(--mainColor);
 }
 .btn-outline-orange:focus, .btn-outline-orange.focus {
   color: #fff;
