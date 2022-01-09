@@ -135,6 +135,7 @@
             $("#editor-headerPic").css("background", "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('"+imageLink+"')");
             $("#editor-headerPic").html('<i class="fas fa-edit"></i> Modifier');
             $("#editor-headerPic").attr("headerPic", imageLink);
+            $("#modalSave").show();
             $("#modal").modal("hide");
         }
 
