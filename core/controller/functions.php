@@ -406,3 +406,20 @@ function isConnected(){
         exit();
     }
 }
+
+// Récupréation diverses infos relatives aux recettes
+function getCategories(){
+    $query = Connexion::pdo()->prepare("SELECT * FROM m_categorie ORDER BY nom");
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+function getUstenciles(){
+    $query = Connexion::pdo()->prepare("SELECT * FROM m_ustencile ORDER BY nom");
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}
+function getIngredients(){
+    $query = Connexion::pdo()->prepare("SELECT * FROM m_ingredient ORDER BY nom");
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
+}

@@ -48,7 +48,12 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <select multiple class="form-control" id="recetteIngredients">
-                                        <option value="0">Aucun</option>
+                                        <?php
+                                            $ingredients = getIngredients();
+                                            foreach($ingredients as $ingredient) {
+                                                echo '<option value="'.$ingredient['id'].'">'.$ingredient['name'].' - '.$ingredient['calories'].' cal</option>';
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -60,7 +65,12 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <select multiple class="form-control" id="recetteUstenciles">
-                                        <option value="0">Aucun</option>
+                                        <?php
+                                            $ustenciles = getUstenciles();
+                                            foreach($ustenciles as $ustencile) {
+                                                echo '<option value="'.$ustencile['id'].'">'.$ustencile['name'].'</option>';
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -72,7 +82,12 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <select class="form-control" id="recetteCategory">
-                                        <option value="0">Aucune</option>
+                                        <?php
+                                            $categories = getCategories();
+                                            foreach($categories as $category) {
+                                                echo '<option value="'.$category['id'].'">'.$category['name'].'</option>';
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
