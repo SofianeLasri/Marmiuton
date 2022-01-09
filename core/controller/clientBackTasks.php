@@ -137,5 +137,5 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
             $return["error"] = "Vous n'avez pas rempli le titre de la recette";
         }
     }
-    return json_encode($return);
+    echo json_encode($return);
 }
