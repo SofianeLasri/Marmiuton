@@ -20,7 +20,7 @@ if(isset($_SESSION['userId'])){
 
     <!-- Dépendances -->
     <?=Client::getDependencies()?>
-    <link rel="stylesheet" href="pages/assets/css/connexion.css">
+    <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/connexion.css">
 
 	<!-- Recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>

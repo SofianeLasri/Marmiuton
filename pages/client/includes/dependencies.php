@@ -17,12 +17,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" type="text/css" href="pages/assets/vendors/fontawesome/css/all.min.css">
-<script src="pages/assets/vendors/fontawesome/js/all.min.js" data-auto-replace-svg="nest"></script>
+<link rel="stylesheet" type="text/css" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/fontawesome/css/all.min.css">
+<script src="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/fontawesome/js/all.min.js" data-auto-replace-svg="nest"></script>
 
 <!-- Intégration de JS Snackbar -->
 <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/js-snackbar/css/js-snackbar.css?v=2.0.0" />
 <script src="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/js-snackbar/js/js-snackbar.js?v=1.2.0"></script>
 
 <!-- Styles -->
-<link rel="stylesheet" href="pages/assets/css/styles.css">
+<link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/styles.css">

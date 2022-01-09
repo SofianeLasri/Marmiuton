@@ -11,7 +11,7 @@ if(isset($_SESSION['userId'])){
     <meta charset="UTF-8">
     <!-- Dépendances -->
 	<?=Client::getDependencies()?>
-    <link rel="stylesheet" href="pages/assets/css/connexion.css">
+    <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/connexion.css">
     <title>Inscription</title>
 
 	<!-- Embed -->

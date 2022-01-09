@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <!-- Dépendances -->
 	<?=Client::getDependencies()?>
-    <link rel="stylesheet" href="pages/assets/css/recette.css">
+    <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/recette.css">
  
 	<!-- Embed -->
 	<meta content="Inscription" property="og:title" />
