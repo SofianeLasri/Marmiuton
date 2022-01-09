@@ -413,8 +413,8 @@ function getCategories(){
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
-function getUstenciles(){
-    $query = Connexion::pdo()->prepare("SELECT * FROM m_ustencile ORDER BY nom");
+function getUstensiles(){
+    $query = Connexion::pdo()->prepare("SELECT * FROM m_ustensile ORDER BY nom");
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }

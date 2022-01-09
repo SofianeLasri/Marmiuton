@@ -61,14 +61,14 @@
                     </div>
                     <div class="col-sm mt-3">
                         <div class="card">
-                            <h6 class="card-header">Ustenciles nécessaires</h6>
+                            <h6 class="card-header">Ustensiles nécessaires</h6>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <select multiple class="form-control" id="recetteUstenciles">
+                                    <select multiple class="form-control" id="recetteUstensiles">
                                         <?php
-                                            $ustenciles = getUstenciles();
-                                            foreach($ustenciles as $ustencile) {
-                                                echo '<option value="'.$ustencile['id'].'">'.$ustencile['nom'].'</option>';
+                                            $ustensiles = getUstensiles();
+                                            foreach($ustensiles as $ustensile) {
+                                                echo '<option value="'.$ustensile['id'].'">'.$ustensile['nom'].'</option>';
                                             }
                                         ?>
                                     </select>
@@ -205,7 +205,7 @@
             var recetteCategory = $("#recetteCategory").val();
             var recetteHeaderPic = $("#editor-headerPic").attr("headerPic");
             var recetteIngredients = $("#recetteIngredients").val();
-            var recetteUstenciles = $("#recetteUstenciles").val();
+            var recetteUstensiles = $("#recetteUstensiles").val();
             var recetteDifficulte = $("#recetteDifficulte").val();
             var recettePreparation = $("#recettePreparation").val();
 

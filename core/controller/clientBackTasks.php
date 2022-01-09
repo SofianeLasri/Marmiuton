@@ -111,7 +111,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
             if(isset($_POST["recetteContent"]) && !empty($_POST["recetteContent"])){
                 if(isset($_POST["recetteIngredients"]) && !empty($_POST["recetteIngredients"])){
                     if(isset($_POST["recetteTempsPreparation"]) && !empty($_POST["recetteTempsPreparation"])){
-                        if(isset($_POST["recetteUstencile"]) && !empty($_POST["recetteUstencile"])){
+                        if(isset($_POST["recetteUstensile"]) && !empty($_POST["recetteUstensile"])){
                             if(isset($_POST["recetteHeaderPic"]) && !empty($_POST["recetteHeaderPic"])){
                                 if(isset($_POST["recetteDifficulte"]) && !empty($_POST["recetteDifficulte"])){
 
@@ -122,7 +122,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                 $return["error"] = "Vous n'avez pas rempli le champ de l'image de couverture";
                             }
                         }else{
-                            $return["error"] = "Vous n'avez pas rempli le champ des ustenciles";
+                            $return["error"] = "Vous n'avez pas rempli le champ des ustensiles";
                         }
                     }else{
                         $return["error"] = "Vous n'avez pas rempli le champ de la préparation";
