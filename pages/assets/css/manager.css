@@ -322,22 +322,6 @@ header .menu-item{
     max-width: 280px;
 }
 
-.vbcard .card-header, .vbcard .card-body{
-	padding: .75rem !important;
-}
-.vbcard .editor-headerPic{
-	width: 100%;
-	height: 126px;
-	background-color: #F7F7F7;
-	background-size: cover;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-.vbcard .editor-headerPic i{
-	font-size: 2.5em;
-}
 .rowSubText{
 	font-size: 0.8em;
 }

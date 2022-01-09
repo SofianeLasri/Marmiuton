@@ -51,15 +51,15 @@
                 </div>
 
                 <div class="card vbcard mt-3">
-                    <h6 class="card-header"><?=$translation["description"]?></h6>
+                    <h6 class="card-header">Description</h6>
                     <div class="card-body">
-                        <p class="card-text"><strong><?=$translation["blog_message_1"]?></strong></p>
+                        <p class="card-text"><strong>Une brève description du plat en question.</strong></p>
                         <textarea id="recetteDescription" class="form-control"></textarea>
                     </div>
                 </div>
 
                 <div class="card vbcard mt-3">
-                    <h6 class="card-header"><?=$translation["blog_category"]?></h6>
+                    <h6 class="card-header">Catégorie de la recette</h6>
                     <div class="card-body">
                         <div class="form-group">
                             <select multiple class="form-control" id="recetteCategory">
