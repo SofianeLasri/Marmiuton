@@ -46,7 +46,7 @@
 	window.onresize = reportWindowSize;
 
     function closeTopBarInfos(){
-        $.get("<?=genPageLink("/backTasks")?>?closeTopBarInfos", function(data) {
+        $.get("<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("backTasks")?>?closeTopBarInfos", function(data) {
             if (data!="") {
                 SnackBar({
                     message: data,

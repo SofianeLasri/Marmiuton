@@ -101,4 +101,40 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
 }elseif(isset($_GET["closeTopBarInfos"])){
     // Cette fonction va fermer la barre d'information en haut de la page
     setcookie("topBarInfos", "false", time()+getWebsiteSetting("cookieDuration"));
+}elseif(isset($_GET["sendRecette"])){
+    $return = null;
+    if(empty($_POST)){
+        // Ici on a pas reçu de données, nous ne sommes pas censsé arriver ici
+        $return["error"] = "Vous n'avez pas rempli tous les champs";
+    }else{
+        if(isset($_POST["recetteTitle"]) && !empty($_POST["recetteTitle"])){
+            if(isset($_POST["recetteContent"]) && !empty($_POST["recetteContent"])){
+                if(isset($_POST["recetteIngredients"]) && !empty($_POST["recetteIngredients"])){
+                    if(isset($_POST["recetteTempsPreparation"]) && !empty($_POST["recetteTempsPreparation"])){
+                        if(isset($_POST["recetteUstencile"]) && !empty($_POST["recetteUstencile"])){
+                            if(isset($_POST["recetteHeaderPic"]) && !empty($_POST["recetteHeaderPic"])){
+                                if(isset($_POST["recetteDifficulte"]) && !empty($_POST["recetteDifficulte"])){
+
+                                }else{
+                                    $return["error"] = "Vous n'avez pas défini de difficulté pour la recette";
+                                }
+                            }else{
+                                $return["error"] = "Vous n'avez pas rempli le champ de l'image de couverture";
+                            }
+                        }else{
+                            $return["error"] = "Vous n'avez pas rempli le champ des ustenciles";
+                        }
+                    }else{
+                        $return["error"] = "Vous n'avez pas rempli le champ de la préparation";
+                    }
+                }else{
+                    $return["error"] = "Vous n'avez pas rempli le champ des ingrédients";
+                }
+            }else{
+                $return["error"] = "Vous n'avez pas rempli le champ de la recette";
+            }
+        }else{
+            $return["error"] = "Vous n'avez pas rempli le titre de la recette";
+        }
+    }
 }

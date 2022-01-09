@@ -40,6 +40,49 @@
                 </div>
                 
                 <textarea required id="summernote" name="recetteContent"></textarea>
+
+                <div class="row mt-3">
+                    <div class="col-sm">
+                        <div class="card">
+                            <h6 class="card-header">Ingrédients de la recette</h6>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <select multiple class="form-control" id="recetteIngredients">
+                                        <option value="0">Aucun</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <h6 class="card-header">Ustencieles nécessaires</h6>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <select multiple class="form-control" id="recetteUstencieles">
+                                        <option value="0">Aucun</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <h6 class="card-header">Difficultée de la recette</h6>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <select class="form-control" id="recetteDifficulte">
+                                        <option value="1">Facile</option>
+                                        <option value="2">Moyennement facile</option>
+                                        <option value="3">Normale</option>
+                                        <option value="4">Difficulté modérée</option>
+                                        <option value="5">Difficile</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-6 col-editor-sidebar">
                 <div class="card vbcard">
@@ -66,7 +109,7 @@
                     <h6 class="card-header">Catégorie de la recette</h6>
                     <div class="card-body">
                         <div class="form-group">
-                            <select multiple class="form-control" id="recetteCategory">
+                            <select class="form-control" id="recetteCategory">
                                 <option value="0">Aucune</option>
                             </select>
                         </div>
@@ -135,7 +178,6 @@
             $("#editor-headerPic").css("background", "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('"+imageLink+"')");
             $("#editor-headerPic").html('<i class="fas fa-edit"></i> Modifier');
             $("#editor-headerPic").attr("headerPic", imageLink);
-            $('button[id^="modalSave"]').show();
             $("#modal").modal("hide");
         }
 
@@ -148,10 +190,64 @@
             var recetteHeaderPic = $("#editor-headerPic").attr("headerPic");
 
             if(recetteTitle == ""){
-                $("#modalTitle").html("Erreur");
-                $("#modalBody").html("Vous n'avez pas entré de titre.");
-                $('button[id^="modalSave"]').hide();
-                $("#modal").modal("show");
+                SnackBar({
+                    message: "Votre recette doit avoir un titre.",
+                    status: "danger",
+                    timeout: false
+                });
+            } else if(recetteContent == ""){
+                SnackBar({
+                    message: "Votre recette doit avoir des instructions.",
+                    status: "danger",
+                    timeout: false
+                });
+            } else if(recetteDescription == ""){
+                SnackBar({
+                    message: "Votre recette doit avoir une description.",
+                    status: "danger",
+                    timeout: false
+                });
+            } else if(recetteCategory == "0"){
+                SnackBar({
+                    message: "Votre recette doit avoir une catégorie.",
+                    status: "danger",
+                    timeout: false
+                });
+            } else if(recetteHeaderPic == ""){
+                SnackBar({
+                    message: "Votre recette doit avoir une image d'entête.",
+                    status: "danger",
+                    timeout: false
+                });
+            } else {
+                // On peut publier
+                $.ajax({
+                    url: '<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("backTasks")?>?sendRecette',
+                    type: 'POST',
+                    data: {
+                        action: "publishRecette",
+                        recetteTitle: recetteTitle,
+                        recetteContent: recetteContent,
+                        recetteDescription: recetteDescription,
+                        recetteCategory: recetteCategory,
+                        recetteHeaderPic: recetteHeaderPic
+                    },
+                    success: function(data){
+                        if(data == "success"){
+                            SnackBar({
+                                message: "Votre recette a bien été publiée.",
+                                status: "success",
+                                timeout: false
+                            });
+                        } else {
+                            SnackBar({
+                                message: "Une erreur est survenue.",
+                                status: "danger",
+                                timeout: false
+                            });
+                        }
+                    }
+                });
             }
         }
     </script>
