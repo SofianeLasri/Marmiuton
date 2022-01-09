@@ -51,8 +51,8 @@
                                         <?php
                                             $ingredients = getIngredients();
                                             foreach($ingredients as $ingredient) {
-                                                echo '<option value="'.$ingredient['id'].'">'.$ingredient['name'].' - '.$ingredient['calories'].' cal</option>';
-                                        }
+                                                echo '<option value="'.$ingredient['id'].'">'.$ingredient['nom'].' - '.$ingredient['calories'].' cal</option>';
+                                            }
                                         ?>
                                     </select>
                                 </div>
@@ -68,7 +68,7 @@
                                         <?php
                                             $ustenciles = getUstenciles();
                                             foreach($ustenciles as $ustencile) {
-                                                echo '<option value="'.$ustencile['id'].'">'.$ustencile['name'].'</option>';
+                                                echo '<option value="'.$ustencile['id'].'">'.$ustencile['nom'].'</option>';
                                             }
                                         ?>
                                     </select>
@@ -85,7 +85,7 @@
                                         <?php
                                             $categories = getCategories();
                                             foreach($categories as $category) {
-                                                echo '<option value="'.$category['id'].'">'.$category['name'].'</option>';
+                                                echo '<option value="'.$category['id'].'">'.$category['nom'].'</option>';
                                             }
                                         ?>
                                     </select>
