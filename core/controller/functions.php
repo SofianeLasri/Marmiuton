@@ -398,3 +398,11 @@ function getUtilisateur($search=""){
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 }
+
+// Regarde si l'utilisateur est connecté, le renvoie vers la page de connexion s'il ne l'est pas
+function isConnected(){
+    if(empty($_SESSION["userId"])){
+        header("Location: ".genPageLink("/login"));
+        exit();
+    }
+}
