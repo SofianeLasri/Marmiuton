@@ -135,7 +135,7 @@
             $("#editor-headerPic").css("background", "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('"+imageLink+"')");
             $("#editor-headerPic").html('<i class="fas fa-edit"></i> Modifier');
             $("#editor-headerPic").attr("headerPic", imageLink);
-            $('input[id^="modalSave"]').show();
+            $('button[id^="modalSave"]').show();
             $("#modal").modal("hide");
         }
 
@@ -150,7 +150,7 @@
             if(recetteTitle == ""){
                 $("#modalTitle").html("Erreur");
                 $("#modalBody").html("Vous n'avez pas entré de titre.");
-                $('input[id^="modalSave"]').hide();
+                $('button[id^="modalSave"]').hide();
                 $("#modal").modal("show");
             }
         }
