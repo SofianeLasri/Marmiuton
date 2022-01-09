@@ -75,7 +75,28 @@
     <?=Client::getFooter()?>
 
     <script type="text/javascript">
+        // Initialise l'editeur
+        document.emojiButton = 'far fa-smile'; // default: fa fa-smile-o
+        document.emojiType = 'unicode'; // default: image
+        document.emojiSource = '<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/tam-emoji/img';
         
+
+
+        $(document).ready(function() {
+            $('#summernote').summernote({
+            placeholder: "Faire cuire les sardines 30 minutes au four à micro-ondes.",
+            tabsize: 2,
+            height: 300,
+            toolbar: [
+                ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+                ['fontsize', ['fontsize', 'height', 'color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['insert', ['link', 'picture', 'video', 'emoji']],
+                ['view', ['fullscreen', 'codeview', 'undo', 'redo', 'help']]
+            ]
+        });
+        });
     </script>
 </body>
 </html>
