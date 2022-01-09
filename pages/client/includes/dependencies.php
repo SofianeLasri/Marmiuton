@@ -22,7 +22,7 @@
 
 <!-- Intégration de JS Snackbar -->
 <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/js-snackbar/css/js-snackbar.css?v=2.0.0" />
-<script src="/pages/assets/vendors/js-snackbar/js/js-snackbar.js?v=1.2.0"></script>
+<script src="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/js-snackbar/js/js-snackbar.js?v=1.2.0"></script>
 
 <!-- Styles -->
 <link rel="stylesheet" href="pages/assets/css/styles.css">

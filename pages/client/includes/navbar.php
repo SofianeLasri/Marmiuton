@@ -31,7 +31,7 @@ if(!isset($_COOKIE["topBarInfos"]) || $_COOKIE["topBarInfos"] == "true"){
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="<?=getWebsiteSetting("websiteUrl")?>">
-            <img src="/data/images/logo/large.svg" width="131" height="30" class="d-inline-block align-top" alt="" loading="<?=getWebsiteSetting("websiteName")?>">
+            <img src="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/large.svg" width="131" height="30" class="d-inline-block align-top" alt="" loading="<?=getWebsiteSetting("websiteName")?>">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

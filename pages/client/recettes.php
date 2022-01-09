@@ -38,7 +38,7 @@
 
     <?=getFooter()?>
 
-    <script src="/pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
+    <script src="<?=getWebsiteSetting("websiteUrl")?>pages/assets/vendors/flickity/js/flickity.pkgd.min.js"></script>
     <script type="text/javascript">
         
     </script>
