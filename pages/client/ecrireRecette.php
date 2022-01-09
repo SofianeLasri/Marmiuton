@@ -149,8 +149,7 @@
             if(recetteTitle == ""){
                 $("#modalTitle").html("Erreur");
                 $("#modalBody").html("Vous n'avez pas entré de titre.");
-                $("#modalClose").attr("onclick", "closeModal()");
-                $("#modalSave").attr("onclick", "closeModal()");
+                $("#modalSave").hide();
                 $("#modal").modal("show");
             }
         }
