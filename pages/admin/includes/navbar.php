@@ -4,7 +4,7 @@
 			<div class="desktop-toggler mx-2">
 				<a href="#" class="menu-toggler" data-action="toggle" data-side="left"><i class="fas fa-bars"></i></a>
 			</div>
-			<a href="<?=getWebsiteSetting("websiteName")?>admin" class="brand-name"><?=getWebsiteSetting("websiteName")?></a>
+			<a href="<?=getWebsiteSetting("websiteUrl")?>admin" class="brand-name"><?=getWebsiteSetting("websiteName")?></a>
 		</div>
 
 		<div class="menu d-flex ml-auto justify-content-end">
@@ -32,7 +32,7 @@
 					</div>
 				</a>
 				<div class="dropdown-menu userDropdown" aria-labelledby="userProfileDD">
-				    <a class="dropdown-item" href="<?=getWebsiteSetting("websiteName")?>logout">Se déconnecter</a>
+				    <a class="dropdown-item" href="<?=getWebsiteSetting("websiteUrl")?>logout">Se déconnecter</a>
 				</div>
 			</div>
 		</div>
@@ -61,7 +61,7 @@
 			<?php /*
 			if(VBcmsGetSetting("debugMode") == "1" && verifyUserPermission($_SESSION['userId'], 'vbcms', 'accessDebug')){
 				echo '<div class="menu-item">
-				<a href="<?=getWebsiteSetting("websiteName")?>vbcms-admin/debug" class="menu-link">
+				<a href="<?=getWebsiteSetting("websiteUrl")?>vbcms-admin/debug" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-bug"></i></span>
 					<span class="menu-text">Debug</span>
 				</a>

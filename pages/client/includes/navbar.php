@@ -30,7 +30,7 @@ if(!isset($_COOKIE["topBarInfos"]) || $_COOKIE["topBarInfos"] == "true"){
 <!-- J'ai un peu honte de cette navbar car c'est ni plus, ni moins, qu'un C/C de la doc de Bootstrap, mais bon le prof n'y verra que du feu x) -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="<?=getWebsiteSetting("websiteName")?>">
+        <a class="navbar-brand" href="<?=getWebsiteSetting("websiteUrl")?>">
             <img src="/data/images/logo/large.svg" width="131" height="30" class="d-inline-block align-top" alt="" loading="<?=getWebsiteSetting("websiteName")?>">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
