@@ -114,7 +114,7 @@
                             <input type="number" id="recettePreparation" step="1" min="1" max="100" placeholder="15">
                         </div>
                         <p class="card-text mt-2"><strong>Choisir une image d'entête</strong></p>
-                        <a href="#" onclick="chooseHeaderPic()" class="text-orange"><div id="editor-headerPic" class="editor-headerPic border rounded" attr="headerPic"><i class="fas fa-image"></i>Ajouter</div></a>
+                        <a href="#" onclick="chooseHeaderPic()" class="text-orange"><div id="editor-headerPic" class="editor-headerPic border rounded" headerPic=""><i class="fas fa-image"></i>Ajouter</div></a>
                         <a href="#" onclick="publish()" class="btn btn-orange" style="margin-top: .75rem;">Publier</a>
                         
                     </div>
@@ -239,6 +239,30 @@
                     status: "danger",
                     timeout: false
                 });
+            } else if(recetteIngredients == ""){
+                SnackBar({
+                    message: "Votre recette doit avoir des ingrédients.",
+                    status: "danger",
+                    timeout: false
+                });
+            } else if(recetteUstensiles == ""){
+                SnackBar({
+                    message: "Votre recette doit avoir des ustensiles.",
+                    status: "danger",
+                    timeout: false
+                });
+            } else if(recetteDifficulte == "0"){
+                SnackBar({
+                    message: "Votre recette doit avoir une difficulté.",
+                    status: "danger",
+                    timeout: false
+                });
+            } else if(recettePreparation == ""){
+                SnackBar({
+                    message: "Votre recette doit avoir une préparation.",
+                    status: "danger",
+                    timeout: false
+                });
             } else {
                 // On peut publier
                 $.ajax({
@@ -253,19 +277,28 @@
                         recetteHeaderPic: recetteHeaderPic
                     },
                     success: function(data){
-                        var json = JSON.parse(data);
-                        if(json.success){
+                        if(isJson(data)){
+                            var json = JSON.parse(data);
+                        
+                            if(json.success){
+                                SnackBar({
+                                    message: "Votre recette a bien été publiée.",
+                                    status: "success",
+                                    timeout: false
+                                });
+                                setTimeout(function(){
+                                    window.location.href = "<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("recette")?>?id="+json.recetteId;
+                                }, 2000);
+                            } else {
+                                SnackBar({
+                                    message: "Une erreur est survenue: "+json.error,
+                                    status: "danger",
+                                    timeout: false
+                                });
+                            }
+                        }else{
                             SnackBar({
-                                message: "Votre recette a bien été publiée.",
-                                status: "success",
-                                timeout: false
-                            });
-                            setTimeout(function(){
-                                window.location.href = "<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("recette")?>?id="+json.recetteId;
-                            }, 2000);
-                        } else {
-                            SnackBar({
-                                message: "Une erreur est survenue: "+json.error,
+                                message: "Une erreur est survenue:"+data,
                                 status: "danger",
                                 timeout: false
                             });
@@ -273,6 +306,14 @@
                     }
                 });
             }
+        }
+
+        function isJson(str) {
+			try {
+				JSON.parse(str);
+			} catch (e) {
+				return false;
+			}
         }
     </script>
 </body>
