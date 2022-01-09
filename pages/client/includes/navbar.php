@@ -67,7 +67,7 @@ if(!isset($_COOKIE["topBarInfos"]) || $_COOKIE["topBarInfos"] == "true"){
             </ul>
             <form action="<?=genPageLink("/lesRecettes")?>" method="get" id="search" class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2 rounded-pill" type="search" name="search" placeholder="Blanquette au saumon">
-                <button type='submit' class='btn btn-orange' ><i class="fas fa-search"></i></button>
+                <button type='submit' class='btn btn-orange rounded-pill' ><i class="fas fa-search"></i></button>
             </form>
         </div>
     </div>

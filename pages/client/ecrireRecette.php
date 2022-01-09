@@ -45,10 +45,10 @@
                 <div class="card vbcard">
                     <h6 class="card-header">Publier</h6>
                     <div class="card-body">
-                        <button type="button" onclick="publish()" class="btn btn-orange btn-sm"><i class="fas fa-save"></i> Brouillon</button>
-                        <button type="button" onclick="preview()" class="btn btn-outline-orange btn-sm"><i class="fas fa-eye"></i> Prévisualiser</button>
+                        <button type="button" class="btn btn-orange btn-sm" data-toggle="tooltip" data-placement="bottom" title="Pas eu le temps"><i class="fas fa-save"></i> Brouillon</button>
+                        <button type="button" class="btn btn-outline-orange btn-sm" data-toggle="tooltip" data-placement="bottom" title="Pas eu le temps non plus"><i class="fas fa-eye"></i> Prévisualiser</button>
                         <p class="card-text mt-2"><strong>Choisir une image d'entête</strong></p>
-                        <a href="#" onclick="chooseHeaderPic()" class="text-orange"><div id="editor-headerPic" class="editor-headerPic border rounded"><i class="fas fa-image"></i>Ajouter</div></a>
+                        <a href="#" onclick="chooseHeaderPic()" class="text-orange"><div id="editor-headerPic" class="editor-headerPic border rounded" attr="headerPic"><i class="fas fa-image"></i>Ajouter</div></a>
                         <a href="#" onclick="publish()" class="btn btn-orange" style="margin-top: .75rem;">Publier</a>
                         
                     </div>
@@ -123,14 +123,6 @@
             });
         });
 
-        function preview(){
-            SnackBar({
-                message: "Alors heu c'est embarrassant mais heum... Disons qu'on a pas vraiment eu le temps d'implémenter cette fonction. :)",
-                status: "danger",
-                timeout: false
-            });
-        }
-
         function chooseHeaderPic(){
             $("#modalTitle").html("Choisir une image d'entête");
             $("#modalBody").html('<div class="form-group"><label>Lien de l\'image (on a pas le temps de faire un envoie de fichier)</label><input type="text" id="headerPicInput" class="form-control-file"></div>');
@@ -140,10 +132,27 @@
 
         function saveHeaderPic(){
             var imageLink = $('input[id^="headerPicInput"]').val();
-            $("#editor-headerPic").css("background", "linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('"+imageLink+"')");
+            $("#editor-headerPic").css("background", "linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('"+imageLink+"')");
             $("#editor-headerPic").html('<i class="fas fa-edit"></i> Modifier');
             $("#editor-headerPic").attr("headerPic", imageLink);
             $("#modal").modal("hide");
+        }
+
+        function publish(){
+            // On va faire les vérifications
+            var recetteTitle = $("#recetteTitle").val();
+            var recetteContent = $("#summernote").val();
+            var recetteDescription = $("#recetteDescription").val();
+            var recetteCategory = $("#recetteCategory").val();
+            var recetteHeaderPic = $("#editor-headerPic").attr("headerPic");
+
+            if(recetteTitle == ""){
+                $("#modalTitle").html("Erreur");
+                $("#modalBody").html("Vous n'avez pas entré de titre.");
+                $("#modalClose").attr("onclick", "closeModal()");
+                $("#modalSave").attr("onclick", "closeModal()");
+                $("#modal").modal("show");
+            }
         }
     </script>
 </body>
