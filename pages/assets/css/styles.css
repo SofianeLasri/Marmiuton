@@ -119,6 +119,15 @@ footer a{
 }
 
 /* Editeur de recette */
+.col-editor-content {
+	flex: 0 0 calc(100% - 280px);
+    max-width: calc(100% - 280px);
+}
+.col-editor-sidebar {
+    flex: 0 0 280px;
+    max-width: 280px;
+}
+
 .vbcard .card-header, .vbcard .card-body{
 	padding: .75rem !important;
 }
@@ -134,4 +143,7 @@ footer a{
 }
 .vbcard .editor-headerPic i{
 	font-size: 2.5em;
+}
+.rowSubText{
+	font-size: 0.8em;
 }

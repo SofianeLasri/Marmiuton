@@ -313,19 +313,6 @@ header .menu-item{
 }
 /* Fin Index Cards */
 
-.col-editor-content {
-	flex: 0 0 calc(100% - 280px);
-    max-width: calc(100% - 280px);
-}
-.col-editor-sidebar {
-    flex: 0 0 280px;
-    max-width: 280px;
-}
-
-.rowSubText{
-	font-size: 0.8em;
-}
-
 /* Gallerie */
 .gallerySidebar{
 	width: 240px;
