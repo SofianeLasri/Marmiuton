@@ -45,10 +45,10 @@
                 <div class="card vbcard">
                     <h6 class="card-header">Publier</h6>
                     <div class="card-body">
-                        <button type="button" onclick="autoSave(0)" class="btn btn-orange btn-sm"><i class="fas fa-save"></i> Brouillon</button>
+                        <button type="button" onclick="publish()" class="btn btn-orange btn-sm"><i class="fas fa-save"></i> Brouillon</button>
                         <button type="button" onclick="preview()" class="btn btn-outline-orange btn-sm"><i class="fas fa-eye"></i> Prévisualiser</button>
                         <p class="card-text mt-2"><strong>Choisir une image d'entête</strong></p>
-                        <a href="#" onclick="openGallery()" class="text-orange"><div id="editor-headerPic" class="editor-headerPic border rounded"><i class="fas fa-image"></i>Ajouter</div></a>
+                        <a href="#" onclick="chooseHeaderPic()" class="text-orange"><div id="editor-headerPic" class="editor-headerPic border rounded"><i class="fas fa-image"></i>Ajouter</div></a>
                         <a href="#" onclick="publish()" class="btn btn-orange" style="margin-top: .75rem;">Publier</a>
                         
                     </div>
@@ -78,6 +78,27 @@
 
     <?=Client::getFooter()?>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Un titre d'exemple</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-orange" data-dismiss="modal" id="modalClose">Fermer</button>
+                <button type="button" class="btn btn-orange" id="modalSave">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript">
         // Initialise l'editeur
         document.emojiButton = 'far fa-smile'; // default: fa fa-smile-o
@@ -88,19 +109,41 @@
 
         $(document).ready(function() {
             $('#summernote').summernote({
-            placeholder: "Faire cuire les sardines 30 minutes au four à micro-ondes.",
-            tabsize: 2,
-            height: 300,
-            toolbar: [
-                ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
-                ['fontsize', ['fontsize', 'height', 'color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['insert', ['link', 'picture', 'video', 'emoji']],
-                ['view', ['fullscreen', 'codeview', 'undo', 'redo', 'help']]
-            ]
+                placeholder: "Faire cuire les sardines 30 minutes au four à micro-ondes.",
+                tabsize: 2,
+                height: 300,
+                toolbar: [
+                    ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+                    ['fontsize', ['fontsize', 'height', 'color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['insert', ['link', 'picture', 'video', 'emoji']],
+                    ['view', ['fullscreen', 'codeview', 'undo', 'redo', 'help']]
+                ]
+            });
         });
-        });
+
+        function preview(){
+            SnackBar({
+                message: "Alors heu c'est embarrassant mais heum... Disons qu'on a pas vraiment eu le temps d'implémenter cette fonction. :)",
+                status: "danger",
+                timeout: false
+            });
+        }
+
+        function chooseHeaderPic(){
+            $("#modalTitle").html("Choisir une image d'entête");
+            $("#modalBody").html('<div class="form-group"><input type="file" id="headerPicInput" class="form-control-file"></div>');
+            $("#modalSave").attr("onclick", "saveHeaderPic()");
+            $("#modal").modal("show");
+        }
+
+        function saveHeaderPic(){
+            var imageLink = $('input[id^="headerPicInput"]').val();
+            $("#editor-headerPic").css("background-image", "url("+imageLink+")");
+            $("#editor-headerPic").html('<i class="fas fa-edit"></i> Modifier');
+            $("#modal").modal("hide");
+        }
     </script>
 </body>
 </html>
