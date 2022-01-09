@@ -34,7 +34,11 @@
 
         <div class="row">
             <div class="col-sm-6 col-editor-content">
-                <input type="text" class="form-control my-2" id="recetteTitle" placeholder="Une superbe recette">
+                <div class="form-group">
+                    <label>Nom de la recette</label>
+                    <input type="text" class="form-control my-2" id="recetteTitle" placeholder="Une superbe recette">
+                </div>
+                
                 <textarea required id="summernote" name="recetteContent"></textarea>
             </div>
             <div class="col-6 col-editor-sidebar">
