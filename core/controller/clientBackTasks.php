@@ -105,36 +105,50 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
     $return = null;
     if(empty($_POST)){
         // Ici on a pas reçu de données, nous ne sommes pas censsé arriver ici
-        $return["error"] = "Vous n'avez pas rempli tous les champs";
+        $return["error"] = "Vous n'avez pas rempli tous les champs.";
     }else{
         if(isset($_POST["recetteTitle"]) && !empty($_POST["recetteTitle"])){
             if(isset($_POST["recetteContent"]) && !empty($_POST["recetteContent"])){
-                if(isset($_POST["recetteIngredients"]) && !empty($_POST["recetteIngredients"])){
-                    if(isset($_POST["recettePreparation"]) && !empty($_POST["recettePreparation"])){
-                        if(isset($_POST["recetteUstensiles"]) && !empty($_POST["recetteUstensiles"])){
-                            if(isset($_POST["recetteHeaderPic"]) && !empty($_POST["recetteHeaderPic"])){
-                                if(isset($_POST["recetteDifficulte"]) && !empty($_POST["recetteDifficulte"])){
-                                    $return["error"] = "Tout est bon, mais je n'ai pas encore fait le backend. :p";
+                if(isset($_POST["recetteDescription"]) && !empty($_POST["recetteDescription"])){
+                    if(isset($_POST["recetteCategory"]) && !empty($_POST["recetteCategory"])){
+                        if(isset($_POST["recetteIngredients"]) && !empty($_POST["recetteIngredients"])){
+                            if(isset($_POST["recettePreparation"]) && !empty($_POST["recettePreparation"])){
+                                if(isset($_POST["recetteUstensiles"]) && !empty($_POST["recetteUstensiles"])){
+                                    if(isset($_POST["recetteHeaderPic"]) && !empty($_POST["recetteHeaderPic"])){
+                                        if(isset($_POST["recetteDifficulte"]) && !empty($_POST["recetteDifficulte"])){
+                                            $recetteId = sendRecette($_POST["recetteTitle"], $_POST["recetteContent"], $_POST["recetteDescription"], $_POST["recetteCategory"], $_POST["recetteIngredients"], $_POST["recettePreparation"], $_POST["recetteUstensiles"], $_POST["recetteHeaderPic"], $_POST["recetteDifficulte"]);
+                                            if($recetteId != null){
+                                                $return["success"] = "La recette a bien été envoyée.";
+                                                $return["recetteId"] = $recetteId;
+                                            }else{
+                                                $return["error"] = "Une erreur est survenue lors de l'envoi de la recette, veuillez contacter un administrateur.";
+                                            }
+                                        }else{
+                                            $return["error"] = "Vous n'avez pas défini de difficulté pour la recette.";
+                                        }
+                                    }else{
+                                        $return["error"] = "Vous n'avez pas rempli le champ de l'image de couverture.";
+                                    }
                                 }else{
-                                    $return["error"] = "Vous n'avez pas défini de difficulté pour la recette";
+                                    $return["error"] = "Vous n'avez pas rempli le champ des ustensiles.";
                                 }
                             }else{
-                                $return["error"] = "Vous n'avez pas rempli le champ de l'image de couverture";
+                                $return["error"] = "Vous n'avez pas rempli le champ de la préparation.";
                             }
                         }else{
-                            $return["error"] = "Vous n'avez pas rempli le champ des ustensiles";
+                            $return["error"] = "Vous n'avez pas rempli le champ des ingrédients.";
                         }
                     }else{
-                        $return["error"] = "Vous n'avez pas rempli le champ de la préparation";
+                        $return["error"] = "Vous n'avez pas rempli le champ de la catégorie.";
                     }
                 }else{
-                    $return["error"] = "Vous n'avez pas rempli le champ des ingrédients";
+                    $return["error"] = "Vous n'avez pas mis de description.";
                 }
             }else{
-                $return["error"] = "Vous n'avez pas rempli le champ de la recette";
+                $return["error"] = "Vous n'avez pas rempli le champ de la recette.";
             }
         }else{
-            $return["error"] = "Vous n'avez pas rempli le titre de la recette";
+            $return["error"] = "Vous n'avez pas rempli le titre de la recette.";
         }
     }
     echo json_encode($return);

@@ -423,3 +423,36 @@ function getIngredients(){
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
+
+// Envoyer une recette
+function sendRecette($recetteTitle, $recetteContent, $recetteDescription, $recetteCategory, $recetteIngredients, $recettePreparation, $recetteUstensiles, $recetteHeaderPic, $recetteDifficulte){
+    // On insert la recette
+    $query = Connexion::pdo()->prepare("INSERT INTO m_recette (id, categoryId, auteurId, nom, description, contenu, image, tempsPreparation, difficulte, datePost, dateModif) VALUES (NULL, :categoryId, :auteurId, :nom, :description, :contenu, :image, :tempsPreparation, :difficulte, NOW(), NOW())");
+    $query->bindParam(':categoryId', $recetteCategory);
+    $query->bindParam(':auteurId', $_SESSION["userId"]);
+    $query->bindParam(':nom', utf8_encode($recetteTitle));
+    $query->bindParam(':description', utf8_encode($recetteDescription));
+    $query->bindParam(':contenu', utf8_encode($recetteContent));
+    $query->bindParam(':image', $recetteHeaderPic);
+    $query->bindParam(':tempsPreparation', $recettePreparation);
+    $query->bindParam(':difficulte', $recetteDifficulte);
+    $query->execute();
+
+    // Puis on répertorie les ingrédients
+    $recetteId = Connexion::pdo()->lastInsertId();
+    foreach($recetteIngredients as $ingredient){
+        $query = Connexion::pdo()->prepare("INSERT INTO m_recetteIngredient (id, recetteId, ingredientId) VALUES (NULL, :recetteId, :ingredientId)");
+        $query->bindParam(':recetteId', $recetteId);
+        $query->bindParam(':ingredientId', $ingredient);
+        $query->execute();
+    }
+    // Et on termine par les ustensiles
+    foreach($recetteUstensiles as $ustensile){
+        $query = Connexion::pdo()->prepare("INSERT INTO m_recetteUstensile (id, recetteId, ustensileId) VALUES (NULL, :recetteId, :ustensileId)");
+        $query->bindParam(':recetteId', $recetteId);
+        $query->bindParam(':ustensileId', $ustensile);
+        $query->execute();
+    }
+    // On retourne l'id de la recette
+    return $recetteId;
+}
