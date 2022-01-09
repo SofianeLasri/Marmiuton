@@ -167,8 +167,8 @@ function login($usernameEmail, $password){
 
 function registerUser($username, $password, $email){
     if (preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/', $password)==1) {
-        $username = strtolower($username);
-        $email = strtolower($email); // ici on converti l'email donné en casse minuscule
+        $username = strtolower(htmlspecialchars($username));
+        $email = strtolower(htmlspecialchars($email)); // ici on converti l'email donné en casse minuscule
         $password = password_hash($password, PASSWORD_DEFAULT);
 
         // Ici on récupère l'id du groupe des utilisateurs
