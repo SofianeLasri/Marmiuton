@@ -76,6 +76,17 @@ body{
     box-shadow: 0 0 0 0.2rem rgba(236, 111, 32, 0.5);
 }
 
+.btn-outline-orange {
+    color: var(--lightMainColor);
+    border-color: var(--lightMainColor);
+}
+.btn-outline-orange:focus, .btn-outline-orange.focus {
+  color: #fff;
+  background-color: var(--mainColor);
+  border-color: var(--mainColor);
+  box-shadow: 0 0 0 0.2rem rgba(167, 124, 88, 0.5);
+}
+
 .card-header{
     background-color: var(--lightMainColor)!important;
 }

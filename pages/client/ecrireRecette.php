@@ -46,7 +46,7 @@
                     <h6 class="card-header">Publier</h6>
                     <div class="card-body">
                         <button type="button" onclick="autoSave(0)" class="btn btn-orange btn-sm"><i class="fas fa-save"></i> Brouillon</button>
-                        <button type="button" onclick="preview()" class="btn btn-secondary btn-sm"><i class="fas fa-eye"></i> Prévisualiser</button>
+                        <button type="button" onclick="preview()" class="btn btn-outline-orange btn-sm"><i class="fas fa-eye"></i> Prévisualiser</button>
                         <p class="card-text mt-2"><strong>Choisir une image d'entête</strong></p>
                         <a href="#" onclick="openGallery()" class="text-dark"><div id="editor-headerPic" class="editor-headerPic border rounded"><i class="fas fa-image"></i>Ajouter</div></a>
                         <a href="#" onclick="publish()" class="btn btn-orange" style="margin-top: .75rem;">Publier</a>
