@@ -65,7 +65,9 @@
                                 <div class="carte-recette-img" style="background-image: url(\''.$recette["image"].'\');"></div>
                             </a>
                             <div class="carte-recette-infos">
-                                <h4><strong>'.utf8_decode($recette["nom"]).'</strong></h4>
+                                <a href="'.genPageLink("/recette/").'?recetteId='.$recette["id"].'" class="text-dark">
+                                    <h4><strong>'.utf8_decode($recette["nom"]).'</strong></h4>
+                                </a>
                                 <p>'.utf8_decode($recette["description"]).'</p>
                                 <i><a href="'.genPageLink("/utilisateur/").'?id='.$recette["auteurId"].'" class="text-orange">'.$utilisateur['username'].'</a> <span class="text-muted"><i class="far fa-stopwatch"></i> '.$recette["tempsPreparation"].' minutes</span></i>
                             </div>

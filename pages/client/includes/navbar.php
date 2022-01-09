@@ -48,12 +48,14 @@ if(!isset($_COOKIE["topBarInfos"]) || $_COOKIE["topBarInfos"] == "true"){
                     Recettes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Appéritifs</a>
-                    <a class="dropdown-item" href="#">Entrées</a>
-                    <a class="dropdown-item" href="#">Desserts</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Boissons</a>
-                    <a class="dropdown-item" href="#">Petit-dej/Brunch</a>
+                        <a class="dropdown-item" href="<?=genPageLink("/recettes/")?>?categoryId=1">Appéritifs</a>
+                        <a class="dropdown-item" href="<?=genPageLink("/recettes/")?>?categoryId=2">Entrées</a>
+                        <a class="dropdown-item" href="<?=genPageLink("/recettes/")?>?categoryId=3">Plats</a>
+                        <a class="dropdown-item" href="<?=genPageLink("/recettes/")?>?categoryId=4">Desserts</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<?=genPageLink("/recettes/")?>?categoryId=5">Pâtisserie</a>
+                        <a class="dropdown-item" href="<?=genPageLink("/recettes/")?>?categoryId=7">Boissons</a>
+                        <a class="dropdown-item" href="<?=genPageLink("/recettes/")?>?categoryId=6">Petit-dej/Brunch</a>
                     </div>
                 </li>
                 <li class="nav-item">
