@@ -59,7 +59,7 @@
                             <h6 class="card-header">Ustenciles nécessaires</h6>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <select multiple class="form-control" id="recetteUstencieles">
+                                    <select multiple class="form-control" id="recetteUstenciles">
                                         <option value="0">Aucun</option>
                                     </select>
                                 </div>
@@ -71,13 +71,13 @@
                             <h6 class="card-header">Difficultée de la recette</h6>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <select class="form-control" id="recetteDifficulte">
-                                        <option value="1">Facile</option>
-                                        <option value="2">Moyennement facile</option>
-                                        <option value="3">Normale</option>
-                                        <option value="4">Moyennement difficile</option>
-                                        <option value="5">Difficile</option>
-                                    </select>
+                                <input
+                                id="recetteDifficulte"
+                                class="rating rating--nojs"
+                                max="5"
+                                step="1"
+                                type="range"
+                                value="3">
                                 </div>
                             </div>
                         </div>
@@ -192,6 +192,10 @@
             var recetteDescription = $("#recetteDescription").val();
             var recetteCategory = $("#recetteCategory").val();
             var recetteHeaderPic = $("#editor-headerPic").attr("headerPic");
+            var recetteIngredients = $("#recetteIngredients").val();
+            var recetteUstenciles = $("#recetteUstenciles").val();
+            var recetteDifficulte = $("#recetteDifficulte").val();
+            var recettePreparation = $("#recettePreparation").val();
 
             if(recetteTitle == ""){
                 SnackBar({
