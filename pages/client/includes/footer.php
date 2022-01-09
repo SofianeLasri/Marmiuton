@@ -16,9 +16,9 @@
                 </div>
                 <div>
                     <ul>
-                        <li><a href="/login">Connexion espace membre</a></li>
-                        <li><a href="/recettes">Recettes</a></li>
-                        <li><a href="/login">Connexion espace membre</a></li>
+                        <li><a href="<?=getWebsiteSetting("websiteName")?><?=genPageLink("login")?>">Connexion espace membre</a></li>
+                        <li><a href="<?=getWebsiteSetting("websiteName")?><?=genPageLink("recettes")?>">Recettes</a></li>
+                        <li><a href="<?=getWebsiteSetting("websiteName")?><?=genPageLink("login")?>">Connexion espace membre</a></li>
                     </ul>
                 </div>
             </div>

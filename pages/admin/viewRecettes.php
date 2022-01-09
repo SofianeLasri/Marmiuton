@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="utf-8">
-	<title><?=getWebsiteSetting("websiteName")?> | Liste des recettes</title>
-	<?=Admin::getDependencies()?>
+    <meta charset="UTF-8">
+    <!-- Dépendances -->
+    <?=Client::getDependencies()?>
+    <title><?=getWebsiteSetting("websiteName")?> | Liste des recettes</title>
+    
+    <!-- Embed -->
+    <meta content="<?=getWebsiteSetting("websiteName")?>" property="og:title" />
+    <meta content="<?=getWebsiteSetting("websiteDescription")?>" property="og:description" />
+    <meta content="<?=getWebsiteSetting("websiteUrl")?>" property="og:url" />
+    <meta content="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.png" property="og:image" />
+    <meta content="<?=getWebsiteSetting("mainColor")?>" data-react-helmet="true" name="theme-color" />
 </head>
 <body>
 	<?=Admin::getNavbar()?>

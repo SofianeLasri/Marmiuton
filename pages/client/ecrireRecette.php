@@ -15,7 +15,7 @@
     <meta content="<?=getWebsiteSetting("mainColor")?>" data-react-helmet="true" name="theme-color" />
 
     <!-- Uniquement pour la vitrine -->
-    <link rel="stylesheet" href="/pages/assets/vendors/flickity/css/flickity.css" media="screen">
+    <link rel="stylesheet" href="<?=getWebsiteSetting("websiteName")?>pages/assets/vendors/flickity/css/flickity.css" media="screen">
 </head>
 <body>
     <!-- Inclusion dynamique de la navbar -->

@@ -1,7 +1,7 @@
 <!-- Icône du site -->
-<link rel="icon" type="image/svg+xml" href="/data/images/logo/favicon.svg">
-<link rel="alternate icon" href="/data/images/logo/favicon.ico">
-<link rel="mask-icon" href="/data/images/logo/favicon.svg" color="#ed8930">
+<link rel="icon" type="image/svg+xml" href="<?=getWebsiteSetting("websiteName")?>data/images/logo/favicon.svg">
+<link rel="alternate icon" href="<?=getWebsiteSetting("websiteName")?>data/images/logo/favicon.ico">
+<link rel="mask-icon" href="<?=getWebsiteSetting("websiteName")?>data/images/logo/favicon.svg" color="#ed8930">
 
 <!-- Embed -->
 <meta content="Marmiuton" property="og:title" />
@@ -25,13 +25,13 @@
 <script src="/pages/assets/vendors/fontawesome/js/all.min.js" data-auto-replace-svg="nest"></script>
 
 <!-- Intégration de JS Snackbar -->
-<link rel="stylesheet" href="/pages/assets/vendors/js-snackbar/css/js-snackbar.css?v=2.0.0" />
+<link rel="stylesheet" href="<?=getWebsiteSetting("websiteName")?>pages/assets/vendors/js-snackbar/css/js-snackbar.css?v=2.0.0" />
 <script src="/pages/assets/vendors/js-snackbar/js/js-snackbar.js?v=1.2.0"></script>
 
 <!-- Fonction JS du panel -->
 <script src="/pages/assets/js/manager.js"></script>
 <!-- Styles -->
-<link rel="stylesheet" href="/pages/assets/css/manager.css">
+<link rel="stylesheet" href="<?=getWebsiteSetting("websiteName")?>pages/assets/css/manager.css">
 
 <!-- Animate CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>

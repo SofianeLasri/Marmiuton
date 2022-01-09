@@ -53,7 +53,7 @@ function genPageLink($path="/"){
     $pages = explode("/", $path);
     array_shift($pages);
 
-    $return = "/index.php?";
+    $return = "index.php?";
     // Ici on va vérifier le mode de récupération de l'url
     // On prend l'exemple de ces appels: 
     // /login, /recettes?search=valeur, /admin/recettes?filterBy=DESC
