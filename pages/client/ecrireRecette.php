@@ -41,8 +41,8 @@
                 
                 <textarea required id="summernote" name="recetteContent"></textarea>
 
-                <div class="row mt-3">
-                    <div class="col-sm">
+                <div class="row">
+                    <div class="col-sm mt-3">
                         <div class="card">
                             <h6 class="card-header">Ingrédients de la recette</h6>
                             <div class="card-body">
@@ -54,9 +54,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm">
+                    <div class="col-sm mt-3">
                         <div class="card">
-                            <h6 class="card-header">Ustencieles nécessaires</h6>
+                            <h6 class="card-header">Ustenciles nécessaires</h6>
                             <div class="card-body">
                                 <div class="form-group">
                                     <select multiple class="form-control" id="recetteUstencieles">
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm">
+                    <div class="col-sm mt-3">
                         <div class="card">
                             <h6 class="card-header">Difficultée de la recette</h6>
                             <div class="card-body">
@@ -75,7 +75,7 @@
                                         <option value="1">Facile</option>
                                         <option value="2">Moyennement facile</option>
                                         <option value="3">Normale</option>
-                                        <option value="4">Difficulté modérée</option>
+                                        <option value="4">Moyennement difficile</option>
                                         <option value="5">Difficile</option>
                                     </select>
                                 </div>
@@ -165,6 +165,10 @@
                 ]
             });
         });
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
 
         function chooseHeaderPic(){
             $("#modalTitle").html("Choisir une image d'entête");
