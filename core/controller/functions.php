@@ -426,9 +426,9 @@ function getIngredients(){
 
 // Envoyer une recette
 function sendRecette($recetteTitle, $recetteContent, $recetteDescription, $recetteCategory, $recetteIngredients, $recettePreparation, $recetteUstensiles, $recetteHeaderPic, $recetteDifficulte){
-    $recetteTitle = utf8_encode($recetteTitle);
-    $recetteContent = utf8_encode($recetteContent);
-    $recetteDescription = utf8_encode($recetteDescription);
+    $recetteTitle = utf8_encode(htmlspecialchars($recetteTitle));
+    $recetteContent = utf8_encode(htmlspecialchars($recetteContent));
+    $recetteDescription = utf8_encode(htmlspecialchars($recetteDescription));
     $quantite = 1; // Je suis un boulet j'ai oublié ça xD
 
     // On insert la recette

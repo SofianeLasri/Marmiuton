@@ -107,7 +107,7 @@
                                 max="5"
                                 step="1"
                                 type="range"
-                                value="3">
+                                value="1">
                         </div>
                         <div class="form-group d-flex flex-column">
                             <label>Temps de préparation (min)</label>
