@@ -1,8 +1,9 @@
 <?php 
-        if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
-        $recetteId=$_GET['recetteId'];
-       $recette=getRecette($recetteId);
-        ?>
+if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
+    $recetteId=$_GET['recetteId'];
+    $recette=getRecette($recetteId);
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
