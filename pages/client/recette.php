@@ -18,7 +18,7 @@
         if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
         $recetteId=$_GET['recetteId'];
         
-         $recette=getRecettes(array("categoryId" => $recetteId));
+        prin_r($recette=getRecettes(array("categoryId" => $recetteId)));
         ?>
 <div class="receipe-content-area">
             <div class="container">
@@ -40,8 +40,9 @@
                         <div class="receipe-ratings text-right my-5">
                             <div class="ratings">
                                 <?php
-                                for ($i = 0; $i <= $recette[0]["difficulte"]; $i++)
+                                for ($i = 0; $i < $recette[0]["difficulte"]; $i++){
                                  echo '<i class="fa fa-star" aria-hidden="true"></i>';
+                                }
                                  echo ' </div>';
                                  if($recette[0]["difficulte"]<3)
                                  echo'<a href="#" class="btn delicious-btn">For Begginers</a>';
