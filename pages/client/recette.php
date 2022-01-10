@@ -1,7 +1,14 @@
+<?php 
+        if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
+        $recetteId=$_GET['recetteId'];
+       $recette=getRecette($recetteId);
+       print_r($recette);
+        ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <title><?=utf8_decode($recette["nom"]?></title>
     <!-- Dépendances -->
 	<?=Client::getDependencies()?>
     <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/recette.css">
@@ -16,12 +23,7 @@
 <body>
     <!-- Inclusion dynamique de la navbar -->
     <?=Client::getNavbar()?>
-        <?php 
-        if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
-        $recetteId=$_GET['recetteId'];
-       $recette=getRecette($recetteId);
-       print_r($recette);
-        ?>
+      
     <div class="receipe-content-area">
         <div class="container">
 
@@ -32,7 +34,7 @@
                 <div class="col-12 col-md-8">
                     <div class="receipe-headline my-5">
                         <?php 
-                        echo "<h2>".$recette["nom"]."</h2>";
+                        echo "<h2>".utf8_decode($recette["nom"])."</h2>";
                         echo "<span>".$recette["dateModif"]."</span>";
                         ?>
                         <div class="receipe-duration">
@@ -77,7 +79,7 @@
                         <div class="single-preparation-step">
                             <h4>Detail de la préparation</h4>
                             <?php 
-                            echo "<p>".$recette["contenu"]."</p>";
+                            echo "<p>".utf8_decode($recette["contenu"])."</p>";
                             ?>
                             
                         </div>
