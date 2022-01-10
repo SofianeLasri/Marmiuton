@@ -53,11 +53,11 @@
                                      if($recette[0]["difficulte"]=3){
                                         echo'<a href="#" class="btn delicious-btn">For Medium</a>';
                                      }
-                                     else 
+                                     else {
                                  echo'<a href="#" class="btn delicious-btn">For advanced pvp player</a>';
                                      }
-
                                     }
+                                    
                               
                                 ?>
                         </div>
