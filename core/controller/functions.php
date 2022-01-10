@@ -158,8 +158,9 @@ function login($usernameEmail, $password){
             $userProfilPic = $userProfilPic->fetchColumn();
 
             if (empty($userProfilPic)) {
-                $userProfilPic = "/data/images/misc/user.png";
+                $userProfilPic = "data/images/misc/user.png";
             }
+            $userProfilPic = getWebsiteSetting("websiteUrl") . $userProfilPic;
             
             $_SESSION['userProfilePic'] = $userProfilPic;
             $return["success"] = "Connexion réussie, bienvenue " . $_SESSION['userName'] . "! 🥳";
