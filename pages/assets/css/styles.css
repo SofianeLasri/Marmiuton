@@ -212,3 +212,12 @@ footer a{
     opacity: 1;
     width: 1px;
 }
+
+/* contenu recette */
+.recetteHeaderPic{
+    width: 100%;
+    height: 200px;
+    background-position: center!important;
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+}
