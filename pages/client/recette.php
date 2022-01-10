@@ -28,12 +28,15 @@
                 <div class="row">
                     <div class="col-12 col-md-8">
                         <div class="receipe-headline my-5">
-                            <span>April 05, 2018</span>
-                            <h2>Vegetarian cheese salad</h2>
-                            <div class="receipe-duration">
-                                <h6>Prep: 15 mins</h6>
-                                <h6>Cook: 30 mins</h6>
-                                <h6>Yields: 8 Servings</h6>
+                            <?php 
+                            echo "<span>$recette[""dateModif""]</span>";
+                            echo "<h2>$recette[""nom""]</h2>";
+                            echo "<div class="receipe-duration">";
+                            echo"<h6>Prep: $recette[""tempsPreparation""] mins</h6>"
+                            
+                            ?>
+                            
+                            
                             </div>
                         </div>
                     </div>
