@@ -57,6 +57,12 @@
 					<span class="menu-text">Paramètres</span>
 				</a>
 			</div>
+			<div class="menu-item">
+				<a href="<?=genPageLink("/admin/editVitrineSlider/")?>" class="menu-link">
+					<span class="menu-icon"><i class="fas fa-presentation"></i></span>
+					<span class="menu-text">Modifier le slider</span>
+				</a>
+			</div>
 			
 			<?php if(verifyUserPermission($_SESSION['userId'], "recette.view")) { ?>
 			<div class="menu-divider"></div>
