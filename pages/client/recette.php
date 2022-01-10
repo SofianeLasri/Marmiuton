@@ -19,6 +19,11 @@
 	<meta content="#ed8930" data-react-helmet="true" name="theme-color" />
 </head>
 <body>
+        <?php 
+        if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
+        $recetteId=$_GET['recetteId'];
+       echo  'getRecette($recetteId)';
+        ?>
 <div class="receipe-content-area">
             <div class="container">
 
