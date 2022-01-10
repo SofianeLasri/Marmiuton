@@ -20,7 +20,7 @@
         if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
         $recetteId=$_GET['recetteId'];
         
-        print_r($recette=getRecettes(array("categoryId" => $recetteId)));
+        print_r($recette=getRecettes(array("recetteId" => $recetteId)));
         ?>
 <div class="receipe-content-area">
             <div class="container">
@@ -46,12 +46,19 @@
                                  echo '<i class="fa fa-star" aria-hidden="true"></i>';
                                 }
                                  echo ' </div>';
-                                 if($recette[0]["difficulte"]<3)
+                                 if($recette[0]["difficulte"]<3){
                                  echo'<a href="#" class="btn delicious-btn">For Begginers</a>';
-                                 else if($recette[0]["difficulte"]=3)
-                                 echo'<a href="#" class="btn delicious-btn">For Medium</a>';
-                                 else
-                                 echo'<a href="#" class="btn delicious-btn">For advanced pvp player</a>';
+                                 }
+                                 else {
+                                     if($recette[0]["difficulte"]==3){
+                                        echo'<a href="#" class="btn delicious-btn">For Medium</a>';
+                                     }
+                                     else {
+                                        echo'<a href="#" class="btn delicious-btn">For advanced pvp player</a>';
+                                     }
+                                    }
+                                    
+                              
                                 ?>
                         </div>
                     </div>
