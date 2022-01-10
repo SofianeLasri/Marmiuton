@@ -50,11 +50,11 @@
                                  echo'<a href="#" class="btn delicious-btn">For Begginers</a>';
                                  }
                                  else {
-                                     if($recette[0]["difficulte"]=3){
+                                     if($recette[0]["difficulte"]==3){
                                         echo'<a href="#" class="btn delicious-btn">For Medium</a>';
                                      }
                                      else {
-                                 echo'<a href="#" class="btn delicious-btn">For advanced pvp player</a>';
+                                        echo'<a href="#" class="btn delicious-btn">For advanced pvp player</a>';
                                      }
                                     }
                                     
