@@ -88,7 +88,7 @@
                         <div class="ingredients">
                             <h4>Ingredients</h4>
                                     <?php 
-                                    $ingredient=getIngredients($recetteId)
+                                    $ingredient=getIngredients($recetteId);
                                     foreach($ingredient as $valeur){
                                      echo "<div class='custom-control custom-checkbox'>";
                                      echo "<input type='checkbox' class='custom-control-input'id=customCheck1>";
