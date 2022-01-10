@@ -32,7 +32,7 @@ if(isset($_SESSION['userId'])){
       };
     </script>
 </head>
-<body style="background-image:url('/data/images/planche-bois-aliments.jpg');background-size:cover;">
+<body style="background-image:url('<?=getWebsiteSetting("websiteUrl")?>/data/images/planche-bois-aliments.jpg');background-size:cover;">
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
