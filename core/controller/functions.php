@@ -50,6 +50,10 @@ function loadPage(){
 // Générer les liens
 function genPageLink($path="/"){
     global $localSettings;
+    if (substr(path, 0, 1) != '/') {
+        $path = '/' . $path;
+    }
+
     $pages = explode("/", $path);
     array_shift($pages);
 
@@ -80,6 +84,7 @@ function genPageLink($path="/"){
         }
     }else{
         // Pas besoin de travailler, on donne les alias par défaut
+        $path = ltrim($path, '/');
         $return = $path;
     }
     return $return;
