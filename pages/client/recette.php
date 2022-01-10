@@ -19,6 +19,7 @@
         $recetteId=$_GET['recetteId'];
         
          $recette=getRecettes(array("categoryId" => $recetteId));
+         print_r(recette);
         ?>
 <div class="receipe-content-area">
             <div class="container">
