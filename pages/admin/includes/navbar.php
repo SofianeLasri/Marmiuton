@@ -57,17 +57,6 @@
 					<span class="menu-text">Paramètres</span>
 				</a>
 			</div>
-
-			<?php /*
-			if(VBcmsGetSetting("debugMode") == "1" && verifyUserPermission($_SESSION['userId'], 'vbcms', 'accessDebug')){
-				echo '<div class="menu-item">
-				<a href="<?=getWebsiteSetting("websiteUrl")?>vbcms-admin/debug" class="menu-link">
-					<span class="menu-icon"><i class="fas fa-bug"></i></span>
-					<span class="menu-text">Debug</span>
-				</a>
-			</div>';
-			}*/
-			?>
 			
 			<?php if(verifyUserPermission($_SESSION['userId'], "recette.view")) { ?>
 			<div class="menu-divider"></div>
