@@ -425,10 +425,18 @@ function getUstensiles(){
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
 }
-function getIngredients(){
-    $query = Connexion::pdo()->prepare("SELECT * FROM m_ingredient ORDER BY nom");
-    $query->execute();
-    return $query->fetchAll(PDO::FETCH_ASSOC);
+function getIngredients($recetteId=""){
+    if(empty($recetteId)){
+        $query = Connexion::pdo()->prepare("SELECT * FROM m_ingredient ORDER BY nom");
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }else{
+        $query = Connexion::pdo()->prepare("SELECT * FROM m_ingredient WHERE id IN (SELECT ingredientId FROM m_ingredientRecette WHERE recetteId=:recetteId) ORDER BY nom");
+        $query->bindParam(':recetteId', $recetteId);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 }
 
 // Envoyer une recette
