@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php
-   $title= $_GET['name'] ;
-  echo "<title>$title</title>";
-?>
-    
 <head>
     <meta charset="UTF-8">
     <!-- Dépendances -->
@@ -22,7 +17,7 @@
         <?php 
         if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
         $recetteId=$_GET['recetteId'];
-       echo  'getRecette($recetteId)';
+       echo  'getRecettes($recetteId)';
         ?>
 <div class="receipe-content-area">
             <div class="container">
