@@ -50,7 +50,7 @@ function loadPage(){
 // Générer les liens
 function genPageLink($path="/"){
     global $localSettings;
-    if (substr(path, 0, 1) != '/') {
+    if (substr($path, 0, 1) != '/') {
         $path = '/' . $path;
     }
 
