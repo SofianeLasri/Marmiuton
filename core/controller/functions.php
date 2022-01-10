@@ -268,13 +268,6 @@ function getRecettes($search=""){
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 }
-function getRecette($recetteId){
-    $nom;
-    $description;
-    $image;
-    
-}
-
 // Vérifie les permissions
 function verifyUserPermission($userId, $permission){
     // $permission peut être un tableau ou un string
