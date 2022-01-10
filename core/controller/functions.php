@@ -273,6 +273,12 @@ function getRecettes($search=""){
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 }
+function getRecette($recetteId){
+    $query = Connexion::pdo()->prepare("SELECT * FROM m_recette WHERE id=?");
+    $query->execute([$recetteId]);
+    return $query->fetch(PDO::FETCH_ASSOC);
+}
+
 // Vérifie les permissions
 function verifyUserPermission($userId, $permission){
     // $permission peut être un tableau ou un string
