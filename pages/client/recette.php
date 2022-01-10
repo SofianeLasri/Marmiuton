@@ -8,7 +8,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title><?=utf8_decode($recette["nom"]?></title>
+    <title><?=utf8_decode($recette["nom"])?></title>
     <!-- Dépendances -->
 	<?=Client::getDependencies()?>
     <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/recette.css">
