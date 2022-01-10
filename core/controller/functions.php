@@ -68,6 +68,8 @@ function genPageLink($path="/"){
             // Oui
             if(isset($pages[1]) && !empty($pages[1])){
                 $return = $return . "page=".$pages[1];
+            }else{
+                $return = $return . "page=index";
             }
             $return = $return . "&admin";
             if(isset($pages[2]) && !empty($pages[2])){
