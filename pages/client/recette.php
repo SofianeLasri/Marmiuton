@@ -18,7 +18,7 @@
         if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
         $recetteId=$_GET['recetteId'];
         
-         print_r(getRecettes($recetteId));
+         print_r(getRecette(array("categoryId" => $recetteId)));
         ?>
 <div class="receipe-content-area">
             <div class="container">
