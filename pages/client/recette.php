@@ -15,9 +15,9 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
  
 	<!-- Embed -->
 	<meta content="Inscription" property="og:title" />
-	<meta content="Retrouvez des milliers de recettes toutes plus délicieuses les unes des autres. Rejoignez la communauté des Marmiutons et  partagez vos recettes de grand-mère!" property="og:description" />
-	<meta content="https://marmiuton.sl-projects.com/" property="og:url" />
-	<meta content="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" property="og:image" />
+	<meta content="<?=utf8_decode($recette["description"])?>" property="og:description" />
+	<meta content="<?=getWebsiteSetting("websiteUrl")?>" property="og:url" />
+	<meta content="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.png" property="og:image" />
 	<meta content="#ed8930" data-react-helmet="true" name="theme-color" />
 </head>
 <body>
