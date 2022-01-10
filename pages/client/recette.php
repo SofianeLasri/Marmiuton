@@ -19,28 +19,31 @@
         <?php 
         if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
         $recetteId=$_GET['recetteId'];
-       $recette=getRecette( $recetteId);
+       $recette=getRecette($recetteId);
        print_r($recette);
         ?>
-<div class="receipe-content-area">
-            <div class="container">
+    <div class="receipe-content-area">
+        <div class="container">
 
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <div class="receipe-headline my-5">
-                            <?php 
-                            echo "<h2>".$recette["nom"]."</h2>";
-                            echo "<span>".$recette["dateModif"]."</span>";
-                            ?>
-                           <div class="receipe-duration">
-                            <?php
-                            echo"<h6>Prep: ".$recette["tempsPreparation"]." mins</h6>"
-                            ?>
-                            
-                            
-                            </div>
+        <!-- Image de la recette -->
+        <div class="recetteHeaderPic" style="background-image:url('<?=$recette["image"]?>');"></div>
+
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="receipe-headline my-5">
+                        <?php 
+                        echo "<h2>".$recette["nom"]."</h2>";
+                        echo "<span>".$recette["dateModif"]."</span>";
+                        ?>
+                        <div class="receipe-duration">
+                        <?php
+                        echo"<h6>Prep: ".$recette["tempsPreparation"]." mins</h6>"
+                        ?>
+                        
+                        
                         </div>
                     </div>
+                </div>
 
                     <div class="col-12 col-md-4">
                         <div class="receipe-ratings text-right my-5">
