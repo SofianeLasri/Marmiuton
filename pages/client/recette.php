@@ -74,7 +74,7 @@
                         <div class="single-preparation-step d-flex">
                             <h4>Detail de la préparation</h4>
                             <?php 
-                            echo "<p>".$recette["contenue"]."</p>";
+                            echo "<p>".$recette["contenu"]."</p>";
                             ?>
                             
                         </div>
