@@ -29,11 +29,12 @@
                     <div class="col-12 col-md-8">
                         <div class="receipe-headline my-5">
                             <?php 
-                            echo "<span>$recette[""dateModif""]</span>";
-                            echo "<h2>$recette[""nom""]</h2>";
-                            echo "<div class="receipe-duration">";
-                            echo"<h6>Prep: $recette[""tempsPreparation""] mins</h6>"
-                            
+                            echo "<span>".$recette["dateModif"]."</span>";
+                            echo "<h2>".$recette["nom"]."</h2>";
+                            ?>
+                           <div class="receipe-duration">
+                            <?php
+                            echo"<h6>Prep: ".$recette["tempsPreparation"]." mins</h6>"
                             ?>
                             
                             
