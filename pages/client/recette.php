@@ -19,7 +19,6 @@
         $recetteId=$_GET['recetteId'];
         
          $recette=getRecettes(array("categoryId" => $recetteId));
-         echo '$recette[''id'']';
         ?>
 <div class="receipe-content-area">
             <div class="container">
@@ -41,7 +40,7 @@
                         <div class="receipe-ratings text-right my-5">
                             <div class="ratings">
                                 <?php
-                                for ($i = 0; $i <= $recette['difficulte']; $i++)
+                                for ($i = 0; $i <= $recette["difficulte"]; $i++)
                                  echo '<i class="fa fa-star" aria-hidden="true"></i>';
                                 ?>
                             </div>
