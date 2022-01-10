@@ -40,7 +40,7 @@
                         <div class="receipe-ratings text-right my-5">
                             <div class="ratings">
                                 <?php
-                                for ($i = 1; $i <= $recette[0]["difficulte"]; $i++){
+                                for ($i = 0; $i < $recette[0]["difficulte"]; $i++){
                                  echo '<i class="fa fa-star" aria-hidden="true"></i>';
                                 }
                                  echo ' </div>';
