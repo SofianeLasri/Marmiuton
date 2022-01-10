@@ -14,6 +14,8 @@
 	<meta content="#ed8930" data-react-helmet="true" name="theme-color" />
 </head>
 <body>
+    <!-- Inclusion dynamique de la navbar -->
+    <?=Client::getNavbar()?>
         <?php 
         if(isset($_GET['recetteId']) && !empty($_GET['recetteId']))
         $recetteId=$_GET['recetteId'];
