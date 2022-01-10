@@ -217,7 +217,7 @@ function getRecettes($search=""){
         // On construit la requête
         $queryString = "SELECT * FROM m_recette WHERE 1=1";
         if(!empty($categoryId)){
-            $queryString .= " AND categorieId=:categoryId";
+            $queryString .= " AND categoryId=:categoryId";
         }
         if(!empty($name)){
             $queryString .= " AND nom LIKE :name";
