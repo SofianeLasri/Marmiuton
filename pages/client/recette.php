@@ -72,7 +72,7 @@
                     <div class="col-12 col-lg-8">
                         <!-- Single Preparation Step -->
                         <div class="single-preparation-step d-flex">
-                            <h4>Detail de la préparation</h4>
+                            <p><h4>Detail de la préparation</h4><p>
                             <?php 
                             echo "<p>".$recette["contenu"]."</p>";
                             ?>
