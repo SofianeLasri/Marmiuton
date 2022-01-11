@@ -21,8 +21,8 @@
     <div class="container">
 
         <div class="filtreRecettes bg-light my-5">
+            <h5>Filtre</h5>
             <div class="row">
-                <h5>Filtre</h5>
                 <div class="col-sm">
                     
                 </div>
