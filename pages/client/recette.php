@@ -91,9 +91,11 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                             <h4>Ingredients</h4>
                                     <?php 
                                     $ingredient=getIngredients($recetteId);
+                                    $i=0
                                     foreach($ingredient as $valeur){
+                                       $i++;
                                      echo "<div class='custom-control custom-checkbox'>";
-                                     echo "<input type='checkbox' class='custom-control-input'id=customCheck1>";
+                                     echo "<input type='checkbox' class='custom-control-input'id=customCheck".$i."'>";
                                     echo" <label class='custom-control-label' for='customCheck1'>".$valeur["nom"]."</label>";
                                     echo"</div>";
                                     }
