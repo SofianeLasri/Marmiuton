@@ -94,3 +94,6 @@ body{
 .dropdown-item:focus{
     background-color: var(--mainColor);
 }
+.form-control:focus{
+    border-color: var(--mainColor);
+}
