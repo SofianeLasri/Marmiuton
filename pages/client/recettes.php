@@ -17,22 +17,41 @@
     <!-- Inclusion dynamique de la navbar -->
     <?=getNavbar()?>
 
+    <!-- Recettes -->
     <div class="container">
-    <?php 
-        $lesRecette[][]=getRecettes($type);
-        foreach($lesRecette as $Recette)
-        echo "<div class=""row"">";
-        echo"<div class=""col"">";
-        echo "<img src="$Recette['imagePath']" class=""img-fluid"" alt=""Responsive image""> "  ;
-        echo "</div>";
-        echo<div class="col">;
-        
-        echo</div>
-    <div class="w-100"></div>
-    <div class="col">Column</div>
-    <div class="col">Column</div>
-  </div>
-</div>
+        <div class="block-titres">
+            <h3><strong>Recettes</strong></h3>
+            <span class="text-muted">Toutes nos recettes sont confectionnées avec <3.</span>
+        </div>
+
+        <div class="row pb-3">
+            <?php
+                $search["difficulte"] = 1;
+                $recettes = getRecettes($search);
+                foreach($recettes as $recette){
+                    $array["userId"] = $recette["auteurId"];
+                    $utilisateur = getUtilisateur($array);
+
+                    echo('<!-- Carte recette -->
+                    <div class="col-md-6">
+                        <div class="carte-recette">
+                            <a href="'.genPageLink("/recette/").'?recetteId='.$recette["id"].'">
+                                <div class="carte-recette-img" style="background-image: url(\''.$recette["image"].'\');"></div>
+                            </a>
+                            <div class="carte-recette-infos">
+                                <a href="'.genPageLink("/recette/").'?recetteId='.$recette["id"].'" class="text-dark">
+                                    <h4><strong>'.utf8_decode($recette["nom"]).'</strong></h4>
+                                </a>
+                                <p>'.utf8_decode($recette["description"]).'</p>
+                                <i><a href="'.genPageLink("/utilisateur/").'?id='.$recette["auteurId"].'" class="text-orange">'.$utilisateur['username'].'</a> <span class="text-muted"><i class="far fa-stopwatch"></i> '.$recette["tempsPreparation"].' minutes</span></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin -->');
+                }
+            ?>
+        </div>
+    </div>
 
 
 
