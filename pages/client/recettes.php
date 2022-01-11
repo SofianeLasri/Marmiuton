@@ -67,5 +67,6 @@
     <script type="text/javascript">
         
     </script>
+    <?=Client::getFooter()?>
 </body>
 </html>
