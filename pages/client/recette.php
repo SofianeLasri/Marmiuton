@@ -79,7 +79,7 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                         <div class="single-preparation-step">
                             <h4>Detail de la préparation</h4>
                             <?php 
-                            echo "<p>".utf8_decode($recette["contenu"])."</p>";
+                            echo "<p>".htmlspecialchars_decode(utf8_decode($recette["contenu"]))."</p>";
                             ?>
                             
                         </div>
