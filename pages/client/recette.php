@@ -138,6 +138,7 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
             </div>
         </div>
     </div>
+    <title> test </title>
     <?=Client::getFooter()?>
 </body>
 </html>
