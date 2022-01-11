@@ -15,7 +15,7 @@
 
     <body>
     <!-- Inclusion dynamique de la navbar -->
-    <?=getNavbar()?>
+    <?=Client::getNavbar()?>
 
     <!-- Recettes -->
     <div class="container">
