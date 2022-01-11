@@ -213,7 +213,7 @@ function getRecettes($search=""){
     // On va récupérer les recettes selon la recherche
     // Si $search est une liste, on va chercher selon son contenu
     // $search["categoryId"], $search["name"], ["ingredientId"], ["difficulte"], ["time"], ["auteurId"]
-    if(is_array($search)){
+    if(is_array($search) && !empty($search)){
         // https://stackoverflow.com/a/18603279
         $categoryId = $search["categoryId"] ?? "";
         $name = $search["name"] ?? "";
