@@ -27,8 +27,11 @@
         <div class="row pb-3">
             <?php
                 $search=null;
-                if(isset($_GET["categoryId"])){
+                if(isset($_GET["categoryId"]) AND !empty($_GET["categoryId"])){
                     $search["categoryId"]=($_GET["categoryId"]);
+                }
+                if(isset($_GET["name"]) AND !empty($_GET["name"])){
+                    $search["name"]=($_GET["name"]);
                 }
                 $recettes = getRecettes($search);
                 foreach($recettes as $recette){
