@@ -225,3 +225,9 @@ footer a{
 .receipe-content-area{
     margin-top: 3rem;
 }
+
+/* filtre recette */
+.filtreRecettes{
+    border-radius: 5px;
+    
+}

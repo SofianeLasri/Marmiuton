@@ -19,6 +19,22 @@
 
     <!-- Recettes -->
     <div class="container">
+
+        <div class="filtreRecettes bg-light my-5">
+            <h5>Filtre</h5>
+            <div class="row">
+                <div class="col-sm">
+                    
+                </div>
+                <div class="col-sm">
+                    
+                </div>
+                <div class="col-sm">
+                    
+                </div>
+            </div>
+        </div>
+
         <div class="block-titres">
             <h3><strong>Recettes</strong></h3>
             <span class="text-muted">Toutes nos recettes sont confectionnées avec <3.</span>

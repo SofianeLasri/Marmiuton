@@ -250,7 +250,8 @@ function getRecettes($search=""){
             $query->bindParam(':categoryId', $categoryId);
         }
         if(!empty($name)){
-            $query->bindParam(':name', "%".$name."%");
+            $name = "%".$name."%";
+            $query->bindParam(':name', $name);
         }
         if(!empty($ingredientId)){
             $query->bindParam(':ingredientId', $ingredientId);
