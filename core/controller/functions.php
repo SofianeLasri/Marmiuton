@@ -217,21 +217,22 @@ function getRecettes($search=""){
         // https://stackoverflow.com/a/18603279
         $categoryId = $search["categoryId"] ?? "";
         $name = $search["name"] ?? "";
-        $ingredientId = $search["ingredientId"] ?? "";
+        $ingredients = $search["ingredients"] ?? "";
         $difficulte = $search["difficulte"] ?? "";
         $tempsPreparation = $search["tempsPreparation"] ?? "";
         $auteurId = $search["auteurId"] ?? "";
 
         // On construit la requête
-        $queryString = "SELECT * FROM m_recette WHERE 1=1";
+        $queryString = "SELECT * FROM m_recette INNER JOIN m_recetteIngredient ON m_recette.id=m_recetteIngredient.recetteId  WHERE 1=1";
         if(!empty($categoryId)){
             $queryString .= " AND categoryId=:categoryId";
         }
         if(!empty($name)){
             $queryString .= " AND nom LIKE :name";
         }
-        if(!empty($ingredientId)){
-            $queryString .= " AND ingredientId=:ingredientId";
+        if(!empty($ingredients)){
+            $ingredientsIn = implode(',', $ingredients);
+            $queryString .= " AND ingredientId IN (:ingredients)";
         }
         if(!empty($difficulte)){
             $queryString .= " AND difficulte=:difficulte";
@@ -254,7 +255,7 @@ function getRecettes($search=""){
             $query->bindParam(':name', $name);
         }
         if(!empty($ingredientId)){
-            $query->bindParam(':ingredientId', $ingredientId);
+            $query->bindParam(':ingredients', $ingredientsIn);
         }
         if(!empty($difficulte)){
             $query->bindParam(':difficulte', $difficulte);
@@ -432,7 +433,7 @@ function getIngredients($recetteId=""){
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }else{
-        $query = Connexion::pdo()->prepare("SELECT * FROM m_ingredient WHERE id IN (SELECT ingredientId FROM m_ingredientRecette WHERE recetteId=:recetteId) ORDER BY nom");
+        $query = Connexion::pdo()->prepare("SELECT * FROM m_ingredient WHERE id IN (SELECT ingredientId FROM m_recetteIngredient WHERE recetteId=:recetteId) ORDER BY nom");
         $query->bindParam(':recetteId', $recetteId);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
