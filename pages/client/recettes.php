@@ -20,8 +20,8 @@
     <!-- Recettes -->
     <div class="container">
 
-        <div class="filtreRecettes bg-light my-5">
-            <h5>Filtre</h5>
+        <div class="filtreRecettes p-2 bg-light my-5">
+            <h5><strong>Filtre</strong></h5>
             <div class="row">
                 <div class="col-sm">
                     
