@@ -95,5 +95,6 @@ body{
     background-color: var(--mainColor);
 }
 .form-control:focus{
+    border-color: var(--mainColor);
     box-shadow: 0 0 0 0.2rem rgba(167, 124, 88, 0.5);
 }
