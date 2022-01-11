@@ -48,7 +48,7 @@ if(!isset($_COOKIE["topBarInfos"]) || $_COOKIE["topBarInfos"] == "true"){
                     Recettes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">                    
-                        <a class="dropdown-item" href="<?=genPageLink("/recettes/")?>">Toutes les recettes</a>
+                        <a class="dropdown-item" href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/recettes/")?>">Toutes les recettes</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/recettes/")?>?categoryId=1">Appéritifs</a>
                         <a class="dropdown-item" href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/recettes/")?>?categoryId=2">Entrées</a>
