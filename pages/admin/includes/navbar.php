@@ -46,19 +46,19 @@
 		<div class="menu" >
 			<div class="menu-header">Tableau de board</div>
 			<div class="menu-item">
-				<a href="<?=genPageLink("admin")?>" class="menu-link">
+				<a href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("admin")?>" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-home"></i></span>
 					<span class="menu-text">Tableau de board</span>
 				</a>
 			</div>
 			<div class="menu-item">
-				<a href="<?=genPageLink("admin/settings/")?>" class="menu-link">
+				<a href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("admin/settings/")?>" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-wrench"></i></span>
 					<span class="menu-text">Paramètres</span>
 				</a>
 			</div>
 			<div class="menu-item">
-				<a href="<?=genPageLink("admin/editVitrineSlider/")?>" class="menu-link">
+				<a href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("admin/editVitrineSlider/")?>" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-presentation"></i></span>
 					<span class="menu-text">Modifier le slider</span>
 				</a>
@@ -68,13 +68,13 @@
 			<div class="menu-divider"></div>
 			<div class="menu-header">Recettes</div>
 			<div class="menu-item">
-				<a href="<?=genPageLink("admin/viewRecettes/")?>" class="menu-link">
+				<a href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("admin/viewRecettes/")?>" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-list"></i></span>
 					<span class="menu-text">Voir les recettes</span>
 				</a>
 			</div>
 			<div class="menu-item">
-				<a href="<?=genPageLink("ecrireRecette/")?>" class="menu-link">
+				<a href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("ecrireRecette/")?>" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-pencil"></i></span>
 					<span class="menu-text">Écrire une recette</span>
 				</a>
@@ -85,14 +85,14 @@
 			<div class="menu-divider"></div>
 			<div class="menu-header">Utilisateurs</div>
 			<div class="menu-item">
-				<a href="<?=genPageLink("/admin/viewUsers/")?>" class="menu-link">
+				<a href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("admin/viewUsers/")?>" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-users"></i></span>
 					<span class="menu-text">Liste des utilisateurs</span>
 				</a>
 			</div>
 			<?php if(verifyUserPermission($_SESSION['userId'], "utilisateur.add")) { ?>
 			<div class="menu-item">
-				<a href="<?=genPageLink("admin/addUser/")?>" class="menu-link">
+				<a href="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("admin/addUser/")?>" class="menu-link">
 					<span class="menu-icon"><i class="fas fa-user-plus"></i></span>
 					<span class="menu-text">Ajouter un utilisateur</span>
 				</a>
