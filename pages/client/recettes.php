@@ -26,7 +26,10 @@
 
         <div class="row pb-3">
             <?php
-                $search["difficulte"] = 1;
+                $search=null;
+                if(isset($_GET["categoryId"])){
+                    $search["categoryId"]=($_GET["categoryId"]);
+                }
                 $recettes = getRecettes($search);
                 foreach($recettes as $recette){
                     $array["userId"] = $recette["auteurId"];
