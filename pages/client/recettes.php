@@ -84,6 +84,15 @@
                 if(isset($_GET["name"]) AND !empty($_GET["name"])){
                     $search["name"]=($_GET["name"]);
                 }
+                if(isset($_GET["difficulte"]) AND !empty($_GET["difficulte"])){
+                    $search["difficulte"]=($_GET["difficulte"]);
+                }
+                if(isset($_GET["tempsPreparation"]) AND !empty($_GET["tempsPreparation"])){
+                    $search["tempsPreparation"]=($_GET["tempsPreparation"]);
+                }
+                if(isset($_GET["ingredients"]) AND !empty($_GET["ingredients"])){
+                    $search["ingredients"]=($_GET["ingredients"]);
+                }
                 $recettes = Recette::getRecettes($search);
                 foreach($recettes as $recette){
                     $array["userId"] = $recette["auteurId"];
