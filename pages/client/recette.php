@@ -14,11 +14,11 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
     <link rel="stylesheet" href="<?=getWebsiteSetting("websiteUrl")?>pages/assets/css/recette.css">
  
 	<!-- Embed -->
-	<meta content="Inscription" property="og:title" />
+	<meta content="<?=utf8_decode($recette["nom"])?>" property="og:title" />
 	<meta content="<?=utf8_decode($recette["description"])?>" property="og:description" />
 	<meta content="<?=getWebsiteSetting("websiteUrl")?>" property="og:url" />
 	<meta content="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.png" property="og:image" />
-	<meta content="#ed8930" data-react-helmet="true" name="theme-color" />
+	<meta content="<?=getWebsiteSetting("mainColor")?>" data-react-helmet="true" name="theme-color" />
 </head>
 <body>
     <!-- Inclusion dynamique de la navbar -->

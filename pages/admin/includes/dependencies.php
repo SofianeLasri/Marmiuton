@@ -1,14 +1,14 @@
 <!-- Icône du site -->
 <link rel="icon" type="image/svg+xml" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.svg">
 <link rel="alternate icon" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.ico">
-<link rel="mask-icon" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.svg" color="#ed8930">
+<link rel="mask-icon" href="<?=getWebsiteSetting("websiteUrl")?>data/images/logo/favicon.svg" color="<?=getWebsiteSetting("mainColor")?>">
 
 <!-- Embed -->
 <meta content="Marmiuton" property="og:title" />
 <meta content="Retrouvez des milliers de recettes toutes plus délicieuses les unes des autres. Rejoignez la communauté des Marmiutons et  partagez vos recettes de grand-mère!" property="og:description" />
 <meta content="https://marmiuton.sl-projects.com/" property="og:url" />
 <meta content="https://marmiuton.sl-projects.com/data/images/logo/favicon.png" property="og:image" />
-<meta content="#ed8930" data-react-helmet="true" name="theme-color" />
+<meta content="<?=getWebsiteSetting("mainColor")?>" data-react-helmet="true" name="theme-color" />
 
 <!-- Intégration de Bootstrap, Font Awesome & jQuery -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
