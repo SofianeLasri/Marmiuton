@@ -45,6 +45,7 @@ class Recette{
             // Having Count pour les ingredients
             if(!empty($ingredients)){
                 $queryString .= " HAVING COUNT(m_recette.id)="+count($ingredients);
+                echo $queryString;
             }
             // On la prépare
             $query = Connexion::pdo()->prepare($queryString."  ORDER BY nom");
