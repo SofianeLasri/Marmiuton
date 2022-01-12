@@ -27,6 +27,7 @@
                     <div class="form-group">
                         <label>Catégorie</label>
                         <select class="form-control" name="categoryId">
+                            <option>Non spécifié</option>
                             <?php
                                 $categories = Recette::getCategories();
                                 foreach($categories as $category) {
