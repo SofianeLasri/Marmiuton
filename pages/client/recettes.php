@@ -98,7 +98,7 @@
                 if(isset($_GET["ingredients"]) AND !empty($_GET["ingredients"])){
                     $array = array();
                     foreach($_GET["ingredients"] as $ingredient){
-                        $array[] = $_GET["ingredients"];
+                        $array[] = $ingredient;
                     }
                     $search["ingredients"]=$array;
                 }
