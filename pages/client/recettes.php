@@ -31,7 +31,12 @@
                             <?php
                                 $categories = Recette::getCategories();
                                 foreach($categories as $category) {
-                                    echo '<option value="'.$category['id'].'">'.$category['nom'].'</option>';
+                                    if(isset($_GET['categoryId']) && !empty($_GET['categoryId']) && ($category['id'] == $_GET['categoryId'])){
+                                        $selected = "selected";
+                                    }else{
+                                        $selected = "";
+                                    }
+                                    echo '<option value="'.$category['id'].'" '.$selected.'>'.$category['nom'].'</option>';
                                 }
                             ?>
                         </select>
@@ -72,7 +77,7 @@
 
         <div class="block-titres">
             <h3><strong>Recettes</strong></h3>
-            <span class="text-muted">Toutes nos recettes sont confectionnées avec ❤️.</span>
+            <span class="text-muted">Toutes nos recettes sont confectionnées avec ❤️</span>
         </div>
 
         <div class="row pb-3">
