@@ -49,7 +49,7 @@
                                 <div class="form-group">
                                     <select multiple class="form-control" id="recetteIngredients">
                                         <?php
-                                            $ingredients = getIngredients();
+                                            $ingredients = Recette::getIngredients();
                                             foreach($ingredients as $ingredient) {
                                                 echo '<option value="'.$ingredient['id'].'">'.$ingredient['nom'].' - '.$ingredient['calories'].' cal</option>';
                                             }
@@ -66,7 +66,7 @@
                                 <div class="form-group">
                                     <select multiple class="form-control" id="recetteUstensiles">
                                         <?php
-                                            $ustensiles = getUstensiles();
+                                            $ustensiles = Recette::getUstensiles();
                                             foreach($ustensiles as $ustensile) {
                                                 echo '<option value="'.$ustensile['id'].'">'.$ustensile['nom'].'</option>';
                                             }
@@ -83,7 +83,7 @@
                                 <div class="form-group">
                                     <select class="form-control" id="recetteCategory">
                                         <?php
-                                            $categories = getCategories();
+                                            $categories = Recette::getCategories();
                                             foreach($categories as $category) {
                                                 echo '<option value="'.$category['id'].'">'.$category['nom'].'</option>';
                                             }
@@ -266,7 +266,7 @@
             } else {
                 // On peut publier
                 $.ajax({
-                    url: '<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("backTasks")?>?sendRecette',
+                    url: '<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("backTasks")?>?Recette::sendRecette',
                     type: 'POST',
                     data: {
                         action: "publishRecette",

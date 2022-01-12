@@ -49,7 +49,7 @@
                 if(isset($_GET["name"]) AND !empty($_GET["name"])){
                     $search["name"]=($_GET["name"]);
                 }
-                $recettes = getRecettes($search);
+                $recettes = Recette::getRecettes($search);
                 foreach($recettes as $recette){
                     $array["userId"] = $recette["auteurId"];
                     $utilisateur = getUtilisateur($array);

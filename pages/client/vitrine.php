@@ -53,7 +53,7 @@
         <div class="row pb-3">
             <?php
                 $search["difficulte"] = 1;
-                $recettes = getRecettes($search);
+                $recettes = Recette::getRecettes($search);
                 foreach($recettes as $recette){
                     $array["userId"] = $recette["auteurId"];
                     $utilisateur = getUtilisateur($array);
