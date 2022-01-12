@@ -22,7 +22,7 @@
 
         <div class="filtreRecettes p-2 bg-light my-5">
             <h5><strong>Filtre</strong></h5>
-            <div class="row">
+            <form method="GET" class="row">
                 <div class="col-sm">
                     <div class="form-group">
                         <label>Catégorie</label>
@@ -54,7 +54,7 @@
                         <label>Difficulté</label>
                         <input
                             name="difficulte"
-                            class="rating rating--nojs"
+                            class="rating rating--nojs bg-light"
                             max="5"
                             step="1"
                             type="range"
@@ -64,8 +64,9 @@
                         <label>Temps de préparation (min)</label>
                         <input type="number" name="tempsPreparation" step="1" min="1" max="100" placeholder="15">
                     </div>
+                    <button type="submit" class="btn btn-orange">Filtrer</button>
                 </div>
-            </div>
+            </form>
         </div>
 
         <div class="block-titres">
