@@ -24,20 +24,53 @@
             <h5><strong>Filtre</strong></h5>
             <div class="row">
                 <div class="col-sm">
-                    
+                    <div class="form-group">
+                        <label>Catégorie</label>
+                        <select class="form-control" name="categoryId">
+                            <?php
+                                $categories = Recette::getCategories();
+                                foreach($categories as $category) {
+                                    echo '<option value="'.$category['id'].'">'.$category['nom'].'</option>';
+                                }
+                            ?>
+                        </select>
+                    </div>
                 </div>
                 <div class="col-sm">
-                    
+                    <div class="form-group">
+                        <label>Ingrédients</label>
+                        <select multiple class="form-control" name="ingredients">
+                            <?php
+                                $ingredients = Recette::getIngredients();
+                                foreach($ingredients as $ingredient) {
+                                    echo '<option value="'.$ingredient['id'].'">'.$ingredient['nom'].' - '.$ingredient['calories'].' cal</option>';
+                                }
+                            ?>
+                        </select>
+                    </div>
                 </div>
                 <div class="col-sm">
-                    
+                    <div class="form-group d-flex flex-column">
+                        <label>Difficulté</label>
+                        <input
+                            name="difficulte"
+                            class="rating rating--nojs"
+                            max="5"
+                            step="1"
+                            type="range"
+                            value="5">
+                    </div>
+                    <div class="form-group d-flex flex-column">
+                        <label>Temps de préparation (min)</label>
+                        <input type="number" name="tempsPreparation" step="1" min="1" max="100" placeholder="15">
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="block-titres">
             <h3><strong>Recettes</strong></h3>
-            <span class="text-muted">Toutes nos recettes sont confectionnées avec <3.</span>
+            <span class="text-muted">Toutes nos recettes sont confectionnées avec ❤️.</span>
         </div>
 
         <div class="row pb-3">
