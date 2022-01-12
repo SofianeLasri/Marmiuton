@@ -45,7 +45,7 @@
                 <div class="col-sm">
                     <div class="form-group">
                         <label>Ingrédients</label>
-                        <select multiple class="form-control" name="ingredients">
+                        <select multiple class="form-control" name="ingredients[]">
                             <?php
                                 $ingredients = Recette::getIngredients();
                                 foreach($ingredients as $ingredient) {
