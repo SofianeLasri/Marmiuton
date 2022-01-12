@@ -96,7 +96,11 @@
                     $search["tempsPreparation"]=($_GET["tempsPreparation"]);
                 }
                 if(isset($_GET["ingredients"]) AND !empty($_GET["ingredients"])){
-                    $search["ingredients"]=($_GET["ingredients"]);
+                    $array = array();
+                    foreach($_GET["ingredients"] as $ingredient){
+                        $array[] = $_GET["ingredients"];
+                    }
+                    $search["ingredients"]=$array;
                 }
                 $recettes = Recette::getRecettes($search);
                 foreach($recettes as $recette){
