@@ -90,7 +90,7 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                         <div class="ingredients">
                             <h4>Ingredients</h4>
                                     <?php 
-                                    $ingredient=Recette::Recette::getIngredients($recetteId);
+                                    $ingredient=Recette::getIngredients($recetteId);
                                     $i=0 ;
                                     foreach($ingredient as $valeur){
                                        $i++;
