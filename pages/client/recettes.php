@@ -22,7 +22,7 @@
 
         <div class="filtreRecettes p-2 bg-light my-5">
             <h5><strong>Filtre</strong></h5>
-            <form method="GET" class="row">
+            <form method="GET" action="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/recettes/")?>" class="row">
                 <div class="col-sm">
                     <div class="form-group">
                         <label>Catégorie</label>
