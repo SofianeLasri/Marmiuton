@@ -106,7 +106,7 @@ class Recette{
     // Envoyer une recette
     public static function sendRecette($recetteTitle, $recetteContent, $recetteDescription, $recetteCategory, $recetteIngredients, $recettePreparation, $recetteUstensiles, $recetteHeaderPic, $recetteDifficulte){
         $recetteTitle = utf8_encode(htmlspecialchars($recetteTitle));
-        $recetteContent = utf8_encode(htmlspecialchars($recetteContent));
+        $recetteContent = utf8_encode($recetteContent);
         $recetteDescription = utf8_encode(htmlspecialchars($recetteDescription));
         $quantite = 1; // Je suis un boulet j'ai oublié ça xD
 
