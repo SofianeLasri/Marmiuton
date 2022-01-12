@@ -25,7 +25,6 @@ class Recette{
                 $queryString .= " AND nom LIKE :name";
             }
             if(!empty($ingredients)){
-                print_r($ingredients);
                 $ingredientsIn = implode(',', $ingredients);
                 $queryString .= " AND ingredientId IN (:ingredients)";
             }
@@ -57,7 +56,7 @@ class Recette{
                 $name = "%".$name."%";
                 $query->bindParam(':name', $name);
             }
-            if(!empty($ingredientId)){
+            if(!empty($ingredients)){
                 $query->bindParam(':ingredients', $ingredientsIn);
             }
             if(!empty($difficulte)){
