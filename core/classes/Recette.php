@@ -37,8 +37,16 @@ class Recette{
             if(!empty($auteurId)){
                 $queryString .= " AND auteurId=:auteurId";
             }
+
+            // Dernier ajout important
+            $queryString .= " GROUP BY m_recette.id";
+
+            // Having Count pour les ingredients
+            if(!empty($ingredients)){
+                $queryString .= " HAVING COUNT(m_recette.id)="+count($ingredients);
+            }
             // On la prépare
-            $query = Connexion::pdo()->prepare($queryString." ORDER BY nom");
+            $query = Connexion::pdo()->prepare($queryString."  ORDER BY nom");
 
             // On rempli les paramètres
             if(!empty($categoryId)){
