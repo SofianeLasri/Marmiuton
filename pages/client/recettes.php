@@ -65,7 +65,7 @@
                         <label>Temps de préparation (min)</label>
                         <input type="number" name="tempsPreparation" step="1" min="1" max="100" placeholder="15">
                     </div>
-                    <button type="submit" class="btn btn-orange">Filtrer</button>
+                    <button type="submit" class="btn btn-orange float-right">Filtrer</button>
                 </div>
             </form>
         </div>
