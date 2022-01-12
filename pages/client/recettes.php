@@ -23,6 +23,7 @@
         <div class="filtreRecettes p-2 bg-light my-5">
             <h5><strong>Filtre</strong></h5>
             <form method="GET" action="<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/recettes/")?>" class="row">
+            <input name="page" type="hidden" value="recettes">
                 <div class="col-sm">
                     <div class="form-group">
                         <label>Catégorie</label>
