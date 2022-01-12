@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-group d-flex flex-column">
                         <label>Temps de préparation (min)</label>
-                        <input type="number" name="tempsPreparation" step="1" min="1" max="100" placeholder="15">
+                        <input type="number" name="tempsPreparation" step="1" min="1" max="100" placeholder="15" value="<?= $_GET['tempsPreparation'] ?? '' ?>">
                     </div>
                     <button type="submit" class="btn btn-orange float-right">Filtrer</button>
                 </div>
