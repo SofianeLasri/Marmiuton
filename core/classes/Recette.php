@@ -69,9 +69,6 @@ class Recette{
             if(!empty($auteurId)){
                 $query->bindParam(':auteurId', $auteurId);
             }
-            if(!empty($ingredients)){
-                $query->bindParam(':ingredients', $ingredients);
-            }
 
             // On exécute
             $query->execute();
