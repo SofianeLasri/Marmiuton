@@ -16,7 +16,7 @@
         <div class="d-flex flex-column" id="page-content">
             <div class="d-flex flex-wrap">
             <?php
-                $recettes = getRecettes();
+                $recettes = Recette::getRecettes();
                 foreach($recettes as $recette){
                     echo('<div class="recette-card border rounded mx-1 my-1" style="background-image: url(\''.$recette["image"].'\');">
                     <div class="recette-card-content p-2">
