@@ -116,7 +116,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
                                 if(isset($_POST["recetteUstensiles"]) && !empty($_POST["recetteUstensiles"])){
                                     if(isset($_POST["recetteHeaderPic"]) && !empty($_POST["recetteHeaderPic"])){
                                         if(isset($_POST["recetteDifficulte"]) && !empty($_POST["recetteDifficulte"])){
-                                            $recetteId = sendRecette($_POST["recetteTitle"], $_POST["recetteContent"], $_POST["recetteDescription"], $_POST["recetteCategory"], $_POST["recetteIngredients"], $_POST["recettePreparation"], $_POST["recetteUstensiles"], $_POST["recetteHeaderPic"], $_POST["recetteDifficulte"]);
+                                            $recetteId = Recette::sendRecette($_POST["recetteTitle"], $_POST["recetteContent"], $_POST["recetteDescription"], $_POST["recetteCategory"], $_POST["recetteIngredients"], $_POST["recettePreparation"], $_POST["recetteUstensiles"], $_POST["recetteHeaderPic"], $_POST["recetteDifficulte"]);
                                             if($recetteId != null){
                                                 $return["success"] = "La recette a bien été envoyée.";
                                                 $return["recetteId"] = $recetteId;
