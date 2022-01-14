@@ -266,7 +266,7 @@
             } else {
                 // On peut publier
                 $.ajax({
-                    url: '<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("backTasks")?>?Recette::sendRecette',
+                    url: '<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("backTasks")?>?sendRecette',
                     type: 'POST',
                     data: {
                         action: "publishRecette",
@@ -291,7 +291,7 @@
                                     timeout: false
                                 });
                                 setTimeout(function(){
-                                    window.location.href = "<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("recette")?>?id="+json.recetteId;
+                                    window.location.href = "<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("recette/?recetteId=")?>"+json.recetteId;
                                 }, 2000);
                             } else {
                                 SnackBar({
