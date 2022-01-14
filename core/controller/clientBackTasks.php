@@ -101,7 +101,7 @@ if(isset($_GET["checkUsernameEmail"]) && !empty($_GET["checkUsernameEmail"])){
 }elseif(isset($_GET["closeTopBarInfos"])){
     // Cette fonction va fermer la barre d'information en haut de la page
     setcookie("topBarInfos", "false", time()+getWebsiteSetting("cookieDuration"));
-}elseif(isset($_GET["Recette::sendRecette"])){
+}elseif(isset($_GET["sendRecette"])){
     $return = null;
     if(empty($_POST)){
         // Ici on a pas reçu de données, nous ne sommes pas censsé arriver ici
