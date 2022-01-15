@@ -129,7 +129,7 @@ if(isset($_SESSION['userId'])){
 		})();
 
 		$("#registerUsername").change(function() {
-			$.get("<?=genPageLink("/backTasks/?checkUsernameEmail=")?>="+encodeURI($("#registerUsername").val()), function(data) {
+			$.get("<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/backTasks/?checkUsernameEmail=")?>="+encodeURI($("#registerUsername").val()), function(data) {
 				if (data=="true") {
 					$("#registerUsernameAlert").html("Nom d'utilisateur déjà utilisé.");
 					$("#registerUsernameAlert").css("display","block");
@@ -143,7 +143,7 @@ if(isset($_SESSION['userId'])){
 		});
 
 		$("#registerEmail").change(function() {
-			$.get("<?=genPageLink("/backTasks/?checkUsernameEmail")?>="+encodeURI($("#registerEmail").val()), function(data) {
+			$.get("<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/backTasks/?checkUsernameEmail")?>="+encodeURI($("#registerEmail").val()), function(data) {
 				if (data=="true") {
 					$("#registerEmailAlert").html("Email déjà utilisée.");
 					$("#registerEmailAlert").css("display","block");
@@ -190,7 +190,7 @@ if(isset($_SESSION['userId'])){
 		}
 		
 		function sendFormData(){
-			$.post( "<?=genPageLink("/backTasks/?handleLoginAndRegisterForm")?>", $( "#registerForm" ).serialize() )
+			$.post( "<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/backTasks/?handleLoginAndRegisterForm")?>", $( "#registerForm" ).serialize() )
             .done(function( data ) {
 				grecaptcha.reset()
 				console.log(data);
