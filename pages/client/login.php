@@ -1,7 +1,7 @@
 <?php
 // On redirige si l'utilisateur est déjà connecté
 if(isset($_SESSION['userId'])){
-	header('Location: /');
+	header('Location: '.getWebsiteSetting("websiteUrl"));
 }
 ?>
 <!DOCTYPE html>
@@ -112,7 +112,7 @@ if(isset($_SESSION['userId'])){
 							message: "Redirection dans 3s...",
 							status: "success"
 						});
-						$("#container").html("<p>Redirection...<br><a href='/' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>");
+						$("#container").html("<p>Redirection...<br><a href='<?=getWebsiteSetting("websiteUrl")?>' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>");
 						setTimeout(function(){
 							window.location.href = '<?=getWebsiteSetting("websiteUrl")?>';
 						}, 2000);
