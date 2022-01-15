@@ -266,7 +266,7 @@
             } else {
                 // On peut publier
                 $.ajax({
-                    url: '<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("backTasks")?>?sendRecette',
+                    url: '<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/backTasks/?sendRecette")?>',
                     type: 'POST',
                     data: {
                         action: "publishRecette",
