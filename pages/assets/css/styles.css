@@ -88,6 +88,7 @@
 }
 .carte-recette-infos{
     padding-left: 1rem;
+    overflow-wrap: anywhere;
 }
 
 /*footer*/
