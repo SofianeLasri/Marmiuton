@@ -20,7 +20,7 @@ if(isset($_SESSION['userId'])){
 if(!isset($_COOKIE["topBarInfos"]) || $_COOKIE["topBarInfos"] == "true"){
 ?>
 <!-- Barre du dessus pour les infos peu ou pas importantes -->
-<div id="topBarInfos" class="container-fluid mainColor-bg">
+<div id="topBarInfos" class="container-fluid mainColor-bg" style="background: linear-gradient(0deg, rgba(236, 111, 32, 0.75), rgba(236, 111, 32, 0.75)), url('<?=getWebsiteSetting("websiteUrl")?>data/images/plat-delicieux1.jpg');">
     <div class="container text-center py-2">
         <span class="badge badge-pill badge-danger">Spécial Noël</span> <span>Une sélection de recettes très spéciales pour les fêtes de Noël.</span> <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Découvrir</a> <a href="#" onclick="closeTopBarInfos()" class="text-light"><i class="fas fa-times"></i></a>
     </div>
