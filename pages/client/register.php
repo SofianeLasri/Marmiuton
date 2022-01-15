@@ -204,7 +204,7 @@ if(isset($_SESSION['userId'])){
 						$("#container").html("<p>Redirection...<br><a href='<?=genPageLink("/login")?>' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>");
 						// On redirige après 2s
 						setTimeout(function(){
-							window.location.href = '/login';
+							window.location.href = '<?=getWebsiteSetting("websiteUrl")?><?=genPageLink("/login")?>';
 						}, 2000);
 					}else{
 						SnackBar({

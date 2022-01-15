@@ -114,7 +114,7 @@ if(isset($_SESSION['userId'])){
 						});
 						$("#container").html("<p>Redirection...<br><a href='/' class='text-light'>Cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</p>");
 						setTimeout(function(){
-							window.location.href = '/';
+							window.location.href = '<?=getWebsiteSetting("websiteUrl")?>';
 						}, 2000);
 					}else{
 						SnackBar({
