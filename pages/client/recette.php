@@ -52,7 +52,7 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                                 for ($i = 0; $i < $recette["difficulte"]; $i++){
                                  echo '<i class="fa fa-star" aria-hidden="true"></i>';
                                 }
-                                 echo ' </div>';
+                            echo '</div>';
                                  if($recette["difficulte"]<3){
                                  echo'<a href="#" class="btn delicious-btn">For Begginers</a>';
                                  }
@@ -64,10 +64,7 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                                         echo'<a href="#" class="btn delicious-btn">For advanced pvp player</a>';
                                      }
                                     }
-                                    
-                              
                                 ?>
-                            </div>
                         </div>
                     </div>
                 </div>
