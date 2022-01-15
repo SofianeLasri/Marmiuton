@@ -58,6 +58,9 @@
                     $array["userId"] = $recette["auteurId"];
                     $utilisateur = getUtilisateur($array);
 
+                    $description = utf8_decode($recette["description"]);
+                    $description = (strlen($description) > 144) ? substr($description,0,140).'...' : $description;
+
                     echo('<!-- Carte recette -->
                     <div class="col-md-6">
                         <div class="carte-recette">
@@ -68,7 +71,7 @@
                                 <a href="'.getWebsiteSetting("websiteUrl").genPageLink("/recette/?recetteId=".$recette["id"]).'" class="text-dark">
                                     <h4><strong>'.utf8_decode($recette["nom"]).'</strong></h4>
                                 </a>
-                                <p>'.utf8_decode($recette["description"]).'</p>
+                                <p>'.$description.'</p>
                                 <i><a href="'.getWebsiteSetting("websiteUrl").genPageLink("/utilisateur/?id=".$recette["auteurId"]).'" class="text-orange">'.$utilisateur['username'].'</a> <span class="text-muted"><i class="far fa-stopwatch"></i> '.$recette["tempsPreparation"].' minutes</span></i>
                             </div>
                         </div>
