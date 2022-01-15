@@ -85,17 +85,17 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                     <div class="col-12 col-lg-4">
                         <div class="ingredients">
                             <h4>Ingredients</h4>
-                                    <?php 
-                                    $ingredient=Recette::getIngredients($recetteId);
-                                    $i=0 ;
-                                    foreach($ingredient as $valeur){
-                                       $i++;
-                                     echo "<div class='custom-control custom-checkbox'>";
-                                     echo "<input type='checkbox' class='custom-control-input' id='customCheck".$i."'>";
+                            <?php 
+                            $ingredient=Recette::getIngredients($recetteId);
+                            $i=0 ;
+                            foreach($ingredient as $valeur){
+                                $i++;
+                                echo "<div class='custom-control custom-checkbox'>";
+                                    echo "<input type='checkbox' class='custom-control-input' id='customCheck".$i."'>";
                                     echo" <label class='custom-control-label' >".$valeur["nom"]."</label>";
-                                    echo"</div>";
-                                    }
-                                    ?>
+                                echo"</div>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
