@@ -38,11 +38,9 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                         echo "<span>".$recette["dateModif"]."</span>";
                         ?>
                         <div class="receipe-duration">
-                        <?php
-                        echo"<h6>Prep: ".$recette["tempsPreparation"]." mins</h6>"
-                        ?>
-                        
-                        
+                            <?php
+                            echo"<h6>Prep: ".$recette["tempsPreparation"]." mins</h6>"
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -69,6 +67,7 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                                     
                               
                                 ?>
+                            </div>
                         </div>
                     </div>
                 </div>
