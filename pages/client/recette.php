@@ -107,7 +107,7 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                 <div class="row">
                     <div class="col-12">
                         <div class="section-heading text-left">
-                            <h3>Leave a comment</h3>
+                            <h3>Envoyer un commentaire</h3>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@ if(isset($_GET['recetteId']) && !empty($_GET['recetteId'])){
                                         <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn delicious-btn mt-30" type="submit">Post Comments</button>
+                                        <button class="btn btn-orange mt-3" type="submit">Post Comments</button>
                                     </div>
                                 </div>
                             </form>
