@@ -105,7 +105,7 @@
                     $utilisateur = getUtilisateur($array);
 
                     $description = utf8_decode($recette["description"]);
-                    $description = (strlen($description) > 144) ? substr($description,0,140).'...' : $description;
+                    $description = (strlen($description) > 74) ? substr($description,0,70).'...' : $description;
 
                     echo('<!-- Carte recette -->
                     <div class="col-md-6">
