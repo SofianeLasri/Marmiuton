@@ -97,7 +97,7 @@ if(isset($_SESSION['userId'])){
 		})();
 
 		function sendFormData(){
-			$.post( "/backTasks/?handleLoginAndRegisterForm", $( "#loginForm" ).serialize() )
+			$.post( "<?=genPageLink("/backTasks/?handleLoginAndRegisterForm")?>", $( "#loginForm" ).serialize() )
             .done(function( data ) {
 				grecaptcha.reset()
 				console.log(data);
