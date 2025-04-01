@@ -1,6 +1,7 @@
 <?php
 // attributs de la classe Connexion paramètres de connexion à la base
 $bddHost = $_ENV['DB_HOST'] ?? 'localhost';
+$bddPort = $_ENV['DB_PORT'] ?? '3306';
 $bddName = $_ENV['DB_NAME'] ?? 'marmiuton';
 $bddUsername = $_ENV['DB_USER'] ?? 'marmiuton_user';
 $bddUserPassword = $_ENV['DB_PASSWORD'] ?? 'password';
